@@ -9,148 +9,126 @@ public class AppDbSeed
     public AppDbSeed(ModelBuilder builder)
     {
         List<Categoria> categorias = new() {
-            new Categoria { Id = 1, Nome = "Smartphones" },
-            new Categoria { Id = 2, Nome = "Notebooks" },
-            new Categoria { Id = 3, Nome = "Smartwatches" },
-            new Categoria { Id = 4, Nome = "Fones de Ouvido" },
-            new Categoria { Id = 5, Nome = "Monitores" },
-            new Categoria { Id = 6, Nome = "Teclados e Mouses" },
-            new Categoria { Id = 7, Nome = "Consoles" },
-            new Categoria { Id = 8, Nome = "Action Figures" },
-            new Categoria { Id = 9, Nome = "Drones" },
-            new Categoria { Id = 10, Nome = "Câmeras Digitais" }
+            new Categoria { Id = 1, Nome = "Tenis" },
+            new Categoria { Id = 2, Nome = "Roupas" },
         };
         builder.Entity<Categoria>().HasData(categorias);
 
         List<Produto> produtos = new List<Produto>
         {
-            // Smartphones
-            new Produto { Id = 1, CategoriaId = 1, Nome = "iPhone 14 Pro", Descricao = "Apple A16 Bionic, 128GB", ValorCusto = 4500.00m, ValorVenda = 6999.00m, QtdeEstoque = 10, Destaque = true },
-            new Produto { Id = 2, CategoriaId = 1, Nome = "Samsung Galaxy S23", Descricao = "Snapdragon 8 Gen 2, 256GB", ValorCusto = 4000.00m, ValorVenda = 6499.00m, QtdeEstoque = 15, Destaque = true },
-            new Produto { Id = 3, CategoriaId = 1, Nome = "Xiaomi 13 Pro", Descricao = "Snapdragon 8 Gen 2, 512GB", ValorCusto = 3500.00m, ValorVenda = 5299.00m, QtdeEstoque = 20 },
-            new Produto { Id = 4, CategoriaId = 1, Nome = "Motorola Edge 30 Ultra", Descricao = "Snapdragon 8 Gen 1, 256GB", ValorCusto = 3200.00m, ValorVenda = 4799.00m, QtdeEstoque = 12 },
-            new Produto { Id = 5, CategoriaId = 1, Nome = "Asus ROG Phone 6", Descricao = "Gaming Phone, 512GB", ValorCusto = 4200.00m, ValorVenda = 6999.00m, QtdeEstoque = 8 },
+            // Tenis
+            new Produto { Id = 1, CategoriaId = 1, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Destaque = true },
+            new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Destaque = true },
+            new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20 },
+            new Produto { Id = 4, CategoriaId = 1, Nome = "Vans Old Skool", Descricao = "Tênis skatista em lona e camurça", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22 },
+            new Produto { Id = 5, CategoriaId = 1, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15 },
+            new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30 },
+            new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12 },
+            new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10 },
+            new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8 },
+            new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14 },
+            new Produto { Id = 11, CategoriaId = 1, Nome = "Reebok Classic", Descricao = "Tênis casual vintage", ValorCusto = 180.00m, ValorVenda = 299.99m, QtdeEstoque = 16 },
+            new Produto { Id = 12, CategoriaId = 1, Nome = "Under Armour HOVR", Descricao = "Tênis esportivo respirável", ValorCusto = 310.00m, ValorVenda = 459.99m, QtdeEstoque = 10 },
+            new Produto { Id = 13, CategoriaId = 1, Nome = "Jordan 1 Mid", Descricao = "Tênis icônico da linha Jordan", ValorCusto = 450.00m, ValorVenda = 749.99m, QtdeEstoque = 6 },
+            new Produto { Id = 14, CategoriaId = 1, Nome = "Oakley Modoc", Descricao = "Tênis robusto e confortável", ValorCusto = 280.00m, ValorVenda = 399.99m, QtdeEstoque = 18 },
+            new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly", Descricao = "Tênis de corrida profissional", ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5 },
+            // Roupas
 
-            // Notebooks
-            new Produto { Id = 6, CategoriaId = 2, Nome = "MacBook Pro M2", Descricao = "Apple M2, 16GB RAM, 512GB SSD", ValorCusto = 8000.00m, ValorVenda = 11999.00m, QtdeEstoque = 5, Destaque = true },
-            new Produto { Id = 7, CategoriaId = 2, Nome = "Dell XPS 15", Descricao = "Intel i7, 16GB RAM, 1TB SSD", ValorCusto = 7000.00m, ValorVenda = 9999.00m, QtdeEstoque = 7 },
-            new Produto { Id = 8, CategoriaId = 2, Nome = "Asus ROG Strix G15", Descricao = "Ryzen 9, RTX 3070, 16GB RAM", ValorCusto = 7500.00m, ValorVenda = 10999.00m, QtdeEstoque = 6 },
-            new Produto { Id = 9, CategoriaId = 2, Nome = "Lenovo ThinkPad X1", Descricao = "Intel i5, 8GB RAM, 512GB SSD", ValorCusto = 5000.00m, ValorVenda = 7999.00m, QtdeEstoque = 10 },
-            new Produto { Id = 10, CategoriaId = 2, Nome = "HP Spectre x360", Descricao = "Intel i7, 16GB RAM, 1TB SSD", ValorCusto = 7200.00m, ValorVenda = 10499.00m, QtdeEstoque = 8 },
-
-            // Smartwatches
-            new Produto { Id = 11, CategoriaId = 3, Nome = "Apple Watch Series 8", Descricao = "GPS + Cellular, 45mm", ValorCusto = 2500.00m, ValorVenda = 3999.00m, QtdeEstoque = 10, Destaque = true },
-            new Produto { Id = 12, CategoriaId = 3, Nome = "Samsung Galaxy Watch 5", Descricao = "LTE, 44mm", ValorCusto = 1500.00m, ValorVenda = 2499.00m, QtdeEstoque = 15 },
-            new Produto { Id = 13, CategoriaId = 3, Nome = "Garmin Fenix 7", Descricao = "MultiSport GPS Watch", ValorCusto = 3500.00m, ValorVenda = 4999.00m, QtdeEstoque = 5 },
-            new Produto { Id = 14, CategoriaId = 3, Nome = "Xiaomi Mi Watch", Descricao = "Bluetooth, 46mm", ValorCusto = 800.00m, ValorVenda = 1499.00m, QtdeEstoque = 20 },
-            new Produto { Id = 15, CategoriaId = 3, Nome = "Fitbit Sense 2", Descricao = "Monitoramento de saúde", ValorCusto = 1200.00m, ValorVenda = 2099.00m, QtdeEstoque = 12 },
-
-            // Fones de Ouvido
-            new Produto { Id = 16, CategoriaId = 4, Nome = "AirPods Pro", Descricao = "Cancelamento de Ruído Ativo", ValorCusto = 900.00m, ValorVenda = 1499.00m, QtdeEstoque = 12, Destaque = true },
-            new Produto { Id = 17, CategoriaId = 4, Nome = "Sony WH-1000XM5", Descricao = "Over-ear, Noise Cancelling", ValorCusto = 1400.00m, ValorVenda = 2199.00m, QtdeEstoque = 10 },
-            new Produto { Id = 18, CategoriaId = 4, Nome = "JBL Live 660NC", Descricao = "Fone Bluetooth, Graves Potentes", ValorCusto = 600.00m, ValorVenda = 999.00m, QtdeEstoque = 20 },
-            new Produto { Id = 19, CategoriaId = 4, Nome = "Beats Studio Buds", Descricao = "Fones In-Ear, Bluetooth", ValorCusto = 800.00m, ValorVenda = 1299.00m, QtdeEstoque = 15 },
-            new Produto { Id = 20, CategoriaId = 4, Nome = "Razer Kraken X", Descricao = "Headset Gamer, Surround 7.1", ValorCusto = 400.00m, ValorVenda = 699.00m, QtdeEstoque = 25 },
-
-            // Monitores
-            new Produto { Id = 21, CategoriaId = 5, Nome = "LG Ultragear 27\"", Descricao = "IPS, 144Hz, 1ms", ValorCusto = 1200.00m, ValorVenda = 1899.00m, QtdeEstoque = 8, Destaque = true },
-            new Produto { Id = 22, CategoriaId = 5, Nome = "Samsung Odyssey G5", Descricao = "Curvo, 165Hz, 2K", ValorCusto = 1400.00m, ValorVenda = 2399.00m, QtdeEstoque = 10 },
-            new Produto { Id = 23, CategoriaId = 5, Nome = "AOC Hero 24\"", Descricao = "IPS, 144Hz, FreeSync", ValorCusto = 900.00m, ValorVenda = 1499.00m, QtdeEstoque = 15 },
-            new Produto { Id = 24, CategoriaId = 5, Nome = "Dell P2723QE", Descricao = "4K UHD, 60Hz, USB-C", ValorCusto = 2000.00m, ValorVenda = 3299.00m, QtdeEstoque = 5 },
-            new Produto { Id = 25, CategoriaId = 5, Nome = "BenQ Zowie XL2546", Descricao = "240Hz, 1ms, eSports", ValorCusto = 2500.00m, ValorVenda = 3999.00m, QtdeEstoque = 6 },
-
-            // Teclados e Mouses
-            new Produto { Id = 26, CategoriaId = 6, Nome = "Logitech G Pro X", Descricao = "Teclado Mecânico, RGB", ValorCusto = 700.00m, ValorVenda = 1099.00m, QtdeEstoque = 20, Destaque = true },
-            new Produto { Id = 27, CategoriaId = 6, Nome = "Razer Huntsman Mini", Descricao = "Teclado Óptico, 60%", ValorCusto = 800.00m, ValorVenda = 1299.00m, QtdeEstoque = 12 },
-            new Produto { Id = 28, CategoriaId = 6, Nome = "HyperX Alloy FPS", Descricao = "Teclado Mecânico, Red Switch", ValorCusto = 600.00m, ValorVenda = 999.00m, QtdeEstoque = 18 },
-            new Produto { Id = 29, CategoriaId = 6, Nome = "Logitech G502 Hero", Descricao = "Mouse Gamer, 16K DPI", ValorCusto = 300.00m, ValorVenda = 599.00m, QtdeEstoque = 25 },
-            new Produto { Id = 30, CategoriaId = 6, Nome = "Razer DeathAdder V2", Descricao = "Mouse Ergonômico, 20K DPI", ValorCusto = 400.00m, ValorVenda = 699.00m, QtdeEstoque = 20 },
-
-            // Consoles
-            new Produto { Id = 31, CategoriaId = 7, Nome = "PlayStation 5", Descricao = "Edição Standard, SSD 825GB", ValorCusto = 3500.00m, ValorVenda = 4999.00m, QtdeEstoque = 8, Destaque = true },
-            new Produto { Id = 32, CategoriaId = 7, Nome = "Xbox Series X", Descricao = "1TB SSD, 4K Gaming", ValorCusto = 3500.00m, ValorVenda = 4899.00m, QtdeEstoque = 10 },
-            new Produto { Id = 33, CategoriaId = 7, Nome = "Nintendo Switch OLED", Descricao = "Tela OLED, 64GB", ValorCusto = 1800.00m, ValorVenda = 2699.00m, QtdeEstoque = 12 },
-            new Produto { Id = 34, CategoriaId = 7, Nome = "PlayStation 4 Slim", Descricao = "500GB HDD, Controle DualShock", ValorCusto = 1500.00m, ValorVenda = 2299.00m, QtdeEstoque = 15 },
-            new Produto { Id = 35, CategoriaId = 7, Nome = "Xbox Series S", Descricao = "512GB SSD, Digital", ValorCusto = 2000.00m, ValorVenda = 2899.00m, QtdeEstoque = 18 },
-
-            // Action Figures
-            new Produto { Id = 36, CategoriaId = 8, Nome = "Batman (DC Collectibles)", Descricao = "Figura colecionável 1/6", ValorCusto = 500.00m, ValorVenda = 899.00m, QtdeEstoque = 15, Destaque = true },
-            new Produto { Id = 37, CategoriaId = 8, Nome = "Homem de Ferro (Hot Toys)", Descricao = "Escala 1/6", ValorCusto = 1200.00m, ValorVenda = 1999.00m, QtdeEstoque = 8 },
-            new Produto { Id = 38, CategoriaId = 8, Nome = "Goku (Dragon Ball Z)", Descricao = "SH Figuarts", ValorCusto = 300.00m, ValorVenda = 599.00m, QtdeEstoque = 25 },
-            new Produto { Id = 39, CategoriaId = 8, Nome = "Naruto Uzumaki", Descricao = "Banpresto Figure", ValorCusto = 250.00m, ValorVenda = 449.00m, QtdeEstoque = 20 },
-            new Produto { Id = 40, CategoriaId = 8, Nome = "Darth Vader (Star Wars)", Descricao = "Figura Hasbro Black Series", ValorCusto = 450.00m, ValorVenda = 799.00m, QtdeEstoque = 10 },
-       
-            // Drones
-            new Produto { Id = 41, CategoriaId = 9, Nome = "DJI Mini 3 Pro", Descricao = "4K, Compacto, Smart Features", ValorCusto = 2500.00m, ValorVenda = 3999.00m, QtdeEstoque = 6, Destaque = true },
-            new Produto { Id = 42, CategoriaId = 9, Nome = "DJI Mavic Air 2", Descricao = "48MP, 4K 60fps", ValorCusto = 3000.00m, ValorVenda = 4999.00m, QtdeEstoque = 7 },
-            new Produto { Id = 43, CategoriaId = 9, Nome = "Parrot Anafi", Descricao = "Câmera HDR 4K, Compacto", ValorCusto = 2000.00m, ValorVenda = 3299.00m, QtdeEstoque = 10 },
-            new Produto { Id = 44, CategoriaId = 9, Nome = "Ryze Tello", Descricao = "Drone Educacional, 720p", ValorCusto = 400.00m, ValorVenda = 799.00m, QtdeEstoque = 20 },
-            new Produto { Id = 45, CategoriaId = 9, Nome = "Autel Evo Lite+", Descricao = "Câmera 6K, Bateria 40min", ValorCusto = 3500.00m, ValorVenda = 5499.00m, QtdeEstoque = 5 },
-
-            // Câmeras Digitais
-            new Produto { Id = 46, CategoriaId = 10, Nome = "Canon EOS R5", Descricao = "Mirrorless, 8K Video", ValorCusto = 12000.00m, ValorVenda = 15999.00m, QtdeEstoque = 4, Destaque = true },
-            new Produto { Id = 47, CategoriaId = 10, Nome = "Sony A7 IV", Descricao = "Mirrorless Full-Frame, 33MP", ValorCusto = 9000.00m, ValorVenda = 12999.00m, QtdeEstoque = 6 },
-            new Produto { Id = 48, CategoriaId = 10, Nome = "Nikon Z6 II", Descricao = "Mirrorless, 24MP, 4K", ValorCusto = 8000.00m, ValorVenda = 11499.00m, QtdeEstoque = 5 },
-            new Produto { Id = 49, CategoriaId = 10, Nome = "GoPro Hero 11", Descricao = "Câmera de Ação, 5.3K", ValorCusto = 2000.00m, ValorVenda = 3199.00m, QtdeEstoque = 15 },
-            new Produto { Id = 50, CategoriaId = 10, Nome = "Fujifilm X-T4", Descricao = "APS-C, 26MP, 4K", ValorCusto = 7500.00m, ValorVenda = 10999.00m, QtdeEstoque = 7 }
-        };
+            new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca", Descricao = "100% algodão, modelagem larga", ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Destaque = true },
+            new Produto { Id = 17, CategoriaId = 2, Nome = "Calça Cargo Preta", Descricao = "Com bolsos laterais e ajuste no tornozelo", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30 },
+            new Produto { Id = 18, CategoriaId = 2, Nome = "Jaqueta Corta-Vento", Descricao = "Impermeável e leve, ideal para dias chuvosos", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12 },
+            new Produto { Id = 19, CategoriaId = 2, Nome = "Moletom Liso com Capuz", Descricao = "Moletom peluciado unissex", ValorCusto = 80.00m, ValorVenda = 129.90m, QtdeEstoque = 25 },
+            new Produto { Id = 20, CategoriaId = 2, Nome = "Bermuda de Sarja Bege", Descricao = "Estilo casual, com bolsos laterais", ValorCusto = 60.00m, ValorVenda = 99.99m, QtdeEstoque = 35 },
+            new Produto { Id = 21, CategoriaId = 2, Nome = "Camisa Social Slim", Descricao = "Camisa masculina, algodão, modelagem justa", ValorCusto = 70.00m, ValorVenda = 119.99m, QtdeEstoque = 20 },
+            new Produto { Id = 22, CategoriaId = 2, Nome = "Vestido Midi Floral", Descricao = "Vestido leve para o verão", ValorCusto = 90.00m, ValorVenda = 149.90m, QtdeEstoque = 18 },
+            new Produto { Id = 23, CategoriaId = 2, Nome = "Calça Jeans Skinny", Descricao = "Jeans com elastano para conforto", ValorCusto = 100.00m, ValorVenda = 169.99m, QtdeEstoque = 28 },
+            new Produto { Id = 24, CategoriaId = 2, Nome = "Jaqueta Jeans Oversized", Descricao = "Estilo urbano e confortável", ValorCusto = 130.00m, ValorVenda = 199.99m, QtdeEstoque = 10 },
+            new Produto { Id = 25, CategoriaId = 2, Nome = "Shorts de Moletom", Descricao = "Conforto para o dia a dia", ValorCusto = 50.00m, ValorVenda = 89.99m, QtdeEstoque = 40 },
+            new Produto { Id = 26, CategoriaId = 2, Nome = "Camiseta Básica Preta", Descricao = "100% algodão, gola careca", ValorCusto = 35.00m, ValorVenda = 69.90m, QtdeEstoque = 60 },
+            new Produto { Id = 27, CategoriaId = 2, Nome = "Macacão Feminino", Descricao = "Look prático e estiloso", ValorCusto = 110.00m, ValorVenda = 179.99m, QtdeEstoque = 14 },
+            new Produto { Id = 28, CategoriaId = 2, Nome = "Blusa Cropped Canelada", Descricao = "Estilo jovem e leve", ValorCusto = 45.00m, ValorVenda = 79.99m, QtdeEstoque = 22 },
+            new Produto { Id = 29, CategoriaId = 2, Nome = "Camisa Polo Masculina", Descricao = "Elegância casual", ValorCusto = 65.00m, ValorVenda = 109.99m, QtdeEstoque = 19 },
+            new Produto { Id = 30, CategoriaId = 2, Nome = "Regata Dry Fit", Descricao = "Ideal para treinos", ValorCusto = 30.00m, ValorVenda = 59.90m, QtdeEstoque = 50 }
+};
         builder.Entity<Produto>().HasData(produtos);
 
         List<ProdutoFoto> produtoFotos = new List<ProdutoFoto>
         {
-            // Produto 1
-            new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "/img/produtos/1/1.png" },
-            new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "/img/produtos/1/2.png" },
-            new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "/img/produtos/1/3.png" },
+    // Produto 1 - Nike Air Force 1
+    new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "https://www.nike.com/w/white-air-force-1-shoes-4g797z5sj3yzy7ok" },
+    new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "https://www.nike.com/w/white-air-force-1-shoes-4g797z5sj3yzy7ok" },
+    new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "https://www.nike.com/w/white-air-force-1-shoes-4g797z5sj3yzy7ok" },
 
-            // Produto 2
-            new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "/img/produtos/2/1.png" },
-            new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "/img/produtos/2/2.png" },
-            new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "/img/produtos/2/3.png" },
+    // Produto 2 - Adidas Ultraboost
+    new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "https://www.adidas.com/us/ultraboost" },
+    new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "https://www.adidas.com/us/ultraboost" },
+    new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "https://www.adidas.com/us/ultraboost" },
 
-            // Produto 6
-            new ProdutoFoto { Id = 7, ProdutoId = 6, ArquivoFoto = "/img/produtos/6/1.png" },
-            new ProdutoFoto { Id = 8, ProdutoId = 6, ArquivoFoto = "/img/produtos/6/2.png" },
-            new ProdutoFoto { Id = 9, ProdutoId = 6, ArquivoFoto = "/img/produtos/6/3.png" },
+    // Produto 3 - Puma RS-X
+    new ProdutoFoto { Id = 7, ProdutoId = 3, ArquivoFoto = "https://us.puma.com/us/en/pd/rs-x-retro-resort-womens-sneakers/395984" },
+    new ProdutoFoto { Id = 8, ProdutoId = 3, ArquivoFoto = "https://us.puma.com/us/en/pd/rs-x-retro-resort-womens-sneakers/395984" },
+    new ProdutoFoto { Id = 9, ProdutoId = 3, ArquivoFoto = "https://us.puma.com/us/en/pd/rs-x-retro-resort-womens-sneakers/395984" },
 
-            // Produto 11
-            new ProdutoFoto { Id = 10, ProdutoId = 11, ArquivoFoto = "/img/produtos/11/1.png" },
-            new ProdutoFoto { Id = 11, ProdutoId = 11, ArquivoFoto = "/img/produtos/11/2.png" },
-            new ProdutoFoto { Id = 12, ProdutoId = 11, ArquivoFoto = "/img/produtos/11/3.png" },
+    // Produto 4 - Vans Old Skool
+    new ProdutoFoto { Id = 10, ProdutoId = 4, ArquivoFoto = "https://www.vans.ca/en-ca/categories/skate-collection-c5420/skate-old-skool-shoe-pvn0a5fcby28" },
+    new ProdutoFoto { Id = 11, ProdutoId = 4, ArquivoFoto = "https://www.vans.ca/en-ca/categories/skate-collection-c5420/skate-old-skool-shoe-pvn0a5fcby28" },
+    new ProdutoFoto { Id = 12, ProdutoId = 4, ArquivoFoto = "https://www.vans.ca/en-ca/categories/skate-collection-c5420/skate-old-skool-shoe-pvn0a5fcby28" },
 
-            // Produto 16
-            new ProdutoFoto { Id = 13, ProdutoId = 16, ArquivoFoto = "/img/produtos/16/1.png" },
-            new ProdutoFoto { Id = 14, ProdutoId = 16, ArquivoFoto = "/img/produtos/16/2.png" },
-            new ProdutoFoto { Id = 15, ProdutoId = 16, ArquivoFoto = "/img/produtos/16/3.png" },
+    // Produto 5 - New Balance 574
+    new ProdutoFoto { Id = 13, ProdutoId = 5, ArquivoFoto = "https://www.newbalance.com/574/" },
+    new ProdutoFoto { Id = 14, ProdutoId = 5, ArquivoFoto = "https://www.newbalance.com/574/" },
+    new ProdutoFoto { Id = 15, ProdutoId = 5, ArquivoFoto = "https://www.newbalance.com/574/" },
 
-            // Produto 21
-            new ProdutoFoto { Id = 16, ProdutoId = 21, ArquivoFoto = "/img/produtos/21/1.png" },
-            new ProdutoFoto { Id = 17, ProdutoId = 21, ArquivoFoto = "/img/produtos/21/2.png" },
-            new ProdutoFoto { Id = 18, ProdutoId = 21, ArquivoFoto = "/img/produtos/21/3.png" },
+    // Produto 6 - Converse Chuck Taylor
+    new ProdutoFoto { Id = 16, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/shop/high-top-shoes" },
+    new ProdutoFoto { Id = 17, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/shop/high-top-shoes" },
+    new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/shop/high-top-shoes" },
 
-            // Produto 26
-            new ProdutoFoto { Id = 19, ProdutoId = 26, ArquivoFoto = "/img/produtos/26/1.png" },
-            new ProdutoFoto { Id = 20, ProdutoId = 26, ArquivoFoto = "/img/produtos/26/2.png" },
+    // Produto 7 - Asics Gel-Kayano 28
+    new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "https://www.asics.com/au/en-au/gel-kayano-28/p/AOP_1011B189-001.html" },
+    new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "https://www.asics.com/au/en-au/gel-kayano-28/p/AOP_1011B189-001.html" },
+    new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "https://www.asics.com/au/en-au/gel-kayano-28/p/AOP_1011B189-001.html" },
 
-            // Produto 31
-            new ProdutoFoto { Id = 21, ProdutoId = 31, ArquivoFoto = "/img/produtos/31/1.png" },
-            new ProdutoFoto { Id = 22, ProdutoId = 31, ArquivoFoto = "/img/produtos/31/2.png" },
-            new ProdutoFoto { Id = 23, ProdutoId = 31, ArquivoFoto = "/img/produtos/31/3.png" },
+    // Produto 8 - Nike Dunk Low
+    new ProdutoFoto { Id = 22, ProdutoId = 8, ArquivoFoto = "https://www.nike.com/w/dunk-shoes-90aohzy7ok" },
+    new ProdutoFoto { Id = 23, ProdutoId = 8, ArquivoFoto = "https://www.nike.com/w/dunk-shoes-90aohzy7ok" },
+    new ProdutoFoto { Id = 24, ProdutoId = 8, ArquivoFoto = "https://www.nike.com/w/dunk-shoes-90aohzy7ok" },
 
-            // Produto 36
-            new ProdutoFoto { Id = 24, ProdutoId = 36, ArquivoFoto = "/img/produtos/36/1.png" },
-            new ProdutoFoto { Id = 25, ProdutoId = 36, ArquivoFoto = "/img/produtos/36/2.png" },
-            new ProdutoFoto { Id = 26, ProdutoId = 36, ArquivoFoto = "/img/produtos/36/3.png" },
+    // Produto 9 - Mizuno Wave Prophecy
+    new ProdutoFoto { Id = 25, ProdutoId = 9, ArquivoFoto = "https://www.mizuno.com/us/en-us/wave-prophecy/" },
+    new ProdutoFoto { Id = 26, ProdutoId = 9, ArquivoFoto = "https://www.mizuno.com/us/en-us/wave-prophecy/" },
+    new ProdutoFoto { Id = 27, ProdutoId = 9, ArquivoFoto = "https://www.mizuno.com/us/en-us/wave-prophecy/" },
 
-            // Produto 41
-            new ProdutoFoto { Id = 27, ProdutoId = 41, ArquivoFoto = "/img/produtos/41/1.png" },
-            new ProdutoFoto { Id = 28, ProdutoId = 41, ArquivoFoto = "/img/produtos/41/2.png" },
-            new ProdutoFoto { Id = 29, ProdutoId = 41, ArquivoFoto = "/img/produtos/41/3.png" },
+    // Produto 10 - Fila Disruptor II
+    new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "https://www.fila.com/disruptor-ii-sneakers/" },
+    new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "https://www.fila.com/disruptor-ii-sneakers/" },
+    new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "https://www.fila.com/disruptor-ii-sneakers/" },
 
-            // Produto 46
-            new ProdutoFoto { Id = 30, ProdutoId = 46, ArquivoFoto = "/img/produtos/46/1.png" },
-            new ProdutoFoto { Id = 31, ProdutoId = 46, ArquivoFoto = "/img/produtos/46/2.png" },
-            new ProdutoFoto { Id = 32, ProdutoId = 46, ArquivoFoto = "/img/produtos/46/3.png" },
+    // Produto 11 - Reebok Classic
+    new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "https://www.reebok.com/us/classic-leather-shoes" },
+    new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "https://www.reebok.com/us/classic-leather-shoes" },
+    new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "https://www.reebok.com/us/classic-leather-shoes" },
+
+    // Produto 12 - Under Armour HOVR
+    new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "https://www.underarmour.com/en-us/p/shoes/ua-hovr-phantom-2-running-shoes/3024155.html" },
+    new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "https://www.underarmour.com/en-us/p/shoes/ua-hovr-phantom-2-running-shoes/3024155.html" },
+    new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "https://www.underarmour.com/en-us/p/shoes/ua-hovr-phantom-2-running-shoes/3024155.html" },
+
+    // Produto 13 - Jordan 1 Mid
+    new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "https://www.nike.com/w/jordan-1-mid-shoes-6ealhzy7ok" },
+    new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "https://www.nike.com/w/jordan-1-mid-shoes-6ealhzy7ok" },
+    new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "https://www.nike.com/w/jordan-1-mid-shoes-6ealhzy7ok" },
+
+    // Produto 14 - Oakley Modoc
+    new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "https://www.oakley.com/en-us/product/OO9406" },
+    new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "https://www.oakley.com/en-us/product/OO9406" },
+    new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "https://www.oakley.com/en-us/product/OO9406" },
+
+    // Produto 15 - Nike ZoomX Vaporfly
+    new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "https://www.nike.com/w/zoomx-vaporfly-shoes-4g797z5sj3yzy7ok" },
+    new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "https://www.nike.com/w/zoomx-vaporfly-shoes-4g797z5sj3yzy7ok" },
+    new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "https://www.nike.com/w/zoomx-vaporfly-shoes-4g797z5sj3yzy7ok" },
+
         };
         builder.Entity<ProdutoFoto>().HasData(produtoFotos);
 
