@@ -1,0 +1,227 @@
+@media screen and (max-width: 699px) {
+    .bg-carousel {
+        display: block;
+        background-image: none;
+    }
+
+    .HeaderSearchBar {
+        display: none;
+    }
+
+    .HeaderIcons {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        background-color: transparent;
+        padding-bottom: 20px;
+    }
+
+    .nav-computer {
+        display: none;
+    }
+
+    .contMobile-Icons {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .HeaderIcons-mobile {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 10%;
+        padding: 10px 0px 5px 0px;
+    }
+
+    .HeaderLogo {
+        padding-top: 5px;
+    }
+
+    .dropdown-menu.show {
+        width: 50vw;
+        height: 50vh;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        /* escondido inicialmente */
+        width: 300px;
+        height: 100%;
+        background-color: var(--RoxoForte-color);
+        color: white;
+        padding: 50px 50px 0px 50px;
+        transition: left 0.3s ease;
+        z-index: 1050;
+        /* acima de quase tudo */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sidebar a {
+        color: var(--Destaque-color);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        align-self: flex-end;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--Destaque-color);
+        border: 0;
+        font-weight: 500;
+    }
+    
+    .text-cardPromocao {
+        padding: 10px 0px 0 0;
+    }
+    .img-cardPromocao{
+        padding: 0;
+    }
+    .botaoFavoritar, .botaoComprar {
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        margin: 10px;
+    }
+    
+    .text-cardPromocao{
+        width: 90%;
+    }
+    
+    .container-BG{
+        display: none;
+    }
+
+    .fa-bars{
+        color: var(--Destaque-color)
+    }
+    .botao-promocao{
+        height: 25px;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+}
+
+/* carousel */
+/* container principal do carrossel */
+.items {
+  position: relative; /* Necessário para posicionamento absoluto dos filhos */
+  width: 100%;
+  height: 500px; /* ajuste conforme necessário */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* impede itens fora da tela aparecerem */
+  background-color: #Fff
+}
+
+/* slides posicionados por cima, mas só o active aparece totalmente */
+.items .item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+
+.item.active {
+  opacity: 1;
+  z-index: 99;
+  /* box-shadow: 0px 0px 105px -35px rgba(118, 118, 118, 0.75); */
+}
+
+.item.prev {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(-150%, -50%);
+}
+
+.item.next {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(50%, -50%);
+}
+
+/* botões centralizados sobre os slides */
+.items .button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 275px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container .button {
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: all 300ms ease-in-out;
+  position: relative;
+}
+
+.button-container .button:hover {
+  opacity: 1;
+}
+
+.button-container{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.fas {
+    color: black;
+}
+
+@media screen and (min-width: 700px){
+    .carousel-mobile{
+        display: none;
+    }
+
+}

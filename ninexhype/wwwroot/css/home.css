@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    max-width: 100vw;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: #101524;
+}
+
+
+/* Utilitarios */
+.borda {
+    border: 1px solid white;
+}
+
+.w40 {
+    width: 40%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w60 {
+    width: 60%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.ninexLogo {
+    color: #E75DFF;
+    font-family: 'Dancing Script';
+    text-decoration: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.df-end {
+    display: flex;
+    justify-content: end;
+}
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --Destaque-color: #E75DFF;
+    --RoxoFraco-color: #865DFF;
+}
+
+.destaqueText {
+    color: var(--Destaque-color);
+    font-weight: 600;
+}
+
+/* Header Computador */
+@media screen and (min-width: 700px) {
+    Header {
+        width: 100%;
+        height: 120px;
+        display: flex;
+    }
+
+    .HeaderLogo {
+        width: 27%;
+        height: 100%;
+    }
+
+    .HeaderSearchBar {
+        width: 46%;
+        height: 100%;
+    }
+
+    .contSearchBar {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        width: 90%;
+        height: 100%;
+        max-height: 50px;
+        border-radius: 20px;
+
+    }
+
+    .searchBar {
+        width: 90%;
+        height: 100%;
+        max-height: 50px;
+        border-radius: 20px;
+        padding-left: 30px;
+    }
+
+    .HeaderIcons {
+        padding: 5px 10% 0 0;
+        width: 27%;
+        height: 100%;
+        gap: 20px;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        color: white;
+        gap: 20px;
+    }
+
+    .botaoNav {
+        text-transform: uppercase;
+    }
+
+    .contMobile-Icons {
+        display: none;
+    }
+
+    .bg-carousel {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-image 1.5s ease-in-out;
+        position: relative;
+    }
+
+    /* Container principal que envolve header e nav */
+    .shadow-header {
+        width: 100%;
+        background: linear-gradient(to bottom,
+                rgba(23, 25, 37, 1) 0%,
+                rgba(23, 25, 37, 0.9) 35%,
+                rgba(23, 25, 37, 0.8) 60%,
+                transparent 100%);
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Header - ajuste para permitir que a sombra do container seja visível */
+    header {
+        background-color: transparent;
+        padding: 15px 0;
+    }
+
+    .carousel-mobile {
+        display: none;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+}
+
+
+input {
+    color: black;
+}
+
+.dropdown-toggle {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    text-shadow: 1px 3px 2px var(--main-BG-color);
+}
+
+.dropdown {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    text-shadow: 1px 3px 2px var(--main-BG-color);
+}
+
+.botoes {
+    font-size: x-large;
+}
+
+.botoes:hover {
+    background-color: var(--RoxoForte-color);
+    border-radius: 5px;
+    border: 0;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+nav {
+    color: white;
+}
+
+svg {
+    color: #E75DFF;
+}
+
+/* mobile menu */
+.mobile-menu-icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.icones {
+    color: var(--Destaque-color);
+    font-size: 25px;
+}
+
+.container-BG {
+    width: 100%;
+    height: 300px;
+}
+
+/* ------------------------- SITE ------------------------- */
+.container-body {
+    width: 100%;
+    max-width: 1300px;
+    height: auto;
+}
+
+.container-Promocao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.cardPromocao {
+    width: 40%;
+    max-width: 600px;
+    min-width: 300px;
+    border-radius: 10px;
+    background-color: var(--RoxoForte-color);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img-cardPromocao {
+    width: 40%;
+    min-width: 200px;
+    padding-left: 15px;
+
+}
+
+.text-cardPromocao {
+    padding: 10px 30px 0 0;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.botao-promocao {
+    width: 45%;
+    height: 20px;
+    background-color: #340752;
+    border-radius: 20px;
+
+}
+
+img {
+    width: 100%;
+}
+
+.botoes-cardPromocao {
+    width: 100%;
+    gap: 5px;
+    padding-bottom: 15px;
+}
+
+.botaoComprar,
+.botaoFavoritar {
+    width: 40%;
+    background-color: var(--main-BG-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.botaoComprar:hover {
+    background-color: #340752;
+    color: white;
+}
+
+.botaoFavoritar:hover {
+    background-color: #340752;
+    color: white;
+}
+
+/* Produtos */
+    /* Sneakers */
+.Produtos{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.Sneakers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--RoxoFraco-color);
+}
+
+
+/* Carousel */
+/* Container do carrossel */
+.slideshow-container {
+    width: 100%;
+    height: 400px; /* ajuste conforme o tamanho desejado */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Cada slide individual */
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    z-index: 0;
+}
+
+/* Slide visível */
+.slideshow.ativo {
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Animações de saída */
+.slideshow.saindo-esquerda {
+    left: -100%;
+    opacity: 0;
+}
+
+.slideshow.saindo-direita {
+    left: 100%;
+    opacity: 0;
+}
+
+/* Imagem do slide */
+.slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botões de navegação */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.2s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    transform: translateY(-50%);
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Legenda */
+.legenda {
+    width: auto;
+    color: #fdfdfd;
+    font-size: 0.9em;
+    padding: 5px;
+    position: absolute;
+    bottom: 18%;
+    left: 10%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* Numeração do slide */
+.numeracao {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+/* Paginação */
+.paginacao {
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 4px;
+    border-radius: 50px;
+    background-color: #007cff;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.ativo,
+.dot:hover {
+    background-color: #242424;
+}
+
+/* RESPONSIVO: Estilo ajustado para telas maiores */
+@media (min-width: 60em) {
+    .legenda {
+        font-size: 2em;
+        padding: 8px;
+    }
+
+    .paginacao {
+        margin: 20px 0;
+    }
+
+    .dot {
+        width: 18px;
+        height: 18px;
+    }
+}
