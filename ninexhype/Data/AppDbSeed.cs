@@ -18,15 +18,15 @@ public class AppDbSeed
         {
             // Tenis
             new Produto { Id = 1, CategoriaId = 1, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Destaque = true },
-            new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Destaque = true },
-            new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20, Destaque = true},
+            new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Destaque = true},
+            new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20,Destaque = true },
             new Produto { Id = 4, CategoriaId = 1, Nome = "Vans Old Skool", Descricao = "Tênis skatista em lona e camurça", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22, Destaque = true},
-            new Produto { Id = 5, CategoriaId = 1, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15 },
-            new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30 },
-            new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12 },
-            new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10 },
-            new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8 },
-            new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14 },
+            new Produto { Id = 5, CategoriaId = 1, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15, Destaque = true},
+            new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30, Destaque = true},
+            new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12, Destaque = true},
+            new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10, Destaque = true},
+            new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8, Destaque = true},
+            new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14, Destaque = true},
             new Produto { Id = 11, CategoriaId = 1, Nome = "Reebok Classic", Descricao = "Tênis casual vintage", ValorCusto = 180.00m, ValorVenda = 299.99m, QtdeEstoque = 16 },
             new Produto { Id = 12, CategoriaId = 1, Nome = "Under Armour HOVR", Descricao = "Tênis esportivo respirável", ValorCusto = 310.00m, ValorVenda = 459.99m, QtdeEstoque = 10 },
             new Produto { Id = 13, CategoriaId = 1, Nome = "Jordan 1 Mid", Descricao = "Tênis icônico da linha Jordan", ValorCusto = 450.00m, ValorVenda = 749.99m, QtdeEstoque = 6 },
@@ -34,11 +34,11 @@ public class AppDbSeed
             new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly", Descricao = "Tênis de corrida profissional", ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5 },
             // Roupas
 
-            new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca", Descricao = "100% algodão, modelagem larga", ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Destaque = true },
-            new Produto { Id = 17, CategoriaId = 2, Nome = "Calça Cargo Preta", Descricao = "Com bolsos laterais e ajuste no tornozelo", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, Destaque = true},
-            new Produto { Id = 18, CategoriaId = 2, Nome = "Jaqueta Corta-Vento", Descricao = "Impermeável e leve, ideal para dias chuvosos", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12, Destaque = true},
-            new Produto { Id = 19, CategoriaId = 2, Nome = "Moletom Liso com Capuz", Descricao = "Moletom peluciado unissex", ValorCusto = 80.00m, ValorVenda = 129.90m, QtdeEstoque = 25, Destaque = true},
-            new Produto { Id = 20, CategoriaId = 2, Nome = "Bermuda de Sarja Bege", Descricao = "Estilo casual, com bolsos laterais", ValorCusto = 60.00m, ValorVenda = 99.99m, QtdeEstoque = 35, Destaque = true},
+            new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca", Descricao = "100% algodão, modelagem larga", ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, },
+            new Produto { Id = 17, CategoriaId = 2, Nome = "Calça Cargo Preta", Descricao = "Com bolsos laterais e ajuste no tornozelo", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, },
+            new Produto { Id = 18, CategoriaId = 2, Nome = "Jaqueta Corta-Vento", Descricao = "Impermeável e leve, ideal para dias chuvosos", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12, },
+            new Produto { Id = 19, CategoriaId = 2, Nome = "Moletom Liso com Capuz", Descricao = "Moletom peluciado unissex", ValorCusto = 80.00m, ValorVenda = 129.90m, QtdeEstoque = 25, },
+            new Produto { Id = 20, CategoriaId = 2, Nome = "Bermuda de Sarja Bege", Descricao = "Estilo casual, com bolsos laterais", ValorCusto = 60.00m, ValorVenda = 99.99m, QtdeEstoque = 35, },
             new Produto { Id = 21, CategoriaId = 2, Nome = "Camisa Social Slim", Descricao = "Camisa masculina, algodão, modelagem justa", ValorCusto = 70.00m, ValorVenda = 119.99m, QtdeEstoque = 20 },
             new Produto { Id = 22, CategoriaId = 2, Nome = "Vestido Midi Floral", Descricao = "Vestido leve para o verão", ValorCusto = 90.00m, ValorVenda = 149.90m, QtdeEstoque = 18 },
             new Produto { Id = 23, CategoriaId = 2, Nome = "Calça Jeans Skinny", Descricao = "Jeans com elastano para conforto", ValorCusto = 100.00m, ValorVenda = 169.99m, QtdeEstoque = 28 },
@@ -55,81 +55,56 @@ public class AppDbSeed
         List<ProdutoFoto> produtoFotos = new List<ProdutoFoto>
         {
     // Produto 1 - Nike Air Force 1
-    new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "https://www.nike.com/w/white-air-force-1-shoes-4g797z5sj3yzy7ok" },
-    new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "https://www.nike.com/w/white-air-force-1-shoes-4g797z5sj3yzy7ok" },
-    new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "https://www.nike.com/w/white-air-force-1-shoes-4g797z5sj3yzy7ok" },
+    new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/AIR+FORCE+1+%2707.png" },
+    new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/AIR+FORCE+1+%2707.png" },
+    new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/AIR+FORCE+1+%2707.png" },
 
     // Produto 2 - Adidas Ultraboost
-    new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "https://www.adidas.com/us/ultraboost" },
-    new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "https://www.adidas.com/us/ultraboost" },
-    new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "https://www.adidas.com/us/ultraboost" },
+    new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/77102bdf4b4b45d4a73a3d36cfa446b7_9366/ultraboost-1.0-shoes.jpg" },
+    new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/77102bdf4b4b45d4a73a3d36cfa446b7_9366/ultraboost-1.0-shoes.jpg" },
+    new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/77102bdf4b4b45d4a73a3d36cfa446b7_9366/ultraboost-1.0-shoes.jpg" },
 
     // Produto 3 - Puma RS-X
-    new ProdutoFoto { Id = 7, ProdutoId = 3, ArquivoFoto = "https://us.puma.com/us/en/pd/rs-x-retro-resort-womens-sneakers/395984" },
-    new ProdutoFoto { Id = 8, ProdutoId = 3, ArquivoFoto = "https://us.puma.com/us/en/pd/rs-x-retro-resort-womens-sneakers/395984" },
-    new ProdutoFoto { Id = 9, ProdutoId = 3, ArquivoFoto = "https://us.puma.com/us/en/pd/rs-x-retro-resort-womens-sneakers/395984" },
+    new ProdutoFoto { Id = 7, ProdutoId = 3, ArquivoFoto = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395984/02/sv01/fnd/PNA/fmt/png/RS-X-Retro-Resort-Women's-Sneakers" },
+    new ProdutoFoto { Id = 8, ProdutoId = 3, ArquivoFoto = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395984/02/sv01/fnd/PNA/fmt/png/RS-X-Retro-Resort-Women's-Sneakers" },
+    new ProdutoFoto { Id = 9, ProdutoId = 3, ArquivoFoto = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395984/02/sv01/fnd/PNA/fmt/png/RS-X-Retro-Resort-Women's-Sneakers" },
 
     // Produto 4 - Vans Old Skool
-    new ProdutoFoto { Id = 10, ProdutoId = 4, ArquivoFoto = "https://www.vans.ca/en-ca/categories/skate-collection-c5420/skate-old-skool-shoe-pvn0a5fcby28" },
-    new ProdutoFoto { Id = 11, ProdutoId = 4, ArquivoFoto = "https://www.vans.ca/en-ca/categories/skate-collection-c5420/skate-old-skool-shoe-pvn0a5fcby28" },
-    new ProdutoFoto { Id = 12, ProdutoId = 4, ArquivoFoto = "https://www.vans.ca/en-ca/categories/skate-collection-c5420/skate-old-skool-shoe-pvn0a5fcby28" },
+    new ProdutoFoto { Id = 10, ProdutoId = 4, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_812678-MLB84265928797_052025-O.webp" },
+    new ProdutoFoto { Id = 11, ProdutoId = 4, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_812678-MLB84265928797_052025-O.webp" },
+    new ProdutoFoto { Id = 12, ProdutoId = 4, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_812678-MLB84265928797_052025-O.webp" },
 
     // Produto 5 - New Balance 574
-    new ProdutoFoto { Id = 13, ProdutoId = 5, ArquivoFoto = "https://www.newbalance.com/574/" },
-    new ProdutoFoto { Id = 14, ProdutoId = 5, ArquivoFoto = "https://www.newbalance.com/574/" },
-    new ProdutoFoto { Id = 15, ProdutoId = 5, ArquivoFoto = "https://www.newbalance.com/574/" },
+    new ProdutoFoto { Id = 13, ProdutoId = 5, ArquivoFoto = "https://nb.scene7.com/is/image/NB/wl574cor_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440" },
+    new ProdutoFoto { Id = 14, ProdutoId = 5, ArquivoFoto = "https://nb.scene7.com/is/image/NB/wl574cor_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440" },
+    new ProdutoFoto { Id = 15, ProdutoId = 5, ArquivoFoto = "https://nb.scene7.com/is/image/NB/wl574cor_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440" },
 
     // Produto 6 - Converse Chuck Taylor
-    new ProdutoFoto { Id = 16, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/shop/high-top-shoes" },
-    new ProdutoFoto { Id = 17, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/shop/high-top-shoes" },
-    new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/shop/high-top-shoes" },
+    new ProdutoFoto { Id = 16, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw187c312e/images/a_08/M7650_A_08X1.jpg?sw=406" },
+    new ProdutoFoto { Id = 17, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw187c312e/images/a_08/M7650_A_08X1.jpg?sw=406" },
+    new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw187c312e/images/a_08/M7650_A_08X1.jpg?sw=406" },
 
     // Produto 7 - Asics Gel-Kayano 28
-    new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "https://www.asics.com/au/en-au/gel-kayano-28/p/AOP_1011B189-001.html" },
-    new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "https://www.asics.com/au/en-au/gel-kayano-28/p/AOP_1011B189-001.html" },
-    new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "https://www.asics.com/au/en-au/gel-kayano-28/p/AOP_1011B189-001.html" },
+    new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "https://images.asics.com/is/image/asics/1011B189_001_SR_RT_GLB?$sfcc-product$" },
+    new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "https://images.asics.com/is/image/asics/1011B189_001_SR_RT_GLB?$sfcc-product$" },
+    new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "https://images.asics.com/is/image/asics/1011B189_001_SR_RT_GLB?$sfcc-product$" },
 
     // Produto 8 - Nike Dunk Low
-    new ProdutoFoto { Id = 22, ProdutoId = 8, ArquivoFoto = "https://www.nike.com/w/dunk-shoes-90aohzy7ok" },
-    new ProdutoFoto { Id = 23, ProdutoId = 8, ArquivoFoto = "https://www.nike.com/w/dunk-shoes-90aohzy7ok" },
-    new ProdutoFoto { Id = 24, ProdutoId = 8, ArquivoFoto = "https://www.nike.com/w/dunk-shoes-90aohzy7ok" },
+    new ProdutoFoto { Id = 22, ProdutoId = 8, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d14fc386-1067-4a72-961e-9f8134680703/W+NIKE+DUNK+LOW.png" },
+    new ProdutoFoto { Id = 23, ProdutoId = 8, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d14fc386-1067-4a72-961e-9f8134680703/W+NIKE+DUNK+LOW.png" },
+    new ProdutoFoto { Id = 24, ProdutoId = 8, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d14fc386-1067-4a72-961e-9f8134680703/W+NIKE+DUNK+LOW.png" },
 
     // Produto 9 - Mizuno Wave Prophecy
-    new ProdutoFoto { Id = 25, ProdutoId = 9, ArquivoFoto = "https://www.mizuno.com/us/en-us/wave-prophecy/" },
-    new ProdutoFoto { Id = 26, ProdutoId = 9, ArquivoFoto = "https://www.mizuno.com/us/en-us/wave-prophecy/" },
-    new ProdutoFoto { Id = 27, ProdutoId = 9, ArquivoFoto = "https://www.mizuno.com/us/en-us/wave-prophecy/" },
+    new ProdutoFoto { Id = 25, ProdutoId = 9, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_825783-MLA74802964877_022024-O.webp" },
+    new ProdutoFoto { Id = 26, ProdutoId = 9, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_825783-MLA74802964877_022024-O.webp" },
+    new ProdutoFoto { Id = 27, ProdutoId = 9, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_825783-MLA74802964877_022024-O.webp" },
 
     // Produto 10 - Fila Disruptor II
-    new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "https://www.fila.com/disruptor-ii-sneakers/" },
-    new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "https://www.fila.com/disruptor-ii-sneakers/" },
-    new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "https://www.fila.com/disruptor-ii-sneakers/" },
+    new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
+    new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
+    new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
 
-    // Produto 11 - Reebok Classic
-    new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "https://www.reebok.com/us/classic-leather-shoes" },
-    new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "https://www.reebok.com/us/classic-leather-shoes" },
-    new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "https://www.reebok.com/us/classic-leather-shoes" },
-
-    // Produto 12 - Under Armour HOVR
-    new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "https://www.underarmour.com/en-us/p/shoes/ua-hovr-phantom-2-running-shoes/3024155.html" },
-    new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "https://www.underarmour.com/en-us/p/shoes/ua-hovr-phantom-2-running-shoes/3024155.html" },
-    new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "https://www.underarmour.com/en-us/p/shoes/ua-hovr-phantom-2-running-shoes/3024155.html" },
-
-    // Produto 13 - Jordan 1 Mid
-    new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "https://www.nike.com/w/jordan-1-mid-shoes-6ealhzy7ok" },
-    new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "https://www.nike.com/w/jordan-1-mid-shoes-6ealhzy7ok" },
-    new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "https://www.nike.com/w/jordan-1-mid-shoes-6ealhzy7ok" },
-
-    // Produto 14 - Oakley Modoc
-    new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "https://www.oakley.com/en-us/product/OO9406" },
-    new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "https://www.oakley.com/en-us/product/OO9406" },
-    new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "https://www.oakley.com/en-us/product/OO9406" },
-
-    // Produto 15 - Nike ZoomX Vaporfly
-    new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "https://www.nike.com/w/zoomx-vaporfly-shoes-4g797z5sj3yzy7ok" },
-    new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "https://www.nike.com/w/zoomx-vaporfly-shoes-4g797z5sj3yzy7ok" },
-    new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "https://www.nike.com/w/zoomx-vaporfly-shoes-4g797z5sj3yzy7ok" },
-
-        };
+};
         builder.Entity<ProdutoFoto>().HasData(produtoFotos);
 
 
