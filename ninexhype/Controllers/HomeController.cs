@@ -22,7 +22,9 @@ public class HomeController : Controller
     {
         List<Produto> produtos = _db.Produtos
             .Where(p => p.Destaque)
+            .OrderBy(p => EF.Functions.Random())
             .Include(p => p.Fotos)
+            .Take(8)
             .ToList();
         return View(produtos);
     }
@@ -37,6 +39,7 @@ public class HomeController : Controller
         
         List<Produto> semelhantes = _db.Produtos
             .Where(p => p.Id != id && p.CategoriaId == produto.CategoriaId)
+            .OrderBy(p => EF.Functions.Random())
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
             .Take(4)
