@@ -80,9 +80,9 @@ img {
 }
 
 /* Dropdown */
-.dropdown{
+/* .dropdown{
     text-shadow: 1px 3px 2px var(--main-BG-color);
-}
+} */
 
 .dropdown-toggle, .dropdown {
     background-color: transparent;

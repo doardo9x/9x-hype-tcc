@@ -21,10 +21,17 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         List<Produto> produtos = _db.Produtos
-            .Where(p => p.Destaque)
             .OrderBy(p => EF.Functions.Random())
+            .Take(12)
+            .Include(p => p.Categoria)
             .Include(p => p.Fotos)
-            .Take(8)
+            .ToList();
+        
+        List<Produto> produtosDestaque = _db.Produtos
+            .Where(p=> p.Destaque)
+            .OrderBy(p => EF.Functions.Random())
+            .Take(4)
+            .Include(p => p.Fotos)
             .ToList();
         return View(produtos);
     }
