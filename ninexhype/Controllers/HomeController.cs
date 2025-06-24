@@ -18,23 +18,30 @@ public class HomeController : Controller
         _db = db;
     }
 
-    public IActionResult Index()
+public IActionResult Index()
+{
+    List<Produto> produtos = _db.Produtos
+        .OrderBy(p => EF.Functions.Random())
+        .Take(12)
+        .Include(p => p.Categoria)
+        .Include(p => p.Fotos)
+        .ToList();
+    
+    List<Produto> destaque = _db.Produtos
+        .Where(p => p.Destaque)
+        .OrderBy(p => EF.Functions.Random())
+        .Take(4)
+        .Include(p => p.Fotos)
+        .ToList();
+
+    IndexVM indexVM = new()
     {
-        List<Produto> produtos = _db.Produtos
-            .OrderBy(p => EF.Functions.Random())
-            .Take(12)
-            .Include(p => p.Categoria)
-            .Include(p => p.Fotos)
-            .ToList();
-        
-        List<Produto> produtosDestaque = _db.Produtos
-            .Where(p=> p.Destaque)
-            .OrderBy(p => EF.Functions.Random())
-            .Take(4)
-            .Include(p => p.Fotos)
-            .ToList();
-        return View(produtos);
-    }
+        Produtos = produtos, 
+        Destaques = destaque  
+    };
+    
+    return View(indexVM);
+}
 
     public IActionResult Produto(int id)
     {

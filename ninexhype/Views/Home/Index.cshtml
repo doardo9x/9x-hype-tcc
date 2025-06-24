@@ -1,4 +1,4 @@
-﻿@model List<ninexhype.Models.Produto>
+﻿@model ninexhype.ViewModels.IndexVM
 @{
     ViewData["Title"] = "Home";
 }
@@ -13,14 +13,17 @@
             <div class="cont-Sneakers">
                 <div class="Sneakers fs-1">DESTAQUES</div>
                 <div class="slideshow-container">
-                    @foreach (Produto produto in Model)
+                    @foreach (Produto produto in Model.Destaques)
                     {
                         <div class="slideshow fade ativo">
                             <div class="numeracao ">@produto.Id</div>
                             <img src="@(produto.Fotos.Count <= 0 ? 
                             "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
                             produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
-                            <div class="legenda">@produto.Nome</div>
+                            <div class="legenda">
+                                <div class="fs-7 w100 NomeDestaque">@produto.Nome</div>
+                                <div class="fs-7 w100 valorVendaDestaque">R$@produto.ValorVenda</div>
+                            </div>
                         </div>
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -30,7 +33,7 @@
 
                 </div>
                 <div class="paginacao">
-                    @for (int i = 0; i < Model.Count(); i++)
+                    @for (int i = 0; i < Model.Destaques.Count; i++)
                     {
                         <span class="dot" onclick="currentSlide(@i)"></span>
                     }
@@ -46,7 +49,7 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            @foreach (Produto produto in Model)
+            @foreach (Produto produto in Model.Produtos)
             {
                 <div class="col mb-5">
                     <div class="card h-100">

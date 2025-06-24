@@ -50,6 +50,11 @@ html, body {
     display: flex;
     justify-content: end;
 }
+.df-start {
+    display: flex;
+    justify-content: start;
+    padding-left: 20px;
+}
 
 .destaqueText {
     color: var(--Destaque-color);
@@ -78,11 +83,6 @@ svg {
 img {
     width: 100%;
 }
-
-/* Dropdown */
-/* .dropdown{
-    text-shadow: 1px 3px 2px var(--main-BG-color);
-} */
 
 .dropdown-toggle, .dropdown {
     background-color: transparent;
@@ -299,6 +299,10 @@ nav {
 
 .legenda {
     width: auto;
+    padding: 0 0px 0 0px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
     color: #fdfdfd;
     font-size: 0.9em;
     padding: 5px;
@@ -309,7 +313,14 @@ nav {
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
-
+.NomeDestaque{
+    font-weight: 500;
+    color: white
+}
+.valorVendaDestaque{
+    font-weight: 300;
+    color: white
+}
 .numeracao {
     color: #f2f2f2;
     font-size: 12px;
