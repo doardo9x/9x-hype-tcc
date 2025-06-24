@@ -42,12 +42,12 @@ public class AppDbSeed
             new Produto { Id = 21, CategoriaId = 2, Nome = "Camisa Social Slim", Descricao = "Camisa masculina, algodão, modelagem justa", ValorCusto = 70.00m, ValorVenda = 119.99m, QtdeEstoque = 20 },
             new Produto { Id = 22, CategoriaId = 2, Nome = "Vestido Midi Floral", Descricao = "Vestido leve para o verão", ValorCusto = 90.00m, ValorVenda = 149.90m, QtdeEstoque = 18 },
             new Produto { Id = 23, CategoriaId = 2, Nome = "Calça Jeans Skinny", Descricao = "Jeans com elastano para conforto", ValorCusto = 100.00m, ValorVenda = 169.99m, QtdeEstoque = 28 },
-            new Produto { Id = 24, CategoriaId = 2, Nome = "Jaqueta Jeans Oversized", Descricao = "Estilo urbano e confortável", ValorCusto = 130.00m, ValorVenda = 199.99m, QtdeEstoque = 10 },
+            new Produto { Id = 24, CategoriaId = 2, Nome = "Jaqueta Jeans Feminina", Descricao = "Estilo urbano e confortável", ValorCusto = 130.00m, ValorVenda = 199.99m, QtdeEstoque = 10 },
             new Produto { Id = 25, CategoriaId = 2, Nome = "Shorts de Moletom", Descricao = "Conforto para o dia a dia", ValorCusto = 50.00m, ValorVenda = 89.99m, QtdeEstoque = 40 },
-            new Produto { Id = 26, CategoriaId = 2, Nome = "Camiseta Básica Preta", Descricao = "100% algodão, gola careca", ValorCusto = 35.00m, ValorVenda = 69.90m, QtdeEstoque = 60 },
+            new Produto { Id = 26, CategoriaId = 2, Nome = "Camiseta Polo Preta Feminina", Descricao = "100% algodão, gola careca", ValorCusto = 35.00m, ValorVenda = 69.90m, QtdeEstoque = 60 },
             new Produto { Id = 27, CategoriaId = 2, Nome = "Macacão Feminino", Descricao = "Look prático e estiloso", ValorCusto = 110.00m, ValorVenda = 179.99m, QtdeEstoque = 14 },
-            new Produto { Id = 28, CategoriaId = 2, Nome = "Blusa Cropped Canelada", Descricao = "Estilo jovem e leve", ValorCusto = 45.00m, ValorVenda = 79.99m, QtdeEstoque = 22 },
-            new Produto { Id = 29, CategoriaId = 2, Nome = "Camisa Polo Masculina", Descricao = "Elegância casual", ValorCusto = 65.00m, ValorVenda = 109.99m, QtdeEstoque = 19 },
+            new Produto { Id = 28, CategoriaId = 2, Nome = "Blusa Cropped Texturizada", Descricao = "Estilo jovem e leve", ValorCusto = 45.00m, ValorVenda = 79.99m, QtdeEstoque = 22 },
+            new Produto { Id = 29, CategoriaId = 2, Nome = "Camisa Polo Texturizada Masculina Marrom", Descricao = "Elegância casual", ValorCusto = 65.00m, ValorVenda = 109.99m, QtdeEstoque = 19 },
             new Produto { Id = 30, CategoriaId = 2, Nome = "Regata Dry Fit", Descricao = "Ideal para treinos", ValorCusto = 30.00m, ValorVenda = 59.90m, QtdeEstoque = 50 }
 };
         builder.Entity<Produto>().HasData(produtos);
