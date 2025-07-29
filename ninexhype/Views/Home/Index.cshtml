@@ -4,10 +4,148 @@
 }
 
 <!-- Header-->
+    <!-- Navigation-->
+    <!------------------- HEADER ------------------->
+    <div class="bg-carousel" id="bgCarousel">
+        <div class="shadow-header">
+            <header>
+
+                <div class="HeaderLogo center c ">
+                    <a asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
+                </div>
+                <div class="HeaderLogo center mobile ">
+                    <a href="index.html" class="fs-1 ninexLogo center">9x</a>
+                </div>
+
+
+                <div class="HeaderSearchBar center ">
+                    <div class="contSearchBar">
+                        <input class="searchBar" type="text" placeholder="Digite o nome do produto.">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="HeaderIcons center ">
+                    <a class="icons" href="">
+                        <i class="icones fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <a class="icons" href="/PagFavoritos/pagFavoritos.html">
+                        <i class="icones fa-regular fa-heart"></i>
+                    </a>
+                    <a class="icons" href="/PagPerfilUsuario/PagPerfilUsuario.html">
+                        <i class="icones fa-regular fa-circle-user"></i>
+                    </a>
+                </div>
+                <!-- mobile -->
+                <div class="contMobile-Icons">
+                    <div class="HeaderIcons-mobile center ">
+                        <a class="icons" href="">
+                            <i class="icones fa-solid fa-cart-shopping"></i>
+                        </a>
+
+                        <a class="icons" href="">
+                            <i class="icones fa-regular fa-heart"></i>
+                        </a>
+
+                        <a class="icons" href="">
+                            <i class="icones fa-regular fa-circle-user"></i>
+                        </a>
+                    </div>
+                    <!-- mobile -->
+                    <!-- Botão do menu -->
+                    <button class="btn btn-secondary" type="button" id="menuToggle">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- Sidebar -->
+                    <div id="sidebar" class="sidebar">
+                        <button class="close-btn" id="closeSidebar">&times;</button>
+                        <a href="#">HOMEM</a>
+                        <a href="#">MULHER</a>
+                        <a href="#">ACESSÓRIOS</a>
+                        <a href="#">PEÇAS</a>
+                        <a href="#">MARCAS</a>
+                    </div>
+                </div>
+                <!-- carousel mobile -->
+                <div class="items carousel-mobile">
+                    <div class="item active">
+                        <img src="~/img/Home/Promocoes/Tênis Vans.png">
+                    </div>
+                    <div class=" item next">
+                        <img src="~/img/Home/Promocoes/Tênis Vans.png">
+                    </div>
+                    <div class="item">
+                        <img src="~/img/Home/Promocoes/Tênis Vans.png">
+                    </div>
+                    <div class="item">
+                        <img src="~/img/Home/Promocoes/Tênis Vans.png">
+                    </div>
+                    <div class="item prev">
+                        <img src="~/img/Home/Promocoes/Tênis Vans.png">
+                    </div>
+                    <div class="button-container">
+                        <div class="button"><i class="fas fa-angle-left"></i></div>
+                        <div class="button"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </header>
+
+            <nav class="nav-computer center ">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown botoes" type="button">
+                        HOMEM
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown botoes" type="button">
+                        MULHER
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ACESSÓRIOS ̬
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Alguma ação</a>
+                        <a class="dropdown-item" href="#">Outra ação</a>
+                        <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PEÇAS ̬
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Alguma ação</a>
+                        <a class="dropdown-item" href="#">Outra ação</a>
+                        <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        MARCAS ̬
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Alguma ação</a>
+                        <a class="dropdown-item" href="#">Outra ação</a>
+                        <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-BG center">
+        </div>
+    </div>
 <!--------------------- SITE --------------------->
 <div class="w100 center">
     <div class="container-body">
-        <!-- CARD PROMOÇÃO -->
 
         <div class="Produtos ">
             <div class="cont-Sneakers">
@@ -69,9 +207,12 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" asp-action="Produto" asp-route-id="@produto.Id">
+                            <div class=" cont-botoes-card text-center w100">
+                                <a class="btn  mt-auto btn-comprar" asp-action="Produto" asp-route-id="@produto.Id">
                                     COMPRAR
+                                </a>
+                                <a class="btn mt-auto btn-addcarrinho">
+                                    <i class="fa-solid fa-cart-plus"></i>
                                 </a>
                             </div>
                         </div>

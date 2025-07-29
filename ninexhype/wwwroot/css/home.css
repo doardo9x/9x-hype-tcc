@@ -148,6 +148,11 @@ nav {
     max-width: 1300px;
     height: auto;
 }
+.cont-botoes-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Promoções */
 .container-Promocao {
@@ -206,6 +211,23 @@ nav {
 
 .botaoComprar:hover, .botaoFavoritar:hover {
     background-color: #340752;
+    color: white;
+}
+
+.btn-comprar{
+    background-color: rgb(24, 185, 124);
+    border: 1px solid #008000;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+.btn-comprar:hover{
+    background-color: rgb(1, 51, 1);
+    border: 1px solid rgb(1, 51, 1);
+    color: white;
+}
+
+.btn-addcarrinho{
+    background-color: rgb(29, 139, 75);
     color: white;
 }
 
