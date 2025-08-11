@@ -21,6 +21,7 @@ public class HomeController : Controller
 public IActionResult Index()
 {
     List<Produto> produtos = _db.Produtos
+        .Where(p => p.CategoriaId != 3) 
         .OrderBy(p => EF.Functions.Random())
         .Take(12)
         .Include(p => p.Categoria)
@@ -28,7 +29,7 @@ public IActionResult Index()
         .ToList();
     
     List<Produto> destaque = _db.Produtos
-        .Where(p => p.Destaque)
+        .Where(p => p.CategoriaId == 3)
         .OrderBy(p => EF.Functions.Random())
         .Take(4)
         .Include(p => p.Fotos)
