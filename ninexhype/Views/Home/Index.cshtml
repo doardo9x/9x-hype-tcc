@@ -21,8 +21,7 @@
                     <input class="searchBar" type="text" placeholder="Digite o nome do produto.">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 
                                3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1z
                                M12 6.5a5.5 5.5 0 1 1-11 0 
                                5.5 5.5 0 0 1 11 0" />
@@ -136,8 +135,7 @@
                             <div class="numeracao">@produto.Id</div>
                             <img src="@(produto.Fotos.Count <= 0 ? 
                                        "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
-                                       produto.Fotos[0].ArquivoFoto)" 
-                                 alt="@produto.Nome" />
+                                       produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
                             <div class="legenda">
                                 <div class="fs-7 w100 NomeDestaque">@produto.Nome</div>
                                 <div class="fs-7 w100 valorVendaDestaque">R$@produto.ValorVenda</div>
@@ -159,46 +157,22 @@
 </div>
 
 <!-- Section-->
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+<section class="contRoupa">
+    <div class="carrosselRoupas">
             @foreach (Produto produto in Model.Produtos)
             {
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <div class="cont-imgTop">
-                            <img class="card-img-top" 
-                                 src="@(produto.Fotos.Count <= 0 ? 
-                                       "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
-                                       produto.Fotos[0].ArquivoFoto)" 
-                                 alt="@produto.Nome" />
-                        </div>
-
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder destaqueText">@produto.Nome</h5>
-                                <!-- Product price-->
-                                R$ @produto.ValorVenda.ToString("N2")
-                            </div>
-                        </div>
-
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="cont-botoes-card text-center w100">
-                                <a class="btn mt-auto btn-comprar" asp-action="Produto" asp-route-id="@produto.Id">
-                                    COMPRAR
-                                </a>
-                                <a class="btn mt-auto btn-addcarrinho">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </a>
-                            </div>
-                        </div>
+                <!--  NewCard teste-->
+                <div class="card cardCarrossel" style="width: 12rem;">
+                    <a asp-action="Produto" asp-route-id="@produto.Id">
+                        <img
+                            src="@(produto.Fotos.Count <= 0 ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :produto.Fotos[0].ArquivoFoto)"
+                            alt="@produto.Nome" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                        <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
                     </div>
                 </div>
             }
-        </div>
     </div>
 </section>
