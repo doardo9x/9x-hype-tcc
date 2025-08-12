@@ -115,7 +115,57 @@ public class AppDbSeed
             new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
             new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
             new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
-    
+
+            // Produto 11 - Reebok Classic
+            new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic1.png"},
+            new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic2.png"},
+            new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic3.png"},
+
+            // Produto 12 - Under Armour HOVR
+            new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR1.png"},
+            new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR2.png"},
+            new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR3.png"},
+
+            // Produto 13 - Jordan 1 Mid
+            new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid1.png"},
+            new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid2.png"},
+            new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid3.png"},
+
+            // Produto 14 - Oakley Modoc
+            new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc1.png"},
+            new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc2.png"},
+            new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc3.png"},
+
+            // Produto 15 - Nike ZoomX Vaporfly
+            new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly1.png"},
+            new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly2.png"},
+            new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly3.png"},
+
+            // Produto 16 - Camiseta Oversized Branca
+            new ProdutoFoto { Id = 46, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
+            new ProdutoFoto { Id = 47, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
+  
+
+            // Produto 17 - Calça Cargo Preta
+            new ProdutoFoto { Id = 48, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
+            new ProdutoFoto { Id = 49, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
+            new ProdutoFoto { Id = 50, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
+
+            // Produto 18 - Jaqueta Corta-Vento
+            new ProdutoFoto { Id = 51, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento1.png"},
+            new ProdutoFoto { Id = 52, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
+            new ProdutoFoto { Id = 53, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
+
+            // Produto 19 - Moletom Liso com Capuz
+            new ProdutoFoto { Id = 54, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
+            new ProdutoFoto { Id = 55, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
+            new ProdutoFoto { Id = 56, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
+
+            // Produto 20 - Bermuda de Sarja Bege
+            new ProdutoFoto { Id = 57, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+            new ProdutoFoto { Id = 58, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+
+
             // Imagens produtos Destaques
             new ProdutoFoto { Id = 31, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
             new ProdutoFoto { Id = 32, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
