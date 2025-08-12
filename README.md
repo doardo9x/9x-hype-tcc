@@ -32,9 +32,10 @@
 - [x] Modelagem de dados com Code First
 - [x] Sistema MVC funcional
 - [x] CRUD de produtos completo
-- [ ] Autenticação e autorização
+- [x] Autenticação e autorização
+- [x] Layout responsivo aprimorado
 - [ ] Integração de pagamentos (fictícia ou real)
-- [ ] Layout responsivo aprimorado
+
 
 ---
 
