@@ -94,7 +94,9 @@ public class AppDbSeed
             new ProdutoFoto { Id = 9, ProdutoId = 9, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_825783-MLA74802964877_022024-O.webp" },
 
             // Produto 10 - Fila Disruptor II
-            new ProdutoFoto { Id = 10, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
+            new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
+            new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
+            new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
     
             // Imagens produtos Destaques
             new ProdutoFoto { Id = 31, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
