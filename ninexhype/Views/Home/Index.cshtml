@@ -171,6 +171,18 @@
                 </div>
             </div>
         }
+        @foreach (Produto produto in Model.Produtos.Where(p => p.CategoriaId == 2))
+        {
+            <div class="card cardCarrossel" style="width: 12rem;">
+                <a asp-action="Produto" asp-route-id="@produto.Id">
+                    <img src="@(produto.Fotos.Count <= 0 ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" class="card-img-top">
+                </a>
+                <div class="card-body">
+                    <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                    <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
+                </div>
+            </div>
+        }
 
     </div>
 </section>

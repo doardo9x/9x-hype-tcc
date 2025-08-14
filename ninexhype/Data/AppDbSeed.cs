@@ -51,6 +51,7 @@ public class AppDbSeed
             new Produto { Id = 29, CategoriaId = 2, Nome = "Camisa Polo Texturizada Masculina Marrom", Descricao = "Elegância casual", ValorCusto = 65.00m, ValorVenda = 109.99m, QtdeEstoque = 19 },
             new Produto { Id = 30, CategoriaId = 2, Nome = "Regata Dry Fit", Descricao = "Ideal para treinos", ValorCusto = 30.00m, ValorVenda = 59.90m, QtdeEstoque = 50 },
 
+            //Destaques
             new Produto { Id = 31, CategoriaId = 3, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25},
             new Produto { Id = 32, CategoriaId = 3, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18},
             new Produto { Id = 33, CategoriaId = 3, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20},
@@ -70,7 +71,7 @@ public class AppDbSeed
             new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/AIR+FORCE+1+%2707.png" },
 
             // Produto 2 - Adidas Ultraboost
-            new ProdutoFoto { Id = 2, ProdutoId = 2, ArquivoFoto = "https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/77102bdf4b4b45d4a73a3d36cfa446b7_9366/ultraboost-1.0-shoes.jpg" },
+            new ProdutoFoto { Id = 2, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost" },
 
             // Produto 3 - Puma RS-X
             new ProdutoFoto { Id = 3, ProdutoId = 3, ArquivoFoto = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395984/02/sv01/fnd/PNA/fmt/png/RS-X-Retro-Resort-Women's-Sneakers" },
@@ -98,17 +99,113 @@ public class AppDbSeed
             new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
             new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
     
+            // Produto 11 - Reebok Classic
+            new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic1.png"},
+            new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic2.png"},
+            new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic3.png"},
+
+            // Produto 12 - Under Armour HOVR
+            new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR1.png"},
+            new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR2.png"},
+            new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR3.png"},
+
+            // Produto 13 - Jordan 1 Mid
+            new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid1.png"},
+            new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid2.png"},
+            new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid3.png"},
+
+            // Produto 14 - Oakley Modoc
+            new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc1.png"},
+            new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc2.png"},
+            new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc3.png"},
+
+            // Produto 15 - Nike ZoomX Vaporfly
+            new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly1.png"},
+            new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly2.png"},
+            new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly3.png"},
+
+            // Produto 16 - Camiseta Oversized Branca
+            new ProdutoFoto { Id = 46, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
+            new ProdutoFoto { Id = 47, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
+
+            // Produto 17 - Calça Cargo Preta
+            new ProdutoFoto { Id = 48, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
+            new ProdutoFoto { Id = 49, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
+            new ProdutoFoto { Id = 50, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
+
+            // Produto 18 - Jaqueta Corta-Vento
+            new ProdutoFoto { Id = 51, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento1.png"},
+            new ProdutoFoto { Id = 52, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
+            new ProdutoFoto { Id = 53, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
+
+            // Produto 19 - Moletom Liso com Capuz
+            new ProdutoFoto { Id = 54, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
+            new ProdutoFoto { Id = 55, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
+            new ProdutoFoto { Id = 56, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
+
+            // Produto 20 - Bermuda de Sarja Bege
+            new ProdutoFoto { Id = 57, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+            new ProdutoFoto { Id = 58, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+
+            
+            // Produto 21 - Camisa Social Slim
+            new ProdutoFoto { Id = 59, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
+            new ProdutoFoto { Id = 60, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim2.png"},
+            new ProdutoFoto { Id = 61, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim3.png"},
+
+            // Produto 22 - Vestido Midi Floral
+            new ProdutoFoto { Id = 62, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral1.png"},
+            new ProdutoFoto { Id = 63, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral2.png"},
+            new ProdutoFoto { Id = 64, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral3.png"},
+
+            // Produto 23 - Calça Jeans Skinny
+            new ProdutoFoto { Id = 65, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny1.png"},
+            new ProdutoFoto { Id = 66, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny2.png"},
+            new ProdutoFoto { Id = 67, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
+
+            // Produto 24 - Jaqueta Jeans Feminina
+            new ProdutoFoto { Id = 68, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
+            new ProdutoFoto { Id = 69, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
+
+            // Produto 25 - Shorts de Moletom
+            new ProdutoFoto { Id = 70, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
+            new ProdutoFoto { Id = 71, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom2.png"},
+            new ProdutoFoto { Id = 72, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom3.png"},
+
+            // Produto 26 - Camiseta Polo Preta Feminina
+            new ProdutoFoto { Id = 73, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
+            new ProdutoFoto { Id = 74, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
+
+            // Produto 27 - Macacão Feminino
+            new ProdutoFoto { Id = 75, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
+            new ProdutoFoto { Id = 76, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino2.png"},
+            new ProdutoFoto { Id = 77, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino3.png"},
+
+            // Produto 28 - Blusa Cropped Texturizada
+            new ProdutoFoto { Id = 78, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada1.png"},
+            new ProdutoFoto { Id = 79, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada2.png"},
+            new ProdutoFoto { Id = 80, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada3.png"},
+
+            // Produto 29 - Camisa Polo Texturizada Masculina Marrom
+            new ProdutoFoto { Id = 81, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
+            new ProdutoFoto { Id = 82, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
+
+            // Produto 30 - Regata Dry Fit
+            new ProdutoFoto { Id = 83, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
+            new ProdutoFoto { Id = 84, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
+
+
             // Imagens produtos Destaques
-            new ProdutoFoto { Id = 31, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
-            new ProdutoFoto { Id = 32, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
-            new ProdutoFoto { Id = 33, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
-            new ProdutoFoto { Id = 34, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
-            new ProdutoFoto { Id = 35, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
-            new ProdutoFoto { Id = 36, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
-            new ProdutoFoto { Id = 37, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
-            new ProdutoFoto { Id = 38, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
-            new ProdutoFoto { Id = 39, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
-            new ProdutoFoto { Id = 40, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
+            new ProdutoFoto { Id = 85, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
+            new ProdutoFoto { Id = 86, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
+            new ProdutoFoto { Id = 87, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
+            new ProdutoFoto { Id = 88, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
+            new ProdutoFoto { Id = 89, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
+            new ProdutoFoto { Id = 90, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
+            new ProdutoFoto { Id = 91, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
+            new ProdutoFoto { Id = 92, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
+            new ProdutoFoto { Id = 93, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
+            new ProdutoFoto { Id = 94, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
 
 };
         builder.Entity<ProdutoFoto>().HasData(produtoFotos);

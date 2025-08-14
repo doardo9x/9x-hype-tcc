@@ -22,7 +22,7 @@ public IActionResult Index()
 {
     List<Produto> produtos = _db.Produtos
         .Where(p => p.CategoriaId != 3)
-        .OrderBy(p => EF.Functions.Random())
+        // .OrderBy(p => EF.Functions.Random())
         .Include(p => p.Categoria)
         .Include(p => p.Fotos)
         .ToList();
