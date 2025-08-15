@@ -194,6 +194,55 @@ public class AppDbSeed
             new ProdutoFoto { Id = 83, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
             new ProdutoFoto { Id = 84, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
 
+            // Produto 31 - Nike Air Force 1
+            new ProdutoFoto { Id = 85, ProdutoId = 31, ArquivoFoto = "/img/500x500/NikeAirForceOne1.png"},
+            new ProdutoFoto { Id = 86, ProdutoId = 31, ArquivoFoto = "/img/500x500/NikeAirForceOne2.png"},
+            new ProdutoFoto { Id = 87, ProdutoId = 31, ArquivoFoto = "/img/500x500/NikeAirForceOne3.png"},
+
+            // Produto 32 - Adidas Ultraboost
+            new ProdutoFoto { Id = 88, ProdutoId = 32, ArquivoFoto = "/img/500x500/AdidasUltraboost1.png"},
+            new ProdutoFoto { Id = 89, ProdutoId = 32, ArquivoFoto = "/img/500x500/AdidasUltraboost2.png"},
+            new ProdutoFoto { Id = 90, ProdutoId = 32, ArquivoFoto = "/img/500x500/AdidasUltraboost3.png"},
+
+            // Produto 33 - Puma RS-X
+            new ProdutoFoto { Id = 91, ProdutoId = 33, ArquivoFoto = "/img/500x500/PumaRS-X1.png"},
+            new ProdutoFoto { Id = 92, ProdutoId = 33, ArquivoFoto = "/img/500x500/PumaRS-X2.png"},
+            new ProdutoFoto { Id = 93, ProdutoId = 33, ArquivoFoto = "/img/500x500/PumaRS-X3.png"},
+
+            // Produto 34 - Vans Old Skool
+            new ProdutoFoto { Id = 94, ProdutoId = 34, ArquivoFoto = "/img/500x500/VansOldSkool1.png"},
+            new ProdutoFoto { Id = 95, ProdutoId = 34, ArquivoFoto = "/img/500x500/VansOldSkool2.png"},
+            new ProdutoFoto { Id = 96, ProdutoId = 34, ArquivoFoto = "/img/500x500/VansOldSkool3.png"},
+
+            // Produto 35 - New Balance 574
+            new ProdutoFoto { Id = 97, ProdutoId = 35, ArquivoFoto = "/img/500x500/NewBalance574_1.png"},
+            new ProdutoFoto { Id = 98, ProdutoId = 35, ArquivoFoto = "/img/500x500/NewBalance574_2.png"},
+            new ProdutoFoto { Id = 99, ProdutoId = 35, ArquivoFoto = "/img/500x500/NewBalance574_3.png"},
+
+            // Produto 36 - Converse Chuck Taylor
+            new ProdutoFoto { Id = 100, ProdutoId = 36, ArquivoFoto = "/img/500x500/ConverseChuckTaylor1.png"},
+            new ProdutoFoto { Id = 101, ProdutoId = 36, ArquivoFoto = "/img/500x500/ConverseChuckTaylor2.png"},
+            new ProdutoFoto { Id = 102, ProdutoId = 36, ArquivoFoto = "/img/500x500/ConverseChuckTaylor3.png"},
+
+            // Produto 37 - Asics Gel-Kayano 28
+            new ProdutoFoto { Id = 103, ProdutoId = 37, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_1.png"},
+            new ProdutoFoto { Id = 104, ProdutoId = 37, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_2.png"},
+            new ProdutoFoto { Id = 105, ProdutoId = 37, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_3.png"},
+
+            // Produto 38 - Nike Dunk Low
+            new ProdutoFoto { Id = 106, ProdutoId = 38, ArquivoFoto = "/img/500x500/NikeDunkLow1.png"},
+            new ProdutoFoto { Id = 107, ProdutoId = 38, ArquivoFoto = "/img/500x500/NikeDunkLow2.png"},
+            new ProdutoFoto { Id = 108, ProdutoId = 38, ArquivoFoto = "/img/500x500/NikeDunkLow3.png"},
+
+            // Poduto 39 - Mizuno Wave Prophecy
+            new ProdutoFoto { Id = 109, ProdutoId = 39, ArquivoFoto = "/img/500x500/MizunoWaveProphecy1.png"},
+            new ProdutoFoto { Id = 110, ProdutoId = 39, ArquivoFoto = "/img/500x500/MizunoWaveProphecy2.png"},
+            new ProdutoFoto { Id = 111, ProdutoId = 39, ArquivoFoto = "/img/500x500/MizunoWaveProphecy3.png"},
+
+            // Produto 40 - Fila Disruptor II
+            new ProdutoFoto { Id = 112, ProdutoId = 40, ArquivoFoto = "/img/500x500/FilaDisruptorII1.png"},
+            new ProdutoFoto { Id = 113, ProdutoId = 40, ArquivoFoto = "/img/500x500/FilaDisruptorII2.png"},
+            new ProdutoFoto { Id = 114, ProdutoId = 40, ArquivoFoto = "/img/500x500/FilaDisruptorII3.png"},
 
             // Imagens produtos Destaques
             new ProdutoFoto { Id = 85, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
