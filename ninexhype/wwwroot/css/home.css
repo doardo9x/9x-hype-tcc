@@ -553,6 +553,23 @@ nav {
 .card-img-top {
     max-height: 300px;
 }
+.Linha{
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.LinhaEsq{
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.LinhaTitulo{
+    width: 50%;
+    border-bottom: 3px solid var(--RoxoClaro-color);
+    color: var(--Destaque-color);
+}
 /* Footer */
 footer {
     background-color: var(--RoxoForte-color);

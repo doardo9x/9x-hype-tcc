@@ -20,28 +20,44 @@ public class HomeController : Controller
 
 public IActionResult Index()
 {
-    List<Produto> produtos = _db.Produtos
-        .Where(p => p.CategoriaId != 3)
-        // .OrderBy(p => EF.Functions.Random())
+    var produtos = _db.Produtos
+        .Where(p => p.CategoriaId != 8)
         .Include(p => p.Categoria)
         .Include(p => p.Fotos)
         .ToList();
-    
-    List<Produto> destaque = _db.Produtos
-        .Where(p => p.CategoriaId == 3)
+
+    var destaques = _db.Produtos
+        .Where(p => p.CategoriaId == 8)
         .OrderBy(p => EF.Functions.Random())
-        .Take(4)
         .Include(p => p.Fotos)
+        .Take(4)
         .ToList();
 
-    IndexVM indexVM = new()
+    var tiposRoupa = _db.TiposRoupa
+        .Include(t => t.Categorias)
+        .ThenInclude(c => c.Produtos)
+        .ToList();
+
+    // Filtrar produtos de cada categoria, removendo destaques
+    foreach (var tipo in tiposRoupa)
     {
-        Produtos = produtos, 
-        Destaques = destaque  
+        foreach (var categoria in tipo.Categorias)
+        {
+            categoria.Produtos = categoria.Produtos
+                .Where(p => p.CategoriaId != 8)
+                .ToList();
+        }
+}
+    var indexVM = new IndexVM
+    {
+        Produtos = produtos,
+        Destaques = destaques,
+        TiposRoupa = tiposRoupa
     };
-    
+
     return View(indexVM);
 }
+
 
     public IActionResult Produto(int id)
     {
