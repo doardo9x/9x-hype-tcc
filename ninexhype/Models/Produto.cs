@@ -39,6 +39,8 @@ public class Produto
 
     public bool Destaque { get; set; }
 
+    public Genero? Genero { get; set; }
+
     public List<ProdutoFoto> Fotos { get; set; }
 
 }
