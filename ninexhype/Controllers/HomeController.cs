@@ -83,6 +83,21 @@ public IActionResult Index()
         return View(produtoVM);
     }
 
+    // public IActionResult PagHomem()
+    // {
+    //     var produtos = _db.Produtos
+    //     .Where(p => p.Genero == Genero.Masculino)
+    //     .Include(p => p.Categoria)
+    //     .Include(p => p.Fotos)
+    //     .ToList();
+
+    // var paghomemVM = new pagHomemVM
+    // {
+    //     Produtos = produtos
+    // };
+    //     return View();
+    // }
+
     public IActionResult Privacy()
     {
         return View();
