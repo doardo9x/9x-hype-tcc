@@ -64,7 +64,7 @@
                 <div id="sidebar" class="sidebar">
                     <button class="close-btn" id="closeSidebar">&times;</button>
                     <a asp-action="PagHomem">HOMEM</a>
-                    <a href="#">MULHER</a>
+                    <a asp-action="PagMulher">MULHER</a>
                     <a href="#">ACESSÓRIOS</a>
                     <a href="#">PEÇAS</a>
                     <a href="#">MARCAS</a>
@@ -73,15 +73,15 @@
         </header>
 
         <nav class="nav-computer center">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown botoes" type="button">
+            <a class="dropdown">
+                <a asp-action="PagHomem" class="btn btn-secondary dropdown botoes" type="button">
                     HOMEM
-                </button>
-            </div>
+                </a>
+            </a>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown botoes" type="button">
+                <a asp-action="PagMulher" class="btn btn-secondary dropdown botoes" type="button">
                     MULHER
-                </button>
+                </a>
             </div>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"

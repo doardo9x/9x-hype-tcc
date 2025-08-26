@@ -83,20 +83,79 @@ public IActionResult Index()
         return View(produtoVM);
     }
 
-    // public IActionResult PagHomem()
-    // {
-    //     var produtos = _db.Produtos
-    //     .Where(p => p.Genero == Genero.Masculino)
-    //     .Include(p => p.Categoria)
-    //     .Include(p => p.Fotos)
-    //     .ToList();
+    public IActionResult PagHomem()
+    {
+        // Carregar todos os produtos masculinos, incluindo categoria e fotos
+        var produtos = _db.Produtos
+            .Where(p => p.Genero == Genero.Masculino)
+            .Include(p => p.Categoria)
+            .Include(p => p.Fotos)
+            .ToList();
 
-    // var paghomemVM = new pagHomemVM
-    // {
-    //     Produtos = produtos
-    // };
-    //     return View();
-    // }
+        // Carregar tipos de roupa com categorias e produtos masculinos
+        var tiposRoupa = _db.TiposRoupa
+            .Include(t => t.Categorias)
+                .ThenInclude(c => c.Produtos)
+            .ToList();
+
+        // Filtrar produtos masculinos de cada categoria, evitando nulos
+        foreach (var tipo in tiposRoupa)
+        {
+            if (tipo.Categorias == null) continue;
+
+            foreach (var categoria in tipo.Categorias)
+            {
+                categoria.Produtos = categoria.Produtos?
+                    .Where(p => p.Genero == Genero.Masculino)
+                    .ToList() ?? new List<Produto>();
+            }
+        }
+
+        // Criar ViewModel
+        var indexVM = new IndexVM
+        {
+            Produtos = produtos,
+            TiposRoupa = tiposRoupa
+        };
+
+        return View(indexVM);
+    }
+ public IActionResult PagMulher()
+    {
+        var produtos = _db.Produtos
+            .Where(p => p.Genero == Genero.Feminino)
+            .Include(p => p.Categoria)
+            .Include(p => p.Fotos)
+            .ToList();
+
+        var tiposRoupa = _db.TiposRoupa
+            .Include(t => t.Categorias)
+                .ThenInclude(c => c.Produtos)
+            .ToList();
+
+        // Filtrar produtos femininos de cada categoria, evitando nulos
+        foreach (var tipo in tiposRoupa)
+        {
+            if (tipo.Categorias == null) continue;
+
+            foreach (var categoria in tipo.Categorias)
+            {
+                categoria.Produtos = categoria.Produtos?
+                    .Where(p => p.Genero == Genero.Feminino)
+                    .ToList() ?? new List<Produto>();
+            }
+        }
+        
+        var indexVM = new IndexVM
+        {
+            Produtos = produtos,
+            TiposRoupa = tiposRoupa
+        };
+
+        return View(indexVM);
+    }
+
+
 
     public IActionResult Privacy()
     {
