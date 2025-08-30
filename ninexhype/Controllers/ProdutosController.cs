@@ -57,7 +57,7 @@ namespace ninexhype.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CategoriaId,Nome,Descricao,QtdeEstoque,ValorCusto,ValorVenda,Destaque")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,CategoriaId,Nome,Descricao,QtdeEstoque,ValorCusto,ValorVenda,Destaque,Genero")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -83,6 +83,7 @@ namespace ninexhype.Controllers
                 return NotFound();
             }
             ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome", produto.CategoriaId);
+            ViewBag.Generos = new SelectList(Enum.GetValues(typeof(Genero)), produto.Genero);
             return View(produto);
         }
 
@@ -91,7 +92,7 @@ namespace ninexhype.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoriaId,Nome,Descricao,QtdeEstoque,ValorCusto,ValorVenda,Destaque")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoriaId,Nome,Descricao,QtdeEstoque,ValorCusto,ValorVenda,Destaque,Genero")] Produto produto)
         {
             if (id != produto.Id)
             {

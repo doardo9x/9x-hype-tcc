@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h1>Create</h1>
@@ -48,6 +47,11 @@
                 </label>
             </div>
             <div class="form-group">
+                <label asp-for="Genero" class="control-label"></label>
+                <input asp-for="Genero" class="form-control" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -58,3 +62,6 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
