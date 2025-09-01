@@ -1,69 +1,436 @@
+<link rel="stylesheet" href="~/css/produto.css">
+
 @model ninexhype.ViewModels.ProdutoVM
 @{
     ViewData["Title"] = "Detalhes do Produto";
 }
 
-<section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-5">
-                <img class="img-fluid mb-5 mb-md-0" src="@(Model.Produto.Fotos.Count == 0 ?
-                            "https://dummyimage.com/600x700/dee2e6/6c757d.jpg"
-                            : Model.Produto.Fotos[0].ArquivoFoto)" alt="@Model.Produto.Nome" />
-            </div>
-            <div class="col-md-7">
-                <div class="small mb-1 normalText">Categoria: @Model.Produto.Categoria.Nome</div>
-                <h1 class="display-5 fw-bolder normalText">@Model.Produto.Nome</h1>
-                <div class="fs-5 mb-5">
-                    <span class="text-decoration-line-through normalText">
-                        R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))
-                    </span>
-                    <span class="normalText">R$ @Model.Produto.ValorVenda.ToString("N2")</span>
-                </div>
-                <p class="lead normalText">@Model.Produto.Descricao</p>
-                <div class="d-flex">
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
+<div class="pagProduto">
+
+    <div class="headerPagProduto">
+        <h1 class="nomeProduto">@Model.Produto.Nome</h1>
+        <a class="botaoVoltar t-nome" href="#voltar">Voltar</a>
+    </div>
+
+    <!-- Carrossel -->
+    <div class="carrossel">
+        <div class="carrossel-pop-up">
+            <div class="carousel-Modal">
+                <ul class="carousel__list-Modal">
+                    @* <li class="carousel__item-Modal" data-pos="-2">1</li> *@
+                    <li class="carousel__item-Modal" data-pos="-1">2</li>
+                    <li class="carousel__item-Modal" data-pos="0">3</li>
+                    <li class="carousel__item-Modal" data-pos="1">4</li>
+                    @* <li class="carousel__item-Modal" data-pos="1">5</li> *@
+                </ul>
             </div>
         </div>
+    </div> <!--Fim Carrossel-->
+
+    <div class="opcoesCores">
+        <div class="opcaoCOr">
+            <input type="radio" name="cor" value="preto" id="preto">
+            <label class="cor" for="preto">Preto</label>
+        </div>
+
+        <div class="opcaoCor">
+            <input type="radio" name="cor" value="branco" id="branco">
+            <label class="cor" for="branco">Branco</label>
+        </div>
+
+        <div class="opcaoCor">
+            <input type="radio" name="cor" value="roxo" id="roxo">
+            <label class="cor" for="roxo">Roxo</label>
+        </div>
+
     </div>
-</section>
-<!-- Related items section-->
-<section class="py-5 bg-light">
-    <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="fw-bolder mb-4">Produtos Semelhantes</h2>
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            @foreach (Produto produto in Model.Semelhantes)
-            {
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <div class="cont-imgTop"><img class="card-img-top" src="@(produto.Fotos.Count == 0 ?
-                            "https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                            : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
-                        </div <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">@produto.Nome</h5>
-                                <!-- Product price-->
-                                @produto.ValorVenda.ToString("N2")
-                            </div>
+
+    <!-- Info Produto -->
+    <div class="infoProduto">
+
+        <div class="tamanhoProduto desktop">
+
+            <div class="OpcoesTamanho">
+                <button class="btnOpcoesTamanho">
+                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
+                </button>
+            </div>
+            <div class="OpcoesTamanho">
+                <button class="btnOpcoesTamanho">
+                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
+                </button>
+            </div>
+            <div class="OpcoesTamanho">
+                <button class="btnOpcoesTamanho">
+                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
+                </button>
+            </div>
+            <div class="OpcoesTamanho">
+                <button class="btnOpcoesTamanho">
+                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
+                </button>
+            </div>
+            <div class="OpcoesTamanho">
+                <button class="btnOpcoesTamanho">
+                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
+                </button>
+            </div>
+            <div class="OpcoesTamanho">
+                <button class="btnOpcoesTamanho">
+                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="infoPrincipal">
+
+            <div class="nomeProdutoPrincipal">Nike Dunk Court Purple</div>
+
+            <div class="tamanhoSelecionado desktop">
+                <p>43</p>
+                <p>R$ 2.300,00</p>
+            </div>
+
+            <div class="tamanhoSelecionado mobile">
+                <select class="tamanhoSelecionadoMobile">
+                    <option value="45">
+                        <p>45</p>
+                        <p>R$ 2.500,00</p>
+                    </option>
+                    <option value="44">
+                        <p>44</p>
+                        <p>R$ 2.300,00</p>
+                    </option>
+                    <option value="43" selected>
+                        <p>43</p>
+                        <p>R$ 2.300,00</p>
+                    </option>
+                    <option value="41">
+                        <p>41</p>
+                        <p>R$ 2.700,00</p>
+                    </option>
+                    <option value="39">
+                        <p>39</p>
+                        <p>R$ 2.500,00</p>
+                    </option>
+                    <option value="37">
+                        <p>37</p>
+                        <p>R$ 2.200,00</p>
+                    </option>
+                    <option value="35">
+                        <p>35</p>
+                        <p>R$ 2.100,00</p>
+                    </option>
+                    <option value="33">
+                        <p>33</p>
+                        <p>R$ 2.000,00</p>
+                    </option>
+                    <option value="32">
+                        <p>32</p>
+                        <p>R$ 2.100,00</p>
+                    </option>
+                    <option value="31">
+                        <p>31</p>
+                        <p>R$ 2.200,00</p>
+                    </option>
+                </select>
+            </div>
+
+            <div class="botoes">
+                <button class="btn btn-primary btnComp" type="button">
+                    <i class="bi-cart-fill me-1"></i>
+                    Comprar
+                </button>
+                <div class="botoesSecundarios">
+                    <a href="#" class="btn btn-primary btnCar ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-cart3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+                        <a href="#" class="btn btn-primary btnFav">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg></a>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="infoEntrega">
+            <div class="OpcoesInfoEntrega">
+                <div class="txtOpcoes">Estoque Disponível</div>
+                <div class="txtOpcoes3">Mais de 50 unidades disponíveis</div>
+                <div class="txtOpcoes2">Quantidade Selecionada: 1</div>
+                <div class="btnEstoqueDisponivel">
+                    <button class="btnAdd">Adicionar</button>
+                    <button class="btnRem">Remover</button>
+                </div>
+            </div>
+            <div class="OpcoesInfoEntrega">
+                <div class="txtOpcoes">Calcular Frete</div>
+                <nav class="SearchBarFrete">
+                    <input type="text" class="calcularFrete" placeholder="Digite Seu CEP" />
+                </nav>
+                <div class="txtOpcoes2">Informe o seu CEP no campo acima</div>
+            </div>
+            <div class="OpcoesInfoEntrega">
+                <div class="txtOpcoes">Prazo de Entrega</div>
+                <div class="txtOpcoes2">Entrega prevista para 05/04 a 12/04</div>
+                <div class="txtOpcoes3">Informe seu CEP para uma informação mais precisa</div>
+            </div>
+            <div class="OpcoesInfoEntrega fornecedor">
+                <div class="txtOpcoes">Fornecedor</div>
+                <div class="txtOpcoes2">Eduardo Ribeiro Morais</div>
+                <div class="txtOpcoes2">(14) 99999-9999</div>
+                <div class="txtOpcoes2">Barra Bonita - SP</div>
+            </div>
+        </div>
+
+
+    </div> <!--Fim Info Produto-->
+
+    <div class="contDescricaoMetodoPagamento">
+
+        <div class="descricao">
+            <div class="descricaoSimples">
+                <div class="headerDescSimples">
+                    <h1 class="titleDesc">Descrição</h1>
+                </div>
+                <div class="itemDescSimples">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check2-circle" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                        <path
+                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                    </svg>
+                    <div class="txtDesc1">Marca:</div>
+                    <div class="txtDesc2">Nike</div>
+                </div>
+                <div class="itemDescSimples">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check2-circle" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                        <path
+                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                    </svg>
+                    <div class="txtDesc1">Cor:</div>
+                    <div class="txtDesc2">Roxo</div>
+                </div>
+                <div class="itemDescSimples">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check2-circle" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                        <path
+                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                    </svg>
+                    <div class="txtDesc1">Material Externo:</div>
+                    <div class="txtDesc2">Couro</div>
+                </div>
+                <div class="itemDescSimples">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check2-circle" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                        <path
+                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                    </svg>
+                    <div class="txtDesc1">Gênero:</div>
+                    <div class="txtDesc2">Unissex</div>
+                </div>
+                <div class="itemDescSimples">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check2-circle" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                        <path
+                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                    </svg>
+                    <div class="txtDesc1">Material Sola:</div>
+                    <div class="txtDesc2">Borracha</div>
+                </div>
+                <div class="itemDescSimples">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-check2-circle" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                        <path
+                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                    </svg>
+                    <div class="txtDesc1">Atividade Recomendada:</div>
+                    <div class="txtDesc2">Uso Casual</div>
+                </div>
+
+            </div>
+
+            <div class="descricaoCompleta">
+                <div class="txtDescCompleta">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <button id="btnDescCompleta">
+                Descrição Completa
+            </button>
+        </div>
+
+        <div class="metodosPagamento">
+
+            <div class="metodoPagamento">
+                <div class="txtOpcoes">Métodos de Pagamento</div>
+
+                <div class="linhaCredito">
+
+                    <div class="txtOpcoes2 seinao">Linha de Crédito</div>
+
+                    <div class="pngsPagamento">
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/mercadoPago.png" alt="">
                         </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a class="btn btn-outline-dark mt-auto" asp-controller="Home" asp-action="Produto"
-                                    asp-route-id="@produto.Id">
-                                    Detalhes</a>
+                    </div>
+
+                </div>
+
+                <div class="cartoesCredito">
+
+                    <div class="txtOpcoes2 seinao">Cartões de Crédito</div>
+                    <div class="txtOpcoes3 seinao">Em até 12x</div>
+
+                    <div class="pngsPagamento">
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/mastercard.png" alt="">
+                        </div>
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/elo.png" alt="">
+                        </div>
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/visa.png" alt="">
+                        </div>
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/hipercard.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cartoesDebito">
+
+                    <div class="txtOpcoes2 seinao">Cartões de Débito</div>
+
+                    <div class="pngsPagamento">
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/caixa.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pix">
+
+                    <div class="txtOpcoes2 seinao">Pix</div>
+
+                    <div class="pngsPagamento">
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/pix.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="boleto">
+
+                    <div class="txtOpcoes2 seinao">Boleto</div>
+
+                    <div class="pngsPagamento">
+                        <div class="pngPagamento">
+                            <img class="pngPagamento" src="~/img/PagProduto/MetodosPag/boleto.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </div> <!-- Fim contDescricaoMetodoPagamento-->
+
+    <!-- Related items section-->
+    <section class="relacionados">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h2 class="titlePadrao">Produtos Semelhantes</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                @foreach (Produto produto in Model.Semelhantes)
+                {
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <div class="cont-imgTop"><img class="card-img-top"
+                                    src="@(produto.Fotos.Count == 0 ?
+                                                                                                                                               "https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                                                                                                                                               : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
+                            </div <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@produto.Nome</h5>
+                                    <!-- Product price-->
+                                    @produto.ValorVenda.ToString("N2")
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" asp-controller="Home" asp-action="Produto"
+                                        asp-route-id="@produto.Id">
+                                        Detalhes</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
+    <!-- Comentários -->
+
+</div> <!--Fim Pag Produto-->

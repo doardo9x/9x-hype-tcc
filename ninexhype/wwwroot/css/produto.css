@@ -1,0 +1,1146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+/* ---------------------------------------------- Universal ---------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    max-width: 100vw;
+    margin: 0;
+    /* Adicionado para evitar espaçamento externo em dispositivos pequenos */
+    padding: 0;
+}
+
+.t-nome {
+    text-decoration: none;
+}
+
+html,
+body {
+    background-color: var(--main-BG-color);
+    overflow-x: hidden;
+    /* Evita rolagem horizontal indesejada */
+}
+
+.btn {
+    padding: 0;
+}
+
+.pagProduto {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    /* Adicionado para respiro lateral em telas pequenas */
+}
+
+.titlePadrao {
+    width: 100%;
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+    /* Ajustado para melhor escalabilidade */
+    display: flex;
+    /* justify-content: center; */
+    border-bottom: 2px solid var(--RoxoClaro-color);
+}
+
+.txtOpcoes,
+.txtOpcoes2,
+.txtOpcoes3 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
+}
+
+.txtOpcoes {
+    color: var(--Destaque-color);
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.txtOpcoes2 {
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.txtOpcoes3 {
+    color: gray;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.txtDesc1,
+.txtDesc2 {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.txtDesc1 {
+    font-weight: 600;
+}
+
+.txtDesc2 {
+    font-weight: 400;
+}
+
+.sei {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.seinao {
+    margin: 0;
+}
+
+.precoProduto {
+    font-size: 1.25rem;
+}
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+}
+
+
+/* ---------------------------------------------- Header Pag Prod ---------------------------------------------- */
+
+.headerPagProduto {
+    width: 90%;
+    /* Mais flexível */
+    max-width: 100%;
+    height: 3.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.nomeProduto {
+    color: var(--RoxoClaro-color);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 1rem 0;
+    text-align: center;
+    position: absolute;
+    left: 52%;
+    transform: translateX(-54%);
+}
+
+.botaoVoltar {
+    font-size: 1.5rem;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    right: 0;
+    color: white;
+}
+
+.botaoVoltar:hover {
+    color: #E75DFF;
+    border-bottom: 1px solid var(--Destaque-color);
+}
+
+/* ---------------------------------------------- Carrossel ---------------------------------------------- */
+
+.carrossel {
+    width: 100%;
+    max-width: 100%;
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-pop-up {
+    width: 100%;
+}
+
+.carousel-Modal {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    font-family: Arial;
+    padding-top: 1.6rem;
+}
+
+.carousel__list-Modal {
+    display: flex;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    justify-content: center;
+    perspective: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel__item-Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0px;
+    width: 500px;
+    height: 90%;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+    position: absolute;
+    transition: all 0.3s ease-in;
+}
+
+.carousel__item-Modal:nth-child(1) {
+    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel__item-Modal:nth-child(2) {
+    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel__item-Modal:nth-child(3) {
+    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 3.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel__item-Modal:nth-child(4) {
+    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 4.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel__item-Modal:nth-child(5) {
+    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 4.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel__item-Modal[data-pos="0"] {
+    z-index: 5;
+}
+
+.carousel__item-Modal[data-pos="-1"] {
+    transform: translateX(-40%) scale(0.9);
+    z-index: 4;
+}
+
+.carousel__item-Modal[data-pos="1"] {
+    transform: translateX(40%) scale(0.9);
+    z-index: 4;
+}
+
+.carousel__item-Modal[data-pos="-2"],
+.carousel__item-Modal[data-pos="2"] {
+    /* opacity: 0.4; */
+    filter: blur(3px) grayscale(20%);
+}
+
+.carousel__item-Modal[data-pos="-2"] {
+    transform: translateX(-70%) scale(0.8);
+    z-index: 3;
+}
+
+.carousel__item-Modal[data-pos="2"] {
+    transform: translateX(70%) scale(0.8);
+    z-index: 3;
+}
+
+/* ---------------------------------------------- Opções Cores ---------------------------------------------- */
+
+.opcoesCores {
+    width: 80%;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cor {
+    width: 130px;
+    background-color: var(--RoxoForte-color);
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+    /* Esconde o radio padrão */
+}
+
+input[type="radio"]:checked+label {
+    border: 2px solid var(--RoxoClaro-color);
+    color: var(--RosaClarinho-color);
+    box-shadow: 0 0 5px var(--RoxoClaro-color);
+}
+
+
+/* ---------------------------------------------- Cont Info Produto ---------------------------------------------- */
+
+.infoProduto {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.875rem;
+    gap: 1rem;
+}
+
+/* ---------------------------------------------- Info Tamanho ---------------------------------------------- */
+
+.tamanhoProduto {
+    background-color: var(--RoxoForte-color);
+    width: 25%;
+    max-width: 100%;
+    max-height: 37.5rem;
+    max-height: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.tamanhoProduto::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--main-BG-color);
+}
+
+.tamanhoProduto::-webkit-scrollbar-thumb {
+    background-color: var(--RoxoClaro-color);
+    border-radius: 5px;
+}
+
+.btnOpcoesTamanho {
+    width: 100%;
+    height: 6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    box-sizing: border-box;
+}
+
+.btnOpcoesTamanho:hover {
+    border: 2px solid var(--RoxoClaro-color);
+    cursor: pointer;
+}
+
+.OpcoesTamanho {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 3px solid var(--main-BG-color);
+}
+
+.btnOpcoesTamanho.first-item {
+    border-top-left-radius: 15px;
+}
+
+.btnOpcoesTamanho.last-item {
+    border-bottom-left-radius: 15px;
+}
+
+/* ---------------------------------------------- Info Principal ---------------------------------------------- */
+
+.infoPrincipal {
+    width: 48%;
+    max-width: 100%;
+    height: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nomeProdutoPrincipal {
+    color: var(--Destaque-color);
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.tamanhoSelecionado {
+    display: flex;
+    gap: 1.875rem;
+    font-weight: 400;
+    font-size: 1.875rem;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.desktop {
+    display: flex;
+}
+
+.mobile {
+    display: none;
+}
+
+.tamanhoSelecionadoMobile {
+    background-color: transparent;
+    display: flex;
+    gap: 1.875rem;
+    font-weight: 400;
+    font-size: 1.875rem;
+    text-align: center;
+    outline: none;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid var(--RoxoClaro-color);
+    border-radius: 5px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnComp {
+    width: 18.75rem;
+    max-width: 100%;
+    border-radius: 1.875rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    border: 0;
+    background-color: var(--Destaque-color);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btnComp:hover {
+    background-color: var(--Destaque-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+}
+
+.botoesSecundarios {
+    width: 18.75rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+}
+
+.btnFav,
+.btnCar {
+    width: 49%;
+    max-width: 100%;
+    border-radius: 1.875rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    border: 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btnFav {
+    background-color: var(--VermelhoFav-color);
+}
+
+.btnFav:hover {
+    background-color: var(--VermelhoFav-color);
+    box-shadow: 0px 4px 8px var(--VermelhoFavHover-color);
+    transform: translateY(-2px);
+}
+
+.btnCar {
+    background-color: var(--VerdeCarrinho-color);
+}
+
+.btnCar:hover {
+    background-color: var(--VerdeCarrinho-color);
+    box-shadow: 0px 4px 8px var(--VerdeCarrinhoHover-color);
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------- Info Entrega ---------------------------------------------- */
+
+.infoEntrega {
+    width: 25%;
+    max-width: 100%;
+    height: 37.5rem;
+    background-color: var(--RoxoForte-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.OpcoesInfoEntrega {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 3px solid var(--main-BG-color);
+}
+
+.btnEstoqueDisponivel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btnAdd,
+.btnRem {
+    width: 8rem;
+    height: 1.5625rem;
+    background-color: var(--CinzaFraco-color);
+    border: 0;
+    border-radius: 5px;
+    color: #808080;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.btnAdd:hover,
+.btnRem:hover {
+    border: 1px solid white;
+}
+
+.calcularFrete {
+    width: 90%;
+    float: left;
+    background-color: var(--CinzaFraco-color);
+    padding-left: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+.fornecedor {
+    border: 0;
+    margin: 0;
+}
+
+.metodosPagamentoOculto {
+    width: 25%;
+    max-width: 100%;
+    height: 37.5rem;
+    background-color: var(--RoxoForte-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    display: none;
+}
+
+/* ---------------------------------------------- Descrição e Pagamento ---------------------------------------------- */
+
+.contDescricaoMetodoPagamento {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    min-height: 37.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+/* ---------------------------------------------- Descricão ---------------------------------------------- */
+
+.descricao {
+    width: 74%;
+    max-width: 100%;
+}
+
+.descricaoOculta {
+    width: 74%;
+    max-width: 100%;
+    display: none;
+}
+
+.descricaoSimples {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.headerDescSimples {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.titleDesc {
+    max-width: 33%;
+    max-width: 100%;
+    color: var(--RosaClarinho-color);
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin: 0;
+    display: flex;
+}
+
+.itemDescSimples {
+    width: 50%;
+    max-width: 100%;
+    height: 3.125rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.descricaoCompleta {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 20em;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    text-indent: 2em;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.descricaoCompleta.active {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: 0;
+    max-height: 2000px;
+}
+
+
+.txtDescCompleta {
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+}
+
+.txtDescCompleta p {
+  margin-bottom: 1rem;
+  text-indent: 2em;
+  line-height: 1.6;
+  word-break: break-word;
+  white-space: normal;
+}
+
+#btnDescCompleta {
+    background-color: transparent;
+    border: 0;
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--RoxoClaro-color);
+}
+
+#btnDescCompleta:hover {
+    color: var(--RoxoClaroHover-color);
+}
+
+/* ---------------------------------------------- Método Pagamento ---------------------------------------------- */
+
+.metodosPagamento {
+    width: 25%;
+    max-width: 100%;
+    height: 37.5rem;
+    background-color: var(--RoxoForte-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.metodoPagamento {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.875rem;
+}
+
+.linhaCredito,
+.cartoesCredito,
+.cartoesDebito,
+.pix,
+.boleto {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.cartoesCredito,
+.cartoesDebito,
+.pix,
+.boleto {
+    margin-top: 1.25rem;
+}
+
+.pngsPagamento {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pngPagamento {
+    width: 70px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ---------------------------------------------- Comentários ---------------------------------------------- */
+
+.comentarios {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+}
+
+.headerComentarios {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#botaoAddComentario {
+    max-width: 100%;
+    height: auto;
+    margin-right: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--RoxoClaro-color);
+    background-color: transparent;
+    border: 0;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+#botaoAddComentario:hover {
+    color: var(--Destaque-color);
+    border-bottom: 1px solid var(--Destaque-color);
+}
+
+.listaComentarios {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.comentario {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 26rem;
+    background-color: var(--RoxoForte-color);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: 10px;
+    margin-bottom: 1.25rem;
+    border-radius: 15px;
+    padding-bottom: 2rem;
+}
+
+.infoEscritas {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.perfil {
+    width: 100%;
+    max-width: 100%;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.imgPerfil {
+    width: 2.8125rem;
+    max-width: 100%;
+    height: 2.8125rem;
+    border-radius: 50%;
+    border: 2px solid var(--Destaque-color);
+    object-fit: cover;
+}
+
+.nomePerfil {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 1.875rem;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.avaliacao {
+    width: 100%;
+    height: 3.125rem;
+    margin-bottom: 10px;
+    background-color: var(--main-BG-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.checked {
+    color: orange;
+}
+
+.fa {
+    font-size: 25px;
+}
+
+.fa-star {
+    width: 30px;
+    cursor: pointer;
+}
+
+.txtComentario {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: var(--main-BG-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.paragrafoComentario {
+    width: 95%;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.imgComentario {
+    width: 45%;
+    max-width: 100%;
+    height: auto;
+    max-height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- Comentário Novo ---------- */
+.comentarioNovoEstilo {
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid var(--RoxoClaro-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaro-color);
+    transform: translateY(-2px);
+}
+
+.oculto {
+    display: none;
+}
+
+.linhaUmComentarioNovo {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.linhaDoisComentarioNovo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnEnviarComentario {
+    width: 25%;
+    height: auto;
+    margin: 1.25rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--VerdeCarrinho-color);
+    gap: 10px;
+    border: 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btnEnviarComentario:hover {
+    box-shadow: 0px 4px 8px var(--VerdeCarrinhoHover-color);
+    transform: translateY(-2px);
+    /* opcional: levanta o botão */
+}
+
+.btnDeletarComentario {
+    width: 25%;
+    height: auto;
+    margin: 1.25rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--VermelhoRemFav-color);
+    gap: 10px;
+    border: 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btnDeletarComentario:hover {
+    box-shadow: 0px 4px 8px var(--VermelhoRemFavHover-color);
+    transform: translateY(-2px);
+    /* opcional: levanta o botão */
+}
+
+.imgRevilComentario {
+    width: 37.5rem;
+    max-width: 100%;
+    height: 18.75rem;
+    border: 2px solid var(--Destaque-color);
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+textarea {
+    height: auto;
+    min-height: 3rem;
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 1px solid var(--RoxoClaroHover-color);
+    border-radius: 5px;
+    outline: none;
+    text-indent: 0;
+    resize: none;
+    overflow-y: hidden;
+}
+
+textarea::placeholder {
+    color: whitesmoke;
+}
+
+/* ---------------------------------------------- Relacionados ---------------------------------------------- */
+
+.relacionados {
+    background-color: var(--main-BG-color);
+}
+
+
+/* ---------------------- Responsividade ---------------------- */
+
+@media (max-width: 1080px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .pagProduto {
+        width: 100%;
+    }
+
+    .carrossel {
+        width: 60%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .carousel__item-Modal {
+        width: 200px;
+        height: 100%;
+    }
+
+    .carousel__list-Modal {
+        height: 150px;
+    }
+
+    .opcoesCores {
+        width: 95%;
+    }
+
+    .cor {
+        width: 100px;
+    }
+
+    .infoProduto {
+        width: 95%;
+        flex-wrap: wrap;
+    }
+
+    .infoPrincipal {
+        order: 0;
+        width: 100%;
+        height: 25rem;
+    }
+
+    .nomeProdutoPrincipal {
+        width: 90%;
+    }
+
+    .tamanhoSelecionadoMobile {
+        width: 300px;
+    }
+
+    .infoEntrega {
+        order: 1;
+        width: 100%;
+    }
+
+    .metodosPagamento {
+        display: none;
+    }
+
+    .contDescricaoMetodoPagamento {
+        width: 95%;
+    }
+
+    .descricao {
+        width: 100%;
+    }
+
+    .itemDescSimples {
+        width: 100%;
+    }
+
+    .comentarios {
+        width: 95%;
+    }
+
+    .comentario {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .infoEscritas {
+        width: 95%;
+    }
+
+    .imgComentario {
+        width: 95%;
+    }
+
+    .linhaUmComentarioNovo {
+        flex-wrap: wrap;
+    }
+
+    .linhaDoisComentarioNovo {
+        flex-wrap: wrap;
+    }
+
+    .btnEnviarComentario {
+        width: 80%;
+        padding: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .btnDeletarComentario {
+        width: 80%;
+        padding: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+}
