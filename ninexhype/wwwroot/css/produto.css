@@ -43,7 +43,6 @@ body {
 }
 
 .titlePadrao {
-    width: 100%;
     color: white;
     font-weight: 400;
     font-size: 2rem;
@@ -172,25 +171,12 @@ body {
 
 /* ---------------------------------------------- Carrossel ---------------------------------------------- */
 
-.carrossel {
-    width: 100%;
-    max-width: 100%;
-    height: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carrossel-pop-up {
-    width: 100%;
-}
-
 .carousel-Modal {
     display: flex;
     width: 100%;
     height: 100%;
     align-items: center;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     padding-top: 1.6rem;
 }
 
@@ -210,46 +196,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 0px;
     width: 500px;
     height: 90%;
     border-radius: 12px;
     box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
     position: absolute;
     transition: all 0.3s ease-in;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.carousel__item-Modal:nth-child(1) {
-    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 1.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
+.carousel__item-Modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.carousel__item-Modal:nth-child(2) {
-    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 2.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.carousel__item-Modal:nth-child(3) {
-    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 3.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.carousel__item-Modal:nth-child(4) {
-    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 4.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.carousel__item-Modal:nth-child(5) {
-    background-image: url(/assets/PagProduto/CarrosselFotos/Nike\ Dunk\ Purple\ 4.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
+/* Posições baseadas em data-pos */
 .carousel__item-Modal[data-pos="0"] {
     z-index: 5;
 }
@@ -262,22 +226,6 @@ body {
 .carousel__item-Modal[data-pos="1"] {
     transform: translateX(40%) scale(0.9);
     z-index: 4;
-}
-
-.carousel__item-Modal[data-pos="-2"],
-.carousel__item-Modal[data-pos="2"] {
-    /* opacity: 0.4; */
-    filter: blur(3px) grayscale(20%);
-}
-
-.carousel__item-Modal[data-pos="-2"] {
-    transform: translateX(-70%) scale(0.8);
-    z-index: 3;
-}
-
-.carousel__item-Modal[data-pos="2"] {
-    transform: translateX(70%) scale(0.8);
-    z-index: 3;
 }
 
 /* ---------------------------------------------- Opções Cores ---------------------------------------------- */

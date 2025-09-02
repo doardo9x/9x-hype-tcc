@@ -39,8 +39,14 @@ public class Produto
 
     public bool Destaque { get; set; }
 
-    public Genero? Genero { get; set; }
+    public Genero Genero { get; set; }
 
     public List<ProdutoFoto> Fotos { get; set; }
+
+    public string Marca { get; set; }
+    public string Cor { get; set; }
+    public string Material { get; set; }
+    public string AtividadeRecomendada { get; set; }
+
 
 }

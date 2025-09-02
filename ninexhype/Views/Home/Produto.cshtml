@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="~/css/produto.css">
-
 @model ninexhype.ViewModels.ProdutoVM
 @{
     ViewData["Title"] = "Detalhes do Produto";
@@ -9,7 +7,7 @@
 
     <div class="headerPagProduto">
         <h1 class="nomeProduto">@Model.Produto.Nome</h1>
-        <a class="botaoVoltar t-nome" href="#voltar">Voltar</a>
+        <a class="botaoVoltar t-nome" asp-action='index'>Voltar</a>
     </div>
 
     <!-- Carrossel -->
@@ -17,33 +15,27 @@
         <div class="carrossel-pop-up">
             <div class="carousel-Modal">
                 <ul class="carousel__list-Modal">
-                    @* <li class="carousel__item-Modal" data-pos="-2">1</li> *@
-                    <li class="carousel__item-Modal" data-pos="-1">2</li>
-                    <li class="carousel__item-Modal" data-pos="0">3</li>
-                    <li class="carousel__item-Modal" data-pos="1">4</li>
-                    @* <li class="carousel__item-Modal" data-pos="1">5</li> *@
+                    <div class="carousel-Modal">
+                        <ul class="carousel__list-Modal">
+                            @for (int i = 0; i < Model.Produto.Fotos.Count; i++)
+                            {
+                                var foto = Model.Produto.Fotos[i];
+                                // Centraliza o primeiro como pos=0, os próximos viram 1,2 e os anteriores -1,-2
+                                var pos = i == 0 ? 0 : i;
+
+                                <li class="carousel__item-Modal @(pos == 0 ? "carousel__item-Modal_active" : "")"
+                                    data-pos="@pos">
+                                    <img src="@foto.ArquivoFoto" alt="@Model.Produto.Nome" />
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
                 </ul>
             </div>
         </div>
     </div> <!--Fim Carrossel-->
 
-    <div class="opcoesCores">
-        <div class="opcaoCOr">
-            <input type="radio" name="cor" value="preto" id="preto">
-            <label class="cor" for="preto">Preto</label>
-        </div>
-
-        <div class="opcaoCor">
-            <input type="radio" name="cor" value="branco" id="branco">
-            <label class="cor" for="branco">Branco</label>
-        </div>
-
-        <div class="opcaoCor">
-            <input type="radio" name="cor" value="roxo" id="roxo">
-            <label class="cor" for="roxo">Roxo</label>
-        </div>
-
-    </div>
 
     <!-- Info Produto -->
     <div class="infoProduto">
@@ -52,37 +44,37 @@
 
             <div class="OpcoesTamanho">
                 <button class="btnOpcoesTamanho">
-                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">39</div>
                     <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
                 </button>
             </div>
             <div class="OpcoesTamanho">
                 <button class="btnOpcoesTamanho">
-                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">40</div>
                     <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
                 </button>
             </div>
             <div class="OpcoesTamanho">
                 <button class="btnOpcoesTamanho">
-                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">41</div>
                     <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
                 </button>
             </div>
             <div class="OpcoesTamanho">
                 <button class="btnOpcoesTamanho">
-                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">42</div>
                     <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
                 </button>
             </div>
             <div class="OpcoesTamanho">
                 <button class="btnOpcoesTamanho">
-                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">43</div>
                     <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
                 </button>
             </div>
             <div class="OpcoesTamanho">
                 <button class="btnOpcoesTamanho">
-                    <div class="txtOpcoes">45</div>
+                    <div class="txtOpcoes">44</div>
                     <div class="txtOpcoes">R$ @((Model.Produto.ValorVenda * 1.10M).ToString("N2"))</div>
                 </button>
             </div>
@@ -92,11 +84,11 @@
 
         <div class="infoPrincipal">
 
-            <div class="nomeProdutoPrincipal">Nike Dunk Court Purple</div>
+            <div class="nomeProdutoPrincipal">@Model.Produto.Nome</div>
 
             <div class="tamanhoSelecionado desktop">
                 <p>43</p>
-                <p>R$ 2.300,00</p>
+                <p>@Model.Produto.ValorVenda</p>
             </div>
 
             <div class="tamanhoSelecionado mobile">
@@ -171,7 +163,7 @@
         <div class="infoEntrega">
             <div class="OpcoesInfoEntrega">
                 <div class="txtOpcoes">Estoque Disponível</div>
-                <div class="txtOpcoes3">Mais de 50 unidades disponíveis</div>
+                <div class="txtOpcoes3">Mais de @Model.Produto.QtdeEstoque unidades disponíveis</div>
                 <div class="txtOpcoes2">Quantidade Selecionada: 1</div>
                 <div class="btnEstoqueDisponivel">
                     <button class="btnAdd">Adicionar</button>
@@ -217,7 +209,7 @@
                             d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
                     </svg>
                     <div class="txtDesc1">Marca:</div>
-                    <div class="txtDesc2">Nike</div>
+                    <div class="txtDesc2">@Model.Produto.Marca</div>
                 </div>
                 <div class="itemDescSimples">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -228,18 +220,7 @@
                             d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
                     </svg>
                     <div class="txtDesc1">Cor:</div>
-                    <div class="txtDesc2">Roxo</div>
-                </div>
-                <div class="itemDescSimples">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-check2-circle" viewBox="0 0 16 16">
-                        <path
-                            d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
-                        <path
-                            d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
-                    </svg>
-                    <div class="txtDesc1">Material Externo:</div>
-                    <div class="txtDesc2">Couro</div>
+                    <div class="txtDesc2">@Model.Produto.Cor</div>
                 </div>
                 <div class="itemDescSimples">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -250,7 +231,7 @@
                             d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
                     </svg>
                     <div class="txtDesc1">Gênero:</div>
-                    <div class="txtDesc2">Unissex</div>
+                    <div class="txtDesc2">@Model.Produto.Genero</div>
                 </div>
                 <div class="itemDescSimples">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -260,8 +241,8 @@
                         <path
                             d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
                     </svg>
-                    <div class="txtDesc1">Material Sola:</div>
-                    <div class="txtDesc2">Borracha</div>
+                    <div class="txtDesc1">Material</div>
+                    <div class="txtDesc2">@Model.Produto.Material</div>
                 </div>
                 <div class="itemDescSimples">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -272,7 +253,7 @@
                             d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
                     </svg>
                     <div class="txtDesc1">Atividade Recomendada:</div>
-                    <div class="txtDesc2">Uso Casual</div>
+                    <div class="txtDesc2">@Model.Produto.AtividadeRecomendada</div>
                 </div>
 
             </div>
@@ -399,30 +380,13 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 @foreach (Produto produto in Model.Semelhantes)
                 {
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <div class="cont-imgTop"><img class="card-img-top"
-                                    src="@(produto.Fotos.Count == 0 ?
-                                                                                                                                               "https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                                                                                                                                               : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
-                            </div <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">@produto.Nome</h5>
-                                    <!-- Product price-->
-                                    @produto.ValorVenda.ToString("N2")
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" asp-controller="Home" asp-action="Produto"
-                                        asp-route-id="@produto.Id">
-                                        Detalhes</a>
-                                </div>
-                            </div>
+                    <div class="card cardCarrossel">
+                        <a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id">
+                            <img class="card-img-top"src="@(produto.Fotos.Count == 0 ?"https://dummyimage.com/450x300/dee2e6/6c757d.jpg": produto.Fotos[0].ArquivoFoto)"alt="@produto.Nome" />
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                            <p class="card-text precoProduto">@produto.ValorVenda</p>
                         </div>
                     </div>
                 }
@@ -431,6 +395,175 @@
     </section>
 
 
-    <!-- Comentários -->
+     <!-- Comentários -->
+        <div class="comentarios">
 
+            <div class="headerComentarios">
+                <h1 class="titlePadrao">Comentários</h1>
+                <button id="botaoAddComentario">Adicionar</button>
+            </div>
+
+            <div class="listaCometarios">
+
+                <!-- Comentário novo -->
+                <form class="comentario comentarioNovoEstilo oculto" id="comentarioNovo" method="post"
+                    action="/Comentarios/Salvar" enctype="multipart/form-data">
+
+                    <div class="linhaUmComentarioNovo">
+                        <div class="infoEscritas">
+                            <div class="perfil">
+                                <img src="/assets/PagProduto/Perfis/PerfilVazio.png" alt="" class="imgPerfil">
+                                <p class="nomePerfil">Nome do Usuário</p>
+                            </div>
+
+                            <!-- Avaliação -->
+                            <div class="avaliacao" id="avaliacaoNova">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <input type="hidden" name="Nota" id="notaSelecionada" value="0" />
+
+                            <!-- Comentário -->
+                            <div class="txtComentario">
+                                <textarea class="paragrafoComentario" id="comentarioAutoAltura" name="Comentario"
+                                    placeholder="Escreva Seu Comentário" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Upload da imagem -->
+                        <div class="imgComentario">
+                            <label for="fotoComentario" style="cursor: pointer;">
+                                <img src="../assets/PagProduto/Cometarios/ImagemVazia.png" alt=""
+                                    class="imgRevilComentario" id="previewImagem">
+                            </label>
+                            <input type="file" id="fotoComentario" name="Foto" accept="image/*" style="display: none;"
+                                onchange="previewImagem(this)">
+                        </div>
+                    </div>
+
+                    <div class="linhaDoisComentarioNovo">
+                        <button type="submit" class="btnEnviarComentario">
+                            <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
+                            Enviar Comentário
+                        </button>
+                        <button type="" class="btnDeletarComentario">
+                            <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                            Deletar Comentário
+                        </button>
+                    </div>
+                </form>
+                <!-- Fim Comentário novo -->
+
+                <div class="comentario">
+                    <div class="infoEscritas">
+                        <div class="perfil">
+                            <img src="/assets/PagProduto/Perfis/exemploImgPerfil.jpg" alt="" class="imgPerfil">
+                            <p class="nomePerfil">Carlos Eduardo</p>
+                        </div>
+                        <div class="avaliacao">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="txtComentario">
+                            <p class="paragrafoComentario">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum
+                                dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris. Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="imgComentario">
+                        <img src="/assets/PagProduto/Cometarios/imgRevilExemplo.jpg" alt="" class="imgRevilComentario">
+                    </div>
+                </div>
+
+                <div class="comentario">
+                    <div class="infoEscritas">
+                        <div class="perfil">
+                            <img src="/assets/PagProduto/Perfis/exemploImgPerfil2.jpg" alt="" class="imgPerfil">
+                            <p class="nomePerfil">José Antônio Gallo Junior</p>
+                        </div>
+                        <div class="avaliacao">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <div class="txtComentario">
+                            <p class="paragrafoComentario">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum
+                                dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="imgComentario">
+                        <img src="/assets/PagProduto/Cometarios/imgRevilExemplo2.jpg" alt="" class="imgRevilComentario">
+                    </div>
+                </div>
+
+                <div class="comentario">
+                    <div class="infoEscritas">
+                        <div class="perfil">
+                            <img src="/assets/PagProduto/Perfis/exemploImgPerfil3.jpeg" alt="" class="imgPerfil">
+                            <p class="nomePerfil">Marcio Jesus de Morais</p>
+                        </div>
+                        <div class="avaliacao">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="txtComentario">
+                            <p class="paragrafoComentario">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="imgComentario">
+                        <img src="/assets/PagProduto/Cometarios/imgRevilExemplo3.jpg" alt="" class="imgRevilComentario">
+                    </div>
+                </div>
+
+            </div><!--Lista Comentários-->
+
+        </div> <!--Fim Comentários-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f950f409a7.js" crossorigin="anonymous"></script>
+
+    <script src="~/js/PagProduto/script.js"></script>
+    <script src="~/js/PagProduto/scriptComentario.js"></script>
+    <script src="~/js/PagProduto/scriptDescricoes.js"></script>
+    <script src="~/js/PagProduto/scriptOpcoesTamanho.js"></script>
+    <link rel="stylesheet" href="~/css/produto.css">
 </div> <!--Fim Pag Produto-->

@@ -30,54 +30,55 @@ public class AppDbSeed
         builder.Entity<Categoria>().HasData(categorias);
 
         List<Produto> produtos = new List<Produto>{
-            
-        // ===== TÊNIS =====
-        new Produto { Id = 1, CategoriaId = 1, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Genero = Genero.Unissex },
-        new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Genero = Genero.Unissex },
-        new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20, Genero = Genero.Masculino },
-        new Produto { Id = 4, CategoriaId = 1, Nome = "Vans Old Skool", Descricao = "Tênis skatista em lona e camurça", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22, Genero = Genero.Masculino },
-        new Produto { Id = 5, CategoriaId = 1, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15, Genero = Genero.Unissex },
-        new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30, Genero = Genero.Unissex },
-        new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12, Genero = Genero.Unissex },
-        new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10, Genero = Genero.Unissex },
-        new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8, Genero = Genero.Masculino },
-        new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14, Genero = Genero.Feminino },
-        new Produto { Id = 11, CategoriaId = 1, Nome = "Reebok Classic", Descricao = "Tênis casual vintage", ValorCusto = 180.00m, ValorVenda = 299.99m, QtdeEstoque = 16, Genero = Genero.Unissex },
-        new Produto { Id = 12, CategoriaId = 1, Nome = "Under Armour HOVR", Descricao = "Tênis esportivo respirável", ValorCusto = 310.00m, ValorVenda = 459.99m, QtdeEstoque = 10, Genero = Genero.Masculino },
-        new Produto { Id = 13, CategoriaId = 1, Nome = "Jordan 1 Mid", Descricao = "Tênis icônico da linha Jordan", ValorCusto = 450.00m, ValorVenda = 749.99m, QtdeEstoque = 6, Genero = Genero.Masculino },
-        new Produto { Id = 14, CategoriaId = 1, Nome = "Oakley Modoc", Descricao = "Tênis robusto e confortável", ValorCusto = 280.00m, ValorVenda = 399.99m, QtdeEstoque = 18, Genero = Genero.Masculino },
-        new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly", Descricao = "Tênis de corrida profissional", ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5, Genero = Genero.Masculino },
 
-        // ===== ROUPAS =====
-        new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca", Descricao = "100% algodão, modelagem larga", ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Genero = Genero.Masculino },
-        new Produto { Id = 17, CategoriaId = 6, Nome = "Calça Cargo Preta", Descricao = "Com bolsos laterais e ajuste no tornozelo", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, Genero = Genero.Masculino },
-        new Produto { Id = 18, CategoriaId = 4, Nome = "Jaqueta Corta-Vento", Descricao = "Impermeável e leve, ideal para dias chuvosos", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12, Genero = Genero.Unissex },
-        new Produto { Id = 19, CategoriaId = 3, Nome = "Moletom Liso com Capuz", Descricao = "Moletom peluciado unissex", ValorCusto = 80.00m, ValorVenda = 129.90m, QtdeEstoque = 25, Genero = Genero.Unissex },
-        new Produto { Id = 20, CategoriaId = 5, Nome = "Bermuda de Sarja Bege", Descricao = "Estilo casual, com bolsos laterais", ValorCusto = 60.00m, ValorVenda = 99.99m, QtdeEstoque = 35, Genero = Genero.Masculino },
-        new Produto { Id = 21, CategoriaId = 2, Nome = "Camisa Social Slim", Descricao = "Camisa masculina, algodão, modelagem justa", ValorCusto = 70.00m, ValorVenda = 119.99m, QtdeEstoque = 20, Genero = Genero.Masculino },
-        new Produto { Id = 22, CategoriaId = 2, Nome = "Vestido Midi Floral", Descricao = "Vestido leve para o verão", ValorCusto = 90.00m, ValorVenda = 149.90m, QtdeEstoque = 18, Genero = Genero.Feminino },
-        new Produto { Id = 23, CategoriaId = 6, Nome = "Calça Jeans Skinny", Descricao = "Jeans com elastano para conforto", ValorCusto = 100.00m, ValorVenda = 169.99m, QtdeEstoque = 28, Genero = Genero.Unissex },
-        new Produto { Id = 24, CategoriaId = 4, Nome = "Jaqueta Jeans Feminina", Descricao = "Estilo urbano e confortável", ValorCusto = 130.00m, ValorVenda = 199.99m, QtdeEstoque = 10, Genero = Genero.Feminino },
-        new Produto { Id = 25, CategoriaId = 5, Nome = "Shorts de Moletom", Descricao = "Conforto para o dia a dia", ValorCusto = 50.00m, ValorVenda = 89.99m, QtdeEstoque = 40, Genero = Genero.Unissex },
-        new Produto { Id = 26, CategoriaId = 2, Nome = "Camiseta Polo Preta Feminina", Descricao = "100% algodão, gola careca", ValorCusto = 35.00m, ValorVenda = 69.90m, QtdeEstoque = 60, Genero = Genero.Feminino },
-        new Produto { Id = 27, CategoriaId = 2, Nome = "Macacão Feminino", Descricao = "Look prático e estiloso", ValorCusto = 110.00m, ValorVenda = 179.99m, QtdeEstoque = 14, Genero = Genero.Feminino },
-        new Produto { Id = 28, CategoriaId = 3, Nome = "Blusa Cropped Texturizada", Descricao = "Estilo jovem e leve", ValorCusto = 45.00m, ValorVenda = 79.99m, QtdeEstoque = 22, Genero = Genero.Feminino },
-        new Produto { Id = 29, CategoriaId = 2, Nome = "Camisa Polo Texturizada Masculina Marrom", Descricao = "Elegância casual", ValorCusto = 65.00m, ValorVenda = 109.99m, QtdeEstoque = 19, Genero = Genero.Masculino },
-        new Produto { Id = 30, CategoriaId = 2, Nome = "Regata Dry Fit", Descricao = "Ideal para treinos", ValorCusto = 30.00m, ValorVenda = 59.90m, QtdeEstoque = 50, Genero = Genero.Unissex },
+    // ===== TÊNIS =====
+    new Produto { Id = 1, CategoriaId = 1, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Genero = Genero.Unissex, Marca="Nike", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual" },
+    new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Genero = Genero.Unissex, Marca="Adidas", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20, Genero = Genero.Masculino, Marca="Puma", Cor="Colorido", Material="Tecido e Sintético", AtividadeRecomendada="Casual" },
+    new Produto { Id = 4, CategoriaId = 1, Nome = "Vans Old Skool", Descricao = "Tênis skatista em lona e camurça", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22, Genero = Genero.Masculino, Marca="Vans", Cor="Preto", Material="Lona e Camurça", AtividadeRecomendada="Skate" },
+    new Produto { Id = 5, CategoriaId = 1, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15, Genero = Genero.Unissex, Marca="New Balance", Cor="Cinza", Material="Suede e Malha", AtividadeRecomendada="Casual" },
+    new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30, Genero = Genero.Unissex, Marca="Converse", Cor="Preto", Material="Lona", AtividadeRecomendada="Casual" },
+    new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12, Genero = Genero.Unissex, Marca="Asics", Cor="Azul", Material="Mesh", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10, Genero = Genero.Unissex, Marca="Nike", Cor="Colorido", Material="Couro e Sintético", AtividadeRecomendada="Casual" },
+    new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8, Genero = Genero.Masculino, Marca="Mizuno", Cor="Preto", Material="Mesh e Borracha", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14, Genero = Genero.Feminino, Marca="Fila", Cor="Branco", Material="Sintético", AtividadeRecomendada="Casual" },
+    new Produto { Id = 11, CategoriaId = 1, Nome = "Reebok Classic", Descricao = "Tênis casual vintage", ValorCusto = 180.00m, ValorVenda = 299.99m, QtdeEstoque = 16, Genero = Genero.Unissex, Marca="Reebok", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual" },
+    new Produto { Id = 12, CategoriaId = 1, Nome = "Under Armour HOVR", Descricao = "Tênis esportivo respirável", ValorCusto = 310.00m, ValorVenda = 459.99m, QtdeEstoque = 10, Genero = Genero.Masculino, Marca="Under Armour", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 13, CategoriaId = 1, Nome = "Jordan 1 Mid", Descricao = "Tênis icônico da linha Jordan", ValorCusto = 450.00m, ValorVenda = 749.99m, QtdeEstoque = 6, Genero = Genero.Masculino, Marca="Nike Jordan", Cor="Preto/Vermelho", Material="Couro", AtividadeRecomendada="Casual" },
+    new Produto { Id = 14, CategoriaId = 1, Nome = "Oakley Modoc", Descricao = "Tênis robusto e confortável", ValorCusto = 280.00m, ValorVenda = 399.99m, QtdeEstoque = 18, Genero = Genero.Masculino, Marca="Oakley", Cor="Marrom", Material="Couro e Borracha", AtividadeRecomendada="Trilha" },
+    new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly", Descricao = "Tênis de corrida profissional", ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5, Genero = Genero.Masculino, Marca="Nike", Cor="Branco/Verde", Material="Mesh", AtividadeRecomendada="Corrida" },
 
-            // ===== DESTAQUES =====
-            new Produto { Id = 31, CategoriaId = 8, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25 },
-            new Produto { Id = 32, CategoriaId = 8, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18 },
-            new Produto { Id = 33, CategoriaId = 8, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20 },
-            new Produto { Id = 34, CategoriaId = 8, Nome = "Vans Old Skool", Descricao = "Tênis skatista em lona e camurça", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22 },
-            new Produto { Id = 35, CategoriaId = 8, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15 },
-            new Produto { Id = 36, CategoriaId = 8, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30 },
-            new Produto { Id = 37, CategoriaId = 8, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12 },
-            new Produto { Id = 38, CategoriaId = 8, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10 },
-            new Produto { Id = 39, CategoriaId = 8, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8 },
-            new Produto { Id = 40, CategoriaId = 8, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14 },
+    // ===== ROUPAS =====
+    new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca", Descricao = "100% algodão, modelagem larga", ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Genero = Genero.Masculino, Marca="9xHype", Cor="Branco", Material="Algodão", AtividadeRecomendada="Casual" },
+    new Produto { Id = 17, CategoriaId = 6, Nome = "Calça Cargo Preta", Descricao = "Com bolsos laterais e ajuste no tornozelo", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, Genero = Genero.Masculino, Marca="9xHype", Cor="Preto", Material="Algodão e Poliéster", AtividadeRecomendada="Casual" },
+    new Produto { Id = 18, CategoriaId = 4, Nome = "Jaqueta Corta-Vento", Descricao = "Impermeável e leve, ideal para dias chuvosos", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Poliéster", AtividadeRecomendada="Esportivo" },
+    new Produto { Id = 19, CategoriaId = 3, Nome = "Moletom Liso com Capuz", Descricao = "Moletom peluciado unissex", ValorCusto = 80.00m, ValorVenda = 129.90m, QtdeEstoque = 25, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Algodão", AtividadeRecomendada="Casual" },
+    new Produto { Id = 20, CategoriaId = 5, Nome = "Bermuda de Sarja Bege", Descricao = "Estilo casual, com bolsos laterais", ValorCusto = 60.00m, ValorVenda = 99.99m, QtdeEstoque = 35, Genero = Genero.Masculino, Marca="9xHype", Cor="Bege", Material="Sarja", AtividadeRecomendada="Casual" },
+    new Produto { Id = 21, CategoriaId = 2, Nome = "Camisa Social Slim", Descricao = "Camisa masculina, algodão, modelagem justa", ValorCusto = 70.00m, ValorVenda = 119.99m, QtdeEstoque = 20, Genero = Genero.Masculino, Marca="9xHype", Cor="Branca", Material="Algodão", AtividadeRecomendada="Social" },
+    new Produto { Id = 22, CategoriaId = 2, Nome = "Vestido Midi Floral", Descricao = "Vestido leve para o verão", ValorCusto = 90.00m, ValorVenda = 149.90m, QtdeEstoque = 18, Genero = Genero.Feminino, Marca="9xHype", Cor="Floral", Material="Viscose", AtividadeRecomendada="Casual" },
+    new Produto { Id = 23, CategoriaId = 6, Nome = "Calça Jeans Skinny", Descricao = "Jeans com elastano para conforto", ValorCusto = 100.00m, ValorVenda = 169.99m, QtdeEstoque = 28, Genero = Genero.Unissex, Marca="9xHype", Cor="Azul Jeans", Material="Jeans com Elastano", AtividadeRecomendada="Casual" },
+    new Produto { Id = 24, CategoriaId = 4, Nome = "Jaqueta Jeans Feminina", Descricao = "Estilo urbano e confortável", ValorCusto = 130.00m, ValorVenda = 199.99m, QtdeEstoque = 10, Genero = Genero.Feminino, Marca="9xHype", Cor="Azul Jeans", Material="Jeans", AtividadeRecomendada="Casual" },
+    new Produto { Id = 25, CategoriaId = 5, Nome = "Shorts de Moletom", Descricao = "Conforto para o dia a dia", ValorCusto = 50.00m, ValorVenda = 89.99m, QtdeEstoque = 40, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Moletom", AtividadeRecomendada="Casual" },
+    new Produto { Id = 26, CategoriaId = 2, Nome = "Camiseta Polo Preta Feminina", Descricao = "100% algodão, gola careca", ValorCusto = 35.00m, ValorVenda = 69.90m, QtdeEstoque = 60, Genero = Genero.Feminino, Marca="9xHype", Cor="Preto", Material="Algodão", AtividadeRecomendada="Casual" },
+    new Produto { Id = 27, CategoriaId = 2, Nome = "Macacão Feminino", Descricao = "Look prático e estiloso", ValorCusto = 110.00m, ValorVenda = 179.99m, QtdeEstoque = 14, Genero = Genero.Feminino, Marca="9xHype", Cor="Preto", Material="Viscose", AtividadeRecomendada="Casual" },
+    new Produto { Id = 28, CategoriaId = 3, Nome = "Blusa Cropped Texturizada", Descricao = "Estilo jovem e leve", ValorCusto = 45.00m, ValorVenda = 79.99m, QtdeEstoque = 22, Genero = Genero.Feminino, Marca="9xHype", Cor="Rosa", Material="Poliéster", AtividadeRecomendada="Casual" },
+    new Produto { Id = 29, CategoriaId = 2, Nome = "Camisa Polo Texturizada Masculina Marrom", Descricao = "Elegância casual", ValorCusto = 65.00m, ValorVenda = 109.99m, QtdeEstoque = 19, Genero = Genero.Masculino, Marca="9xHype", Cor="Marrom", Material="Algodão", AtividadeRecomendada="Casual" },
+    new Produto { Id = 30, CategoriaId = 2, Nome = "Regata Dry Fit", Descricao = "Ideal para treinos", ValorCusto = 30.00m, ValorVenda = 59.90m, QtdeEstoque = 50, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Poliéster", AtividadeRecomendada="Treino" },
 
-        };
+    // ===== DESTAQUES =====
+    new Produto { Id = 31, CategoriaId = 8, Nome = "Nike Air Force 1", Descricao = "Tênis casual branco clássico", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Marca="Nike", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual" },
+    new Produto { Id = 32, CategoriaId = 8, Nome = "Adidas Ultraboost", Descricao = "Tênis esportivo com amortecimento", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Marca="Adidas", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 33, CategoriaId = 8, Nome = "Puma RS-X", Descricao = "Tênis estiloso retrô", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20, Marca="Puma", Cor="Colorido", Material="Tecido e Sintético", AtividadeRecomendada="Casual" },
+    new Produto { Id = 34, CategoriaId = 8, Nome = "Vans Old Skool", Descricao = "Tênis skatista em lona e camurça", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22, Marca="Vans", Cor="Preto", Material="Lona e Camurça", AtividadeRecomendada="Skate" },
+    new Produto { Id = 35, CategoriaId = 8, Nome = "New Balance 574", Descricao = "Tênis retrô confortável", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15, Marca="New Balance", Cor="Cinza", Material="Suede e Malha", AtividadeRecomendada="Casual" },
+    new Produto { Id = 36, CategoriaId = 8, Nome = "Converse Chuck Taylor", Descricao = "Tênis cano alto icônico", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30, Marca="Converse", Cor="Preto", Material="Lona", AtividadeRecomendada="Casual" },
+    new Produto { Id = 37, CategoriaId = 8, Nome = "Asics Gel-Kayano 28", Descricao = "Tênis de corrida com suporte", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12, Marca="Asics", Cor="Azul", Material="Mesh", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 38, CategoriaId = 8, Nome = "Nike Dunk Low", Descricao = "Tênis streetwear com cores vibrantes", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10, Marca="Nike", Cor="Colorido", Material="Couro e Sintético", AtividadeRecomendada="Casual" },
+    new Produto { Id = 39, CategoriaId = 8, Nome = "Mizuno Wave Prophecy", Descricao = "Tênis de performance com amortecimento", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8, Marca="Mizuno", Cor="Preto", Material="Mesh e Borracha", AtividadeRecomendada="Corrida" },
+    new Produto { Id = 40, CategoriaId = 8, Nome = "Fila Disruptor II", Descricao = "Tênis chunky retrô", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14, Marca="Fila", Cor="Branco", Material="Sintético", AtividadeRecomendada="Casual" },
+
+};
+
         builder.Entity<Produto>().HasData(produtos);
 
         List<ProdutoFoto> produtoFotos = new List<ProdutoFoto>
