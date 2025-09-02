@@ -382,7 +382,9 @@
                 {
                     <div class="card cardCarrossel">
                         <a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id">
-                            <img class="card-img-top"src="@(produto.Fotos.Count == 0 ?"https://dummyimage.com/450x300/dee2e6/6c757d.jpg": produto.Fotos[0].ArquivoFoto)"alt="@produto.Nome" />
+                            <img class="card-img-top"
+                                src="@(produto.Fotos.Count == 0 ?"https://dummyimage.com/450x300/dee2e6/6c757d.jpg": produto.Fotos[0].ArquivoFoto)"
+                                alt="@produto.Nome" />
                         </a>
                         <div class="card-body">
                             <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
@@ -395,162 +397,165 @@
     </section>
 
 
-     <!-- Comentários -->
-        <div class="comentarios">
+    <!-- Comentários -->
+    <div class="comentarios">
 
-            <div class="headerComentarios">
-                <h1 class="titlePadrao">Comentários</h1>
-                <button id="botaoAddComentario">Adicionar</button>
+        <div class="headerComentarios">
+            <h1 class="titlePadrao">Comentários</h1>
+            <button id="botaoAddComentario">Adicionar</button>
+        </div>
+
+        <div class="listaCometarios">
+
+            <!-- Comentário novo -->
+            <form id="comentarioNovo" class="comentario comentarioNovoEstilo oculto">
+                <div class="linhaUmComentarioNovo">
+                    <div class="infoEscritas">
+                        <div class="perfil">
+                            <img src="/assets/PagProduto/Perfis/PerfilVazio.png" alt="" class="imgPerfil">
+                            <p class="nomePerfil">Nome do Usuário</p>
+                        </div>
+
+                        <!-- Avaliação -->
+                        <div class="avaliacao" id="avaliacaoNova">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <input type="hidden" name="Nota" id="notaSelecionada" value="0" />
+
+                        <!-- Comentário -->
+                        <div class="txtComentario">
+                            <textarea class="paragrafoComentario" id="comentarioAutoAltura" name="Comentario"
+                                placeholder="Escreva Seu Comentário" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Upload da imagem -->
+                    <div class="imgComentario">
+                        <label for="fotoComentario" style="cursor: pointer;">
+                            <img src="../assets/PagProduto/Cometarios/ImagemVazia.png" alt="" class="imgRevilComentario"
+                                id="previewImagem">
+                        </label>
+                        <input type="file" id="fotoComentario" name="Foto" accept="image/*" style="display: none;"
+                            onchange="previewImagem(this)">
+                    </div>
+                </div>
+
+                <div class="linhaDoisComentarioNovo">
+                    <button type="submit" class="btnEnviarComentario">
+                        <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
+                        Enviar Comentário
+                    </button>
+                    <button type="" class="btnDeletarComentario">
+                        <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                        Deletar Comentário
+                    </button>
+                </div>
+            </form>
+
+            <!-- Container de comentários existentes -->
+            <div id="comentariosContainer">
+                <!-- Comentários já existentes podem ser colocados aqui -->
+            </div>
+            <!-- Fim Comentário novo -->
+
+            <div class="comentario">
+                <div class="infoEscritas">
+                    <div class="perfil">
+                        <img src="/assets/PagProduto/Perfis/exemploImgPerfil.jpg" alt="" class="imgPerfil">
+                        <p class="nomePerfil">Carlos Eduardo</p>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="txtComentario">
+                        <p class="paragrafoComentario">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum
+                            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris. Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+                </div>
+                <div class="imgComentario">
+                    <img src="/assets/PagProduto/Cometarios/imgRevilExemplo.jpg" alt="" class="imgRevilComentario">
+                </div>
             </div>
 
-            <div class="listaCometarios">
-
-                <!-- Comentário novo -->
-                <form class="comentario comentarioNovoEstilo oculto" id="comentarioNovo" method="post"
-                    action="/Comentarios/Salvar" enctype="multipart/form-data">
-
-                    <div class="linhaUmComentarioNovo">
-                        <div class="infoEscritas">
-                            <div class="perfil">
-                                <img src="/assets/PagProduto/Perfis/PerfilVazio.png" alt="" class="imgPerfil">
-                                <p class="nomePerfil">Nome do Usuário</p>
-                            </div>
-
-                            <!-- Avaliação -->
-                            <div class="avaliacao" id="avaliacaoNova">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <input type="hidden" name="Nota" id="notaSelecionada" value="0" />
-
-                            <!-- Comentário -->
-                            <div class="txtComentario">
-                                <textarea class="paragrafoComentario" id="comentarioAutoAltura" name="Comentario"
-                                    placeholder="Escreva Seu Comentário" required></textarea>
-                            </div>
-                        </div>
-
-                        <!-- Upload da imagem -->
-                        <div class="imgComentario">
-                            <label for="fotoComentario" style="cursor: pointer;">
-                                <img src="../assets/PagProduto/Cometarios/ImagemVazia.png" alt=""
-                                    class="imgRevilComentario" id="previewImagem">
-                            </label>
-                            <input type="file" id="fotoComentario" name="Foto" accept="image/*" style="display: none;"
-                                onchange="previewImagem(this)">
-                        </div>
+            <div class="comentario">
+                <div class="infoEscritas">
+                    <div class="perfil">
+                        <img src="/assets/PagProduto/Perfis/exemploImgPerfil2.jpg" alt="" class="imgPerfil">
+                        <p class="nomePerfil">José Antônio Gallo Junior</p>
                     </div>
-
-                    <div class="linhaDoisComentarioNovo">
-                        <button type="submit" class="btnEnviarComentario">
-                            <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
-                            Enviar Comentário
-                        </button>
-                        <button type="" class="btnDeletarComentario">
-                            <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
-                            Deletar Comentário
-                        </button>
+                    <div class="avaliacao">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
                     </div>
-                </form>
-                <!-- Fim Comentário novo -->
-
-                <div class="comentario">
-                    <div class="infoEscritas">
-                        <div class="perfil">
-                            <img src="/assets/PagProduto/Perfis/exemploImgPerfil.jpg" alt="" class="imgPerfil">
-                            <p class="nomePerfil">Carlos Eduardo</p>
-                        </div>
-                        <div class="avaliacao">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="txtComentario">
-                            <p class="paragrafoComentario">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum
-                                dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris. Lorem ipsum dolor sit amet.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="imgComentario">
-                        <img src="/assets/PagProduto/Cometarios/imgRevilExemplo.jpg" alt="" class="imgRevilComentario">
+                    <div class="txtComentario">
+                        <p class="paragrafoComentario">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum
+                            dolor sit amet.
+                        </p>
                     </div>
                 </div>
+                <div class="imgComentario">
+                    <img src="/assets/PagProduto/Cometarios/imgRevilExemplo2.jpg" alt="" class="imgRevilComentario">
+                </div>
+            </div>
 
-                <div class="comentario">
-                    <div class="infoEscritas">
-                        <div class="perfil">
-                            <img src="/assets/PagProduto/Perfis/exemploImgPerfil2.jpg" alt="" class="imgPerfil">
-                            <p class="nomePerfil">José Antônio Gallo Junior</p>
-                        </div>
-                        <div class="avaliacao">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </div>
-                        <div class="txtComentario">
-                            <p class="paragrafoComentario">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Lorem ipsum
-                                dolor sit amet.
-                            </p>
-                        </div>
+            <div class="comentario">
+                <div class="infoEscritas">
+                    <div class="perfil">
+                        <img src="/assets/PagProduto/Perfis/exemploImgPerfil3.jpeg" alt="" class="imgPerfil">
+                        <p class="nomePerfil">Marcio Jesus de Morais</p>
                     </div>
-                    <div class="imgComentario">
-                        <img src="/assets/PagProduto/Cometarios/imgRevilExemplo2.jpg" alt="" class="imgRevilComentario">
+                    <div class="avaliacao">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="txtComentario">
+                        <p class="paragrafoComentario">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
                     </div>
                 </div>
-
-                <div class="comentario">
-                    <div class="infoEscritas">
-                        <div class="perfil">
-                            <img src="/assets/PagProduto/Perfis/exemploImgPerfil3.jpeg" alt="" class="imgPerfil">
-                            <p class="nomePerfil">Marcio Jesus de Morais</p>
-                        </div>
-                        <div class="avaliacao">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="txtComentario">
-                            <p class="paragrafoComentario">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="imgComentario">
-                        <img src="/assets/PagProduto/Cometarios/imgRevilExemplo3.jpg" alt="" class="imgRevilComentario">
-                    </div>
+                <div class="imgComentario">
+                    <img src="/assets/PagProduto/Cometarios/imgRevilExemplo3.jpg" alt="" class="imgRevilComentario">
                 </div>
+            </div>
 
-            </div><!--Lista Comentários-->
+        </div><!--Lista Comentários-->
 
-        </div> <!--Fim Comentários-->
+    </div> <!--Fim Comentários-->
 
 
     <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js"

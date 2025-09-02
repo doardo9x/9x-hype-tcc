@@ -1,43 +1,85 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const carouselList = document.querySelector('.carousel__list-Modal');
-  const elems = Array.from(document.querySelectorAll('.carousel__item-Modal'));
+// Adicionar/Cancelar comentário
+const botaoAdicionar = document.getElementById('botaoAddComentario');
+const areaComentario = document.getElementById('formComentario');
 
-  // inicializa posições (0 central, os outros 1 e -1)
-  elems.forEach((elem, index) => {
-      if(index === 0) elem.dataset.pos = 0;
-      else if(index === 1) elem.dataset.pos = 1;
-      else if(index === 2) elem.dataset.pos = -1;
-  });
+botaoAdicionar.addEventListener('click', () => {
+    areaComentario.classList.toggle('oculto');
+    botaoAdicionar.textContent = areaComentario.classList.contains('oculto') ? 'Adicionar Comentário' : 'Cancelar';
+});
 
-  carouselList.addEventListener('click', function (event) {
-      const newActive = event.target.closest('.carousel__item-Modal');
-      if (!newActive || newActive.classList.contains('carousel__item-Modal_active')) return;
+// Avaliação do comentário novo
+const stars = document.querySelectorAll('#avaliacaoNova .fa-star');
+stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+        stars.forEach(s => s.classList.remove('checked'));
+        for (let i = 0; i <= index; i++) stars[i].classList.add('checked');
+        document.getElementById('notaSelecionada').value = index + 1;
+    });
+});
 
-      update(newActive);
-  });
+// Preview da imagem do comentário
+function previewImagem(input) {
+    const file = input.files[0];
+    const preview = document.getElementById('previewImagem');
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = e => preview.src = e.target.result;
+        reader.readAsDataURL(file);
+    }
+}
 
-  const update = function (newActive) {
-      const newActivePos = parseInt(newActive.dataset.pos);
+// Altura automática do textarea
+const textarea = document.getElementById('comentarioAutoAltura');
+textarea.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+});
+textarea.dispatchEvent(new Event('input'));
 
-      const current = elems.find(elem => parseInt(elem.dataset.pos) === 0);
-      const prev = elems.find(elem => parseInt(elem.dataset.pos) === -1);
-      const next = elems.find(elem => parseInt(elem.dataset.pos) === 1);
+// Adicionar comentário no container
+const formComentario = document.getElementById('formComentario');
+const comentariosContainer = document.getElementById('comentariosContainer');
 
-      current.classList.remove('carousel__item-Modal_active');
+formComentario.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      [current, prev, next].forEach(item => {
-          if (!item) return;
-          const pos = parseInt(item.dataset.pos);
-          item.dataset.pos = getPos(pos, newActivePos);
-      });
+    const nome = document.querySelector('.nomePerfil').textContent;
+    const comentario = textarea.value;
+    const nota = parseInt(document.getElementById('notaSelecionada').value);
+    const inputImagem = document.getElementById('fotoComentario');
+    let imgSrc = inputImagem.files[0] ? URL.createObjectURL(inputImagem.files[0]) : '/assets/PagProduto/Perfis/PerfilVazio.png';
 
-      newActive.classList.add("carousel__item-Modal_active");
-  };
+    const novoComentario = document.createElement('div');
+    novoComentario.classList.add('comentario');
+    novoComentario.innerHTML = `
+        <div class="infoEscritas">
+            <div class="perfil">
+                <img src="${imgSrc}" alt="" class="imgPerfil">
+                <p class="nomePerfil">${nome}</p>
+            </div>
+            <div class="avaliacao">
+                ${[1,2,3,4,5].map(i => `<span class="fa fa-star ${i <= nota ? 'checked' : ''}"></span>`).join('')}
+            </div>
+            <div class="txtComentario">
+                <p class="paragrafoComentario">${comentario}</p>
+            </div>
+            <button class="btnDeletarComentario">Deletar Comentário</button>
+        </div>
+    `;
 
-  const getPos = function(current, active) {
-      const diff = current - active;
-      if(diff === 0) return 0;
-      if(diff === -1 || diff === 2) return -1;
-      if(diff === 1 || diff === -2) return 1;
-  };
+    comentariosContainer.prepend(novoComentario);
+
+    // Botão deletar
+    novoComentario.querySelector('.btnDeletarComentario').addEventListener('click', () => {
+        novoComentario.remove();
+    });
+
+    // Resetar formulário
+    formComentario.reset();
+    document.getElementById('notaSelecionada').value = 0;
+    document.getElementById('previewImagem').src = '../assets/PagProduto/Cometarios/ImagemVazia.png';
+    textarea.style.height = 'auto';
+    stars.forEach(s => s.classList.remove('checked'));
+    areaComentario.classList.add('oculto');
+    botaoAdicionar.textContent = 'Adicionar Comentário';
 });
