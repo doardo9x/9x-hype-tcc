@@ -262,6 +262,18 @@ public class AppDbSeed
                 Nome = "José Antonio Gallo Junior",
                 DataNascimento = DateTime.Parse("05/08/1981"),
                 Foto = "/img/usuarios/ddf093a6-6cb5-4ff7-9a64-83da34aee005.png"
+            },
+            new Usuario(){
+                Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee006",
+                Email = "eduardo010304@gmail.com",
+                NormalizedEmail = "EDUARDO010304@GMAIL.COM",
+                UserName = "EduardoRibeiro",
+                NormalizedUserName = "EDUARDORIBEIRO",
+                LockoutEnabled = true,
+                EmailConfirmed = true,
+                Nome = "Eduardo Ribeiro",
+                DataNascimento = DateTime.Parse("05/08/1981"),
+                Foto = "/img/usuarios/ddf093a6-6cb5-4ff7-9a64-83da34aee005.png"
             }
         };
         foreach (var user in usuarios)

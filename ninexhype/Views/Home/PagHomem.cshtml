@@ -1,11 +1,13 @@
 @model ninexhype.ViewModels.IndexVM
 @{
     ViewData["Title"] = "Homens";
+
 }
+<link rel="stylesheet" href="~/css/PagGeneros.css" />
 
 <section class="contRoupa">
     <div class="carrosselRoupas">
-        <div class="Linha"><p class="LinhaTitulo fs-1 center">Sneakers</p></div>
+        <div class="Linha center"><p class="LinhaTitulo fs-1 center">Sneakers</p></div>
         
         @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 2))
         {

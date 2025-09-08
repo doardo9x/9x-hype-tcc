@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="Eduardo Ribeiro" content="" />
     <title>ninexhype - @ViewData["Title"]</title>
     <!-- Favicon-->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -15,7 +15,14 @@
 </head>
 
 <body>
-
+    @{
+        var isHomeIndex = (ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
+                           ViewContext.RouteData.Values["action"]?.ToString() == "Index");
+    }
+    @if (!isHomeIndex)
+    {
+        <partial name="_Header" />
+    }
 
     @RenderBody()
 
