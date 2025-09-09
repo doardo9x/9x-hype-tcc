@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+}
+
+body{
+    background-color: var(--main-BG-color);
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ninexLogo {
+    color: var(--Destaque-color);
+    font-family: 'Dancing Script';
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 20px;
+}
+.ninexLogo:hover {
+    color: var(--Destaque-color);
+    font-family: 'Dancing Script';
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 20px;
+}
+
+a.esqueci-senha,
+a.crie-conta {
+    color: var(--Destaque-color) !important;
+    text-decoration: underline;
+}
+a.esqueci-senha:hover,
+a.crie-conta:hover {
+    color: var(--RosaClarinho-color) !important;
+}
+
+.containerLogin{
+    display: flex;
+
+}
+
+.cardLogin{
+    background-color: var(--RoxoForte-color);
+}
+
+.TextWhite{
+    color: white;
+}
+
+.TextRosa{
+    color: var(--Destaque-color);
+    text-decoration: none;
+}
+
+input{
+    background-color: #171925;
+    color: white;
+    border: 0;
+}
+
+label{
+    background-color: #171925;
+    color: rgb(0, 0, 0);
+    border: 0;
+    background-color: transparent !important;
+}
+.form-control {
+    padding: 0;
+    border: 0;
+}
