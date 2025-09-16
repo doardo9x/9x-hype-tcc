@@ -1,77 +1,124 @@
+<link rel="stylesheet" href="~/css/tabelaProdutos.css">
+
 @model IEnumerable<ninexhype.Models.Produto>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="tituloGerenciar">Gerenciar Produtos</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QtdeEstoque)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorCusto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorVenda)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destaque)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QtdeEstoque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorCusto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorVenda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destaque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+<div class="botoes">
+    <p class="botaoAdicionar botao">
+        <a asp-action="Create" class="textoBotaoAdd">Adicionar Produto</a>
+    </p>
+
+    <p class="botaoEditar botao">
+        <a href="#" id="btnEditar" class="textoBotaoEdit">Editar Produto</a>
+    </p>
+
+    <p class="botaoDetalhes botao">
+        <a href="#" id="btnDetalhes" class="textoBotaoDetails">Ver Detalhes</a>
+    </p>
+
+    <p class="botaoDeletar botao">
+        <a href="#" id="btnDeletar" class="textoBotaoDelete">Deletar Produto</a>
+    </p>
+</div>
+
+<div class="tabela">
+    <table class="table" id="tabelaProdutos">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Categoria)</th>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.Descricao)</th>
+                <th>@Html.DisplayNameFor(model => model.QtdeEstoque)</th>
+                <th>@Html.DisplayNameFor(model => model.ValorCusto)</th>
+                <th>@Html.DisplayNameFor(model => model.ValorVenda)</th>
+                <th>@Html.DisplayNameFor(model => model.Destaque)</th>
+                <th>@Html.DisplayNameFor(model => model.Genero)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr data-id="@item.Id" class="itemTabela"> 
+                    <td>@Html.DisplayFor(modelItem => item.Categoria.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+                    <td>@Html.DisplayFor(modelItem => item.QtdeEstoque)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ValorCusto)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ValorVenda)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Destaque)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Genero)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+    // Adiciona classe "active" ao botão clicado
+    document.querySelectorAll('.botoes .botao a').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault(); // Evita o comportamento padrão do link
+        document.querySelectorAll('.botoes .botao').forEach(div => div.classList.remove('active'));
+        this.parentElement.classList.add('active'); // Adiciona 'active' na div pai
+    });
+});
+
+    // Adiciona evento de clique às linhas da tabela
+    document.querySelectorAll('#tabelaProdutos tbody tr').forEach(row => {
+        row.addEventListener('click', function () {
+            const produtoId = this.getAttribute('data-id');
+            const action = document.querySelector('.botoes .active')?.id;
+
+            if (action === 'btnEditar') {
+                window.location.href = `/Produtos/Edit/${produtoId}`;
+            } else if (action === 'btnDetalhes') {
+                window.location.href = `/Produtos/Details/${produtoId}`;
+            } else if (action === 'btnDeletar') {
+                if (confirm('Tem certeza que deseja deletar este produto?')) {
+                    window.location.href = `/Produtos/Delete/${produtoId}`;
+                }
+            } else {
+                document.getElementById('produtoSelecionadoTexto').innerText = 'Por favor, selecione uma ação antes de clicar no produto.';
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const rows = document.querySelectorAll('#tabelaProdutos tbody tr');
+        rows.forEach((row, index) => {
+            if (index % 2 === 0) {
+                row.classList.add('linha-par'); // Classe para linhas pares
+            } else {
+                row.classList.add('linha-impar'); // Classe para linhas ímpares
+            }
+        });
+    });
+</script>
+    <style>
+        /* Estilo para destacar a linha selecionada */
+        .selected {
+            background-color: #d3d3d3;
+        }
+
+        /* Estilo para o botão ativo */
+        .botoes .active {
+            color: white;
+            font-weight: bold;
+            outline: 2px solid #622efe;
+        }
+
+        /* Estilo para o texto do produto selecionado */
+        .produtoSelecionadoContainer {
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 }
-    </tbody>
-</table>
