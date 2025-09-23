@@ -98,12 +98,12 @@
 
 .itemTabela{
     background-color: var(--main-BG-color);
-
 }
 
 .table th {
-    background-color: var(--CinzaFraco-color); 
+    background-color: var(--CinzaFraco-color) !important;
     color: white; 
+    font-weight: 600 !important;
 }
 
 .textoBotaoAdd{
@@ -137,11 +137,11 @@
 }
 
 .linha-par {
-    background-color: #f9f9f9; /* Cor para linhas pares */
+    background-color: #f9f9f9; 
 }
 
 .linha-impar {
-    background-color: red; /* Cor para linhas ímpares */
+    background-color: red; 
 }
 
 .table {
@@ -155,4 +155,26 @@
     height: auto;
     justify-content: center;
     align-items: center;
+}
+
+.selected {
+    background-color: #d3d3d3;
+}
+
+.botoes .active {
+    color: white;
+    font-weight: bold;
+    outline: 2px solid #622efe;
+}
+
+.produtoSelecionadoContainer {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#tabelaProdutos tbody tr.selected {
+    background-color: #d3d3d3 !important; /* Cor de fundo para a linha selecionada */
+    color: #000; /* Cor do texto para contraste */
 }
