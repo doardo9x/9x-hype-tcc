@@ -118,6 +118,11 @@ footer {
     display: flex;
     justify-content: center;
 }
+@media screen and (min-width: 700px) {
+    .HeaderLogo{
+        display: none;
+    }
+}
 
 /* Responsividade do footer */
 @media(max-width: 1000px) {
