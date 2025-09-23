@@ -1,5 +1,121 @@
 @{
     ViewData["Title"] = "Área Administrativa";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
 
+}
+<style>
+    .vertical {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .vertical>div {
+        font-size: 14px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+    }
+
+    .grafico {
+        width: 50px;
+        background-color: #E75DFF;
+    }
+</style>
+
+<body>
+    <div class="ADMcontainer ">
+
+        <div class=" bodyAdmContainer">
+            <div class="center paddingtop100">
+                <h1 class="titleDashboard w100"> DASHBOARD</h1>
+
+            </div>
+            <div class="center bordertitle ">
+                <div class="fs-5 ">O que voce deseja?</div>
+            </div>
+
+            <div class="DashboardC center">
+                <div class="linksContainer ">
+                    <a class="nav-link a-reset border-b fs-5" asp-controller="Categorias" asp-action="Index">
+                        <i class="fa-solid fa-layer-group"></i>
+                        Categorias
+                    </a>
+                    <a class="nav-link a-reset border-b fs-5" asp-controller="Produtos" asp-action="Index">
+                        <i class="fa-solid fa-list-ul"></i>
+                        Produtos
+                    </a>
+                </div>
+                <div class="Graficos ">
+                    <div class="w100 ">
+                        <div class="fs-5">VISUALIZAR VENDAS...</div>
+                    </div>
+                    <div class="vertical w100 center">
+                        <div>
+                            <div> 150%</div>
+                            <div class="grafico" style="height: 10px;"></div>
+                            <div>Janeiro</div>
+                        </div>
+                        <div>
+                            <div>100%</div>
+                            <div class="grafico" style="height: 20px;"></div>
+                            <div>Fevereiro</div>
+                        </div>
+                        <div>
+                            <div>50%</div>
+                            <div class="grafico" style="height: 30px;"></div>
+                            <div>Março</div>
+                        </div>
+                        <div>
+                            <div>10%</div>
+                            <div class="grafico" style="height: 40px;"></div>
+                            <div>Abril</div>
+                        </div>
+                        <div>
+                            <div> 150%</div>
+                            <div class="grafico" style="height: 50px;"></div>
+                            <div>Maio</div>
+                        </div>
+                        <div>
+                            <div>100%</div>
+                            <div class="grafico" style="height: 60px;"></div>
+                            <div>Junho</div>
+                        </div>
+                        <div>
+                            <div>50%</div>
+                            <div class="grafico" style="height: 70px;"></div>
+                            <div>Julho</div>
+                        </div>
+                        <div>
+                            <div>10%</div>
+                            <div class="grafico" style="height: 80px;"></div>
+                            <div>Agosto</div>
+                        </div>
+                        <div>
+                            <div> 150%</div>
+                            <div class="grafico" style="height: 90px;"></div>
+                            <div>Setembro</div>
+                        </div>
+                        <div>
+                            <div>100%</div>
+                            <div class="grafico" style="height: 100px;"></div>
+                            <div>Outubro</div>
+                        </div>
+                        <div>
+                            <div>50%</div>
+                            <div class="grafico" style="height: 110px;"></div>
+                            <div>Novembro</div>
+                        </div>
+                        <div>
+                            <div>10%</div>
+                            <div class="grafico" style="height: 120px;"></div>
+                            <div>Dezembro</div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
