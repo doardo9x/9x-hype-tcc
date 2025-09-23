@@ -1,66 +1,82 @@
+<link rel="stylesheet" href="~/css/details.css">
+
 @model ninexhype.Models.Produto
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="textoDetails">
+    <h1 class="detailEscrito">Detalhes</h1>
+</div>
 
-<div>
-    <h4>Produto</h4>
+<div class="quadradao">
+    <h4 class="tituloProduto">Produto</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Categoria.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QtdeEstoque)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QtdeEstoque)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorCusto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorCusto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorVenda)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorVenda)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Destaque)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Destaque)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Genero)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genero)
-        </dd>
+        <div class="quadradoEsq">
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Categoria)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Categoria.Nome)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.QtdeEstoque)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.QtdeEstoque)
+            </dd>
+        </div>
+
+        <div class="quadradoDir">
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ValorCusto)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ValorCusto)
+            </dd>
+
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ValorVenda)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ValorVenda)
+            </dd>
+
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Destaque)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Destaque)
+            </dd>
+
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Genero)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Genero)
+            </dd>
+        </div>
+
+
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
     <a asp-action="Index">Back to List</a>
 </div>

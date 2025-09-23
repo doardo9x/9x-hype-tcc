@@ -1,0 +1,80 @@
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
+    --Amarelo: #E8BB00;
+    --AmareloHover: #c5a00d;
+    --CinzaClaro: #808080;
+    --CinzaClaroHover: #515151;
+}
+
+.detailEscrito {
+    color: var(--Destaque-color);
+    align-self: start;
+}
+
+.quadradao {
+    background-color: var(--main-BG-color);
+    width: 80%;
+    border: 1px solid var(--Destaque-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+dl {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloProduto {
+    color: white;
+}
+
+dt {
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+   
+}
+
+dd {
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textoDetails{
+    width: 80%;
+}
+
+.quadradoEsq{
+    display: flex;
+    width: 50%;
+    height: auto;
+    border: 1px solid white;
+    flex-direction: column;
+}
+
+.quadradoDir{
+    display: flex;
+    width: 50%;
+    height: auto;
+    border: 1px solid white;
+    flex-direction: column;
+}

@@ -24,124 +24,10 @@
     margin-left: 3vh;
 }
 
-.textoBotao{
-    color: white;
-    text-decoration: none;
-}
-
-.botoes{
-    width: 100%;
-    display: flex;
-    gap: 50px;
-    padding-left: 3vh;
-}
-
-.botoes:hover{
-    background-color: transparent;
-} 
-
-.botaoAdicionar {
-    font-size: 20px;
-    width: 12%;
-    background-color: var(--CinzaFraco-color);
-    justify-content: center;
-    display: flex;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-.botaoAdicionar:Hover{
-    background-color: var(--CinzaClaroHover);
-}
-
-.botaoEditar{
-    font-size: 20px;
-    width: 12%;
-    background-color: var(--CinzaFraco-color);
-    justify-content: center;
-    display: flex;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-.botaoEditar:Hover{
-    background-color: var(--CinzaClaroHover);
-}
-
-.botaoDetalhes{
-    font-size: 20px;
-    width: 12%;
-    background-color: var(--CinzaFraco-color);
-    justify-content: center;
-    display: flex;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-.botaoDetalhes:Hover{
-    background-color: var(--CinzaClaroHover);
-}
-
-.botaoDeletar{
-    font-size: 20px;
-    width: 12%;
-    background-color: var(--CinzaFraco-color);
-    justify-content: center;
-    display: flex;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-.botaoDeletar:Hover{
-    background-color: var(--CinzaClaroHover);
-}
-
-.itemTabela{
-    background-color: var(--main-BG-color);
-}
-
 .table th {
     background-color: var(--CinzaFraco-color) !important;
     color: white; 
     font-weight: 600 !important;
-}
-
-.textoBotaoAdd{
-    color: var(--VerdeCarrinho-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.textoBotaoEdit{
-    color: var(--Amarelo);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.textoBotaoDetails{
-    color: var(--CinzaClaro);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.textoBotaoDelete{
-    color: var(--VermelhoFav-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-
-.table td {
-    background-color: #22242c;
-    color: whitesmoke;
-}
-
-.linha-par {
-    background-color: #f9f9f9; 
-}
-
-.linha-impar {
-    background-color: red; 
 }
 
 .table {
@@ -157,24 +43,70 @@
     align-items: center;
 }
 
-.selected {
-    background-color: #d3d3d3;
+.botaoEdit{
+    height: auto;
+    width: auto;
+    background-color: var(--Amarelo);
+    display: flex;
+    border-radius: 5px;
 }
 
-.botoes .active {
+.botaoEdit:hover{
+    background-color: var(--AmareloHover);
+}
+
+.botaoDetails{
+    height: auto;
+    width: auto;
+    background-color: var(--CinzaClaro);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoDetails:hover{
+    background-color: var(--CinzaClaroHover);
+}
+
+.botaoDelete{
+    height: auto;
+    width: auto;
+    background-color: var(--VermelhoFav-color);
+    display: flex;
+    border-radius: 5px;
+}
+
+.botaoDelete:hover{
+    background-color: var(--VermelhoFavHover-color);
+}
+
+.divBotoes {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.botoesGerenciar{
     color: white;
-    font-weight: bold;
-    outline: 2px solid #622efe;
+    padding: 10px;
 }
 
-.produtoSelecionadoContainer {
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+.btnAddProduto{
+    height: 40px;
+    width: 200px;
+    background-color: red;
+    margin-left: 3vh;
+    margin-bottom: 1vh;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    color: var(--VerdeCarrinho-color);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--VerdeCarrinho-color);
 }
 
-#tabelaProdutos tbody tr.selected {
-    background-color: #d3d3d3 !important; /* Cor de fundo para a linha selecionada */
-    color: #000; /* Cor do texto para contraste */
+.btnAddProduto:hover {
+    background-color: var(--CinzaClaroHover);
 }

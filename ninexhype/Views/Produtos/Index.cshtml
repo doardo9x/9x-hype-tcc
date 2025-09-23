@@ -8,17 +8,10 @@
 
 <h1 class="tituloGerenciar">Gerenciar Produtos</h1>
 
-<div class="botoes">
-    <p class="botaoEditar botao">
-        <a href="#" id="btnEditar" class="textoBotaoEdit">Editar Produto</a>
-    </p>
-    <p class="botaoDetalhes botao">
-        <a href="#" id="btnDetalhes" class="textoBotaoDetails">Ver Detalhes</a>
-    </p>
-    <p class="botaoDeletar botao">
-        <a href="#" id="btnDeletar" class="textoBotaoDelete">Deletar Produto</a>
-    </p>
-</div>
+<button class="btnAddProduto">
+    Adicionar Produto
+    <i class="fa-solid fa-plus"></i>    
+</button>
 
 <div class="tabela">
     <table class="table" id="tabelaProdutos">
@@ -31,6 +24,7 @@
                 <th>@Html.DisplayNameFor(model => model.ValorCusto)</th>
                 <th>@Html.DisplayNameFor(model => model.ValorVenda)</th>
                 <th>@Html.DisplayNameFor(model => model.Genero)</th>
+                <th>Gerenciar</th>
             </tr>
         </thead>
         <tbody>
@@ -44,10 +38,29 @@
                     <td>@Html.DisplayFor(modelItem => item.ValorCusto)</td>
                     <td>@Html.DisplayFor(modelItem => item.ValorVenda)</td>
                     <td>@Html.DisplayFor(modelItem => item.Genero)</td>
+                     <td>
+                        <div class="divBotoes">
+                            <div class="botaoEdit">
+                                <a asp-action="Edit" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-pen-to-square botoesGerenciar"></i>
+                                </a> 
+                            </div>
+
+                            <div class="botaoDetails">
+                                <a asp-action="Details" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-circle-info botoesGerenciar"></i>
+                                </a> 
+                            </div>
+
+                            <div class="botaoDelete">
+                                <a asp-action="Delete" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-trash-can botoesGerenciar"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
-
-<script src="~/js/tabelaProduto.js"></script>
