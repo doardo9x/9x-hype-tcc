@@ -268,6 +268,12 @@ nav {
     color: white;
 }
 
+.card-img-top:hover {
+    outline: 2px solid var(--RoxoClaro-color);
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px var(--RoxoClaro-color);
+    
+}
 
 
 .Sneakers {
@@ -531,7 +537,7 @@ nav {
     padding: 0;
     border-radius: 5px;
     object-fit: cover;
-    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card-body {
     display: flex;

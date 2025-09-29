@@ -84,37 +84,38 @@
                 </a>
             </div>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ACESSÓRIOS ̬
+                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownAcessorios"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    ACESSÓRIOS
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Alguma ação</a>
-                    <a class="dropdown-item" href="#">Outra ação</a>
-                    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-                </div>
+                <ul class="dropdown-menu" aria-labelledby="dropdownAcessorios">
+                    <li><a class="dropdown-item" href="#">Alguma ação</a></li>
+                    <li><a class="dropdown-item" href="#">Outra ação</a></li>
+                    <li><a class="dropdown-item" href="#">Alguma coisa aqui</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownAcessorios"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    PEÇAS
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownAcessorios">
+                    <li><a class="dropdown-item" href="#">Alguma ação</a></li>
+                    <li><a class="dropdown-item" href="#">Outra ação</a></li>
+                    <li><a class="dropdown-item" href="#">Alguma coisa aqui</a></li>
+                </ul>
             </div>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    PEÇAS ̬
+                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownAcessorios"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    MARCAS
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Alguma ação</a>
-                    <a class="dropdown-item" href="#">Outra ação</a>
-                    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle botoes" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    MARCAS ̬
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Alguma ação</a>
-                    <a class="dropdown-item" href="#">Outra ação</a>
-                    <a class="dropdown-item" href="#">Alguma coisa aqui</a>
-                </div>
+                <ul class="dropdown-menu" aria-labelledby="dropdownAcessorios">
+                    <li><a class="dropdown-item" href="#">Alguma ação</a></li>
+                    <li><a class="dropdown-item" href="#">Outra ação</a></li>
+                    <li><a class="dropdown-item" href="#">Alguma coisa aqui</a></li>
+                </ul>
             </div>
         </nav>
     </div>
@@ -131,16 +132,21 @@
                 <div class="slideshow-container">
                     @foreach (Produto produto in Model.Destaques)
                     {
+
                         <div class="slideshow fade ativo">
-                            <div class="numeracao">@produto.Id</div>
-                            <img src="@(produto.Fotos.Count <= 0 ? 
-                                "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
-                                produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
-                            <div class="legenda">
-                                <div class="fs-7 w100 NomeDestaque">@produto.Nome</div>
-                                <div class="fs-7 w100 valorVendaDestaque">R$@produto.ValorVenda</div>
-                            </div>
+                            <a  asp-action="Produto" asp-route-id="@produto.Id"
+                                class="w100 h100 d-block">
+                                <div class="numeracao">@produto.Id</div>
+                                <img src="@(produto.Fotos.Count <= 0 ? 
+            "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
+            produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
+                                <div class="legenda">
+                                    <div class="fs-7 w100 NomeDestaque">@produto.Nome</div>
+                                    <div class="fs-7 w100 valorVendaDestaque">R$@produto.ValorVenda</div>
+                                </div>
+                            </a>
                         </div>
+
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     }
@@ -159,8 +165,10 @@
 <!-- Section-->
 <section class="contRoupa">
     <div class="carrosselRoupas">
-        <div class="Linha"><p class="LinhaTitulo fs-1 center">Sneakers</p></div>
-        
+        <div class="Linha">
+            <p class="LinhaTitulo fs-1 center">Sneakers</p>
+        </div>
+
         @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 2))
         {
 
@@ -168,21 +176,23 @@
 
             @foreach (var produto in produtosTipo)
             {
-                    <div class="card cardCarrossel" style="width: 12rem;">
-                        <a asp-action="Produto" asp-route-id="@produto.Id">
-                            <img src="@(produto.Fotos.Count <= 0 
+                <div class="card cardCarrossel" style="width: 12rem;">
+                    <a asp-action="Produto" asp-route-id="@produto.Id">
+                        <img src="@(produto.Fotos.Count <= 0 
                                 ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
                                 : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
-                            <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
-                        </div>
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                        <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
                     </div>
-                }
+                </div>
             }
         }
-        <div class="LinhaEsq"><p class="LinhaTitulo fs-1 center">Roupas</p></div>
+        }
+        <div class="LinhaEsq">
+            <p class="LinhaTitulo fs-1 center">Roupas</p>
+        </div>
         @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 1))
         {
 
@@ -190,19 +200,19 @@
 
             @foreach (var produto in produtosTipo)
             {
-                    <div class="card cardCarrossel" style="width: 12rem;">
-                        <a asp-action="Produto" asp-route-id="@produto.Id">
-                            <img src="@(produto.Fotos.Count <= 0 
+                <div class="card cardCarrossel" style="width: 12rem;">
+                    <a asp-action="Produto" asp-route-id="@produto.Id">
+                        <img src="@(produto.Fotos.Count <= 0 
                                 ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
                                 : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" class="card-img-top">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
-                            <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
-                        </div>
+                    </a>
+                    <div class="card-body">
+                        <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
+                        <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
                     </div>
-                }
+                </div>
             }
+        }
         }
 
 
