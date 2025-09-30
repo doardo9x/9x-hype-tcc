@@ -4,57 +4,74 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<link rel="stylesheet" href="~/css/CreateProduto.css">
 
-<h4>Produto</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="areaTitulo">
+    <h1 class="detalhesTitulo">Adicionar Produto</h1>
+</div>
+
+<div class="main">
+    <div class="quadradoEsq">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CategoriaId" class="control-label"></label>
-                <select asp-for="CategoriaId" class ="form-control" asp-items="ViewBag.CategoriaId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+            <div class="primeiraLinha">
+                <label asp-for="Nome" class="tituloCampo fs-3"></label>
+                <input asp-for="Nome" class=" inputCampo" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="segundaLinha">
+                <div class="campoDuplo">
+                    <label asp-for="CategoriaId" class="tituloCampo fs-3"></label>
+                    <select asp-for="CategoriaId" class=" inputCampo" asp-items="ViewBag.CategoriaId"></select>
+                </div>
+                <div class="campoDuplo">
+                    <label asp-for="Genero" class="tituloCampo fs-3"></label>
+                    <select asp-for="Genero" asp-items="Html.GetEnumSelectList<Genero>()" class="inputCampo"></select>
+                </div>
+
+            </div>
+
+            <div class="terceiraLinha">
+                <div class="campoDuplo">
+                    <label asp-for="ValorVenda" class=" tituloCampo fs-3"></label>
+                    <input asp-for="ValorVenda" class=" inputCampo" />
+                    <span asp-validation-for="ValorVenda" class="text-danger"></span>
+                </div>
+                <div class="campoDuplo">
+                    <label asp-for="ValorCusto" class=" tituloCampo fs-3"></label>
+                    <input asp-for="ValorCusto" class=" inputCampo" />
+                    <span asp-validation-for="ValorCusto" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="quintaLinha">
+                <div class="form-group">
+                    <label asp-for="QtdeEstoque" class=" tituloCampo fs-3"></label>
+                    <input asp-for="QtdeEstoque" class=" inputCampo" />
+                    <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="quintaLinha">
+                <label asp-for="Descricao" class=" tituloCampo fs-3"></label>
+                <input asp-for="Descricao" class=" inputCampo" />
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="QtdeEstoque" class="control-label"></label>
-                <input asp-for="QtdeEstoque" class="form-control" />
-                <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorCusto" class="control-label"></label>
-                <input asp-for="ValorCusto" class="form-control" />
-                <span asp-validation-for="ValorCusto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorVenda" class="control-label"></label>
-                <input asp-for="ValorVenda" class="form-control" />
-                <span asp-validation-for="ValorVenda" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Destaque" /> @Html.DisplayNameFor(model => model.Destaque)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genero" class="control-label"></label>
-                <input asp-for="Genero" class="form-control" />
-                <span asp-validation-for="Genero" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="form-group center">
+                <input type="submit" value="Create" class="btn btn-primary botaoCreate" />
             </div>
         </form>
+
+    </div>
+    <div class="quadradoDir">
+        <div class="fotoGrande">Foto Exemplo</div>
+        <div class="fotoGrande">Foto Exemplo</div>
+
+        <div class="divFotoPequena">
+            <div class="fotoPequena">Foto Exemplo</div>
+            <div class="fotoPequena">Foto Exemplo</div>
+        </div>
     </div>
 </div>
 
@@ -63,5 +80,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
