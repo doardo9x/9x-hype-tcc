@@ -34,7 +34,7 @@ html {
     --CinzaClaroHover: #515151;
 }
 
-body {
+.container {
     background-color: var(--main-BG-color);
     height: auto;
     width: 100%;
@@ -56,7 +56,7 @@ body {
 }
 
 .detalhesTitulo {
-    color: var(--VerdeCarrinho-color);
+    color: white;
     font-family: Rajdhani;
     font-weight: 600;
 }
@@ -65,20 +65,22 @@ body {
     width: 80%;
     height: 10%;
     align-items: center;
+    justify-content: center;
     display: flex;
+    margin-top: 10px;
 }
 
 .quadradoEsq {
-    width: 60%;
+    width: 50%;
     height: 100%;
-    min-height: 742px;
+    /* min-height: 742px; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .quadradoDir {
-    width: 40%;
+    width: 50%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -112,6 +114,11 @@ body {
     font-weight: 400;
     padding: 5px;
     margin-top: 10px;
+
+    resize: vertical;        /* permite redimensionar verticalmente */
+    max-height: 7.5em;       /* altura máxima aproximada p/ 5 linhas */
+    overflow-y: auto;        /* adiciona scrollbar vertical se passar */
+    line-height: 1.5em;      /* altura de cada linha */
 }
 
 .segundaLinha {
@@ -162,7 +169,7 @@ body {
 }   
 
 .fotoGrande {
-    width: 100%;
+    width: 80%;
     height: 250px;
     background-color: var(--CinzaFraco-color);
     display: flex;
@@ -174,13 +181,21 @@ body {
     border-radius: 5px;
 }
 
+.fotoGrande:hover,
+.fotoPequena:hover {
+    filter: brightness(0.8);   /* escurece um pouco */
+    cursor: pointer;
+    transition: 0.3s ease;     /* animação suave */
+    border: 1px solid var(--RoxoClaroHover-color);
+}
+
 .fotoPequena {
     width: 48%;
     background-color: var(--CinzaFraco-color);
     height: 200px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     color: var(--CinzaClaroHover);
     font-family: Rajdhani;
     font-weight: 600;
@@ -188,7 +203,7 @@ body {
 }
 
 .divFotoPequena {
-    width: 100%;
+    width: 80%;
     height: 30%;
     display: flex;
     flex-direction: row;
@@ -250,26 +265,37 @@ body {
     box-shadow: 0 0 5px #a855f7;
 }
 
+.divBotaoCriar {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid white;
+}
+
 .botaoCreate {
-    background-color: var(--RoxoClaro-color);
+    background-color: var(--Destaque-color);
     border: var(--RoxoClaro-color);
     justify-self: center;
     align-self: center;
     display: flex;
     margin-bottom: 20px;
     margin-top: 10px;
-    width: 15%;
+    width: 20%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .botaoCreate:hover {
-    background-color: var(--RoxoClaroHover-color);
-    border: var(--RoxoClaroHover-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+    background-color: var(--Destaque-color);
 }
 
 .botaoVoltarLista {
     text-decoration: none;
     font-size: 20px;
     color: white;
+    font-weight: 600;
 }
 
 .botaoVoltar {
@@ -283,8 +309,89 @@ body {
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .botaoVoltar:hover {
-    background-color: var(--RoxoClaroHover-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+}
+
+.botaoMobile {
+    display: none;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 20%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botaoCreateMobile:hover {
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+    background-color: var(--Destaque-color);
+}
+
+.botaoCreateMobile {
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: var(--Destaque-color);
+    border: 0;
+}
+
+.uploadArea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.previewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+    .main {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .quadradoEsq {
+        width: 100%;
+        align-items: start;
+    }
+
+    .quadradoDir {
+        width: 100%;
+        justify-content: start;
+        margin-top: 20px;
+    }
+
+    .oculto {
+        display: none;
+    }
+
+    .botaoMobile {
+        display: flex;
+    }
+
+    .botaoVoltar {
+        width: 20%;
+    }
 }
