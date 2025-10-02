@@ -82,6 +82,7 @@ html {
 .quadradoDir {
     width: 50%;
     height: auto;
+    gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,7 +191,7 @@ html {
 .fotoPequena {
     width: 48%;
     background-color: var(--CinzaFraco-color);
-    height: 100%;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -266,7 +267,6 @@ html {
 .divBotaoCriar {
     display: flex;
     justify-content: space-around;
-    border: 1px solid white;
 }
 
 .botaoCreate {
@@ -321,7 +321,7 @@ html {
     align-self: center;
     margin-bottom: 20px;
     margin-top: 10px;
-    width: 20%;
+    width: 30%;
     height: 40px;
     font-weight: 600;
     font-size: 20px;
@@ -390,6 +390,19 @@ html {
     }
 
     .botaoVoltar {
-        width: 20%;
+        width: 40%;
+    }
+
+    .fotoGrande {
+        height: 150px;
+        width: 100%;
+    }
+
+    .divFotoPequena {
+        width: 100%;
+    }
+
+    .fotoPequena {
+        height: 100px;
     }
 }
