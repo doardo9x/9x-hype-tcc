@@ -46,7 +46,7 @@ html {
 
 .main {
     width: 80%;
-    height: 100%;
+    height: 80%;
     border: 1px solid var(--Destaque-color);
     display: flex;
     justify-content: center;
@@ -88,7 +88,6 @@ html {
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-    gap: 10px;
 }
 
 .primeiraLinha {
@@ -101,7 +100,6 @@ html {
     color: white;
     font-family: Rajdhani;
     font-weight: 600;
-    width: 100%;
 }
 
 .inputCampo {
@@ -166,7 +164,7 @@ html {
 
 .inputDesc {
     height: 50%;
-}   
+}
 
 .fotoGrande {
     width: 80%;
@@ -192,7 +190,7 @@ html {
 .fotoPequena {
     width: 48%;
     background-color: var(--CinzaFraco-color);
-    height: 200px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;

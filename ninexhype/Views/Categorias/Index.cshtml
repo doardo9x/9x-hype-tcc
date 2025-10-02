@@ -15,7 +15,7 @@
                     @Html.DisplayNameFor(model => model.Nome)
                 </th>
                 <th class="fs-4 ">
-                    <a asp-action="Create" class="text-tituloTable">Create New</a>
+                    <a asp-action="Create" class="text-tituloTable"> <i class="fa-solid fa-plus"></i></a>
                 </th>
             </tr>
         </thead>
@@ -26,10 +26,26 @@
                     <td class="nomeProduto">
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>
-                    <td>
-                        <a class="edit" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a class="detalhes" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                        <a class="delete" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <td class="divBotoes">
+
+                        <div class="botaoEdit">
+                            <a asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-pen-to-square botoesGerenciar"></i>
+                            </a>
+                        </div>
+
+                        <div class="botaoDetails">
+                            <a asp-action="Details" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-circle-info botoesGerenciar"></i>
+                            </a>
+                        </div>
+
+                        <div class="botaoDelete">
+                            <a asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-trash-can botoesGerenciar"></i>
+                            </a>
+                        </div>
+
                     </td>
                 </tr>
             }

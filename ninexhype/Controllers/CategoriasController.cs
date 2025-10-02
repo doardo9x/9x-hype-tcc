@@ -46,6 +46,12 @@ namespace ninexhype.Controllers
         // GET: Categorias/Create
         public IActionResult Create()
         {
+            // Busca todos os tipos de roupas
+            var tipos = _context.TiposRoupa.ToList();
+
+            // Cria a SelectList (valor = Id, texto = Nome)
+            ViewBag.TipoRoupaId = new SelectList(tipos, "Id", "Nome");
+
             return View();
         }
 
@@ -54,17 +60,21 @@ namespace ninexhype.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Foto")] Categoria categoria)
+        public IActionResult Create(Categoria categoria)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(categoria);
-                await _context.SaveChangesAsync();
+                _context.Categorias.Add(categoria);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
+
+            // Se houver erro, recarrega o SelectList para a view
+            var tipos = _context.TiposRoupa.ToList();
+            ViewBag.TipoRoupaId = new SelectList(tipos, "Id", "Nome", categoria.TipoRoupaId);
+
             return View(categoria);
         }
-
         // GET: Categorias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
