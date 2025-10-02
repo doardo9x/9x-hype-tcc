@@ -34,19 +34,11 @@ html {
     --CinzaClaroHover: #515151;
 }
 
-body {
-    background-color: var(--main-BG-color);
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 .main {
     width: 80%;
-    height: 100%;
+    height: 80%;
     border: 1px solid var(--Destaque-color);
     display: flex;
     justify-content: center;
@@ -71,22 +63,17 @@ body {
 .quadradoEsq {
     width: 60%;
     height: 100%;
-    min-height: 742px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .quadradoDir {
     width: 40%;
-    height: auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-    gap: 10px;
 }
 
 .primeiraLinha {
@@ -99,7 +86,6 @@ body {
     color: white;
     font-family: Rajdhani;
     font-weight: 600;
-    width: 100%;
 }
 
 .inputCampo {
@@ -159,11 +145,11 @@ body {
 
 .inputDesc {
     height: 50%;
-}   
+}
 
 .fotoGrande {
     width: 100%;
-    height: 250px;
+    height: 30%;
     background-color: var(--CinzaFraco-color);
     display: flex;
     align-items: center;
@@ -177,7 +163,7 @@ body {
 .fotoPequena {
     width: 48%;
     background-color: var(--CinzaFraco-color);
-    height: 200px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,12 +239,6 @@ body {
 .botaoCreate {
     background-color: var(--RoxoClaro-color);
     border: var(--RoxoClaro-color);
-    justify-self: center;
-    align-self: center;
-    display: flex;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    width: 15%;
 }
 
 .botaoCreate:hover {
@@ -266,7 +246,7 @@ body {
     border: var(--RoxoClaroHover-color);
 }
 
-.botaoVoltarLista {
+/* .botaoVoltarLista {
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -275,16 +255,12 @@ body {
 .botaoVoltar {
     width: 10%;
     height: 10%;
-    background-color: var(--Destaque-color);
+    background-color: var(--Destaque-color)
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     padding: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.botaoVoltar:hover {
-    background-color: var(--RoxoClaroHover-color);
-}
+    margin-top: 10px;
+    margin-bottom: 10px;
+} */
