@@ -30,9 +30,15 @@
             </div>
 
             <div class="HeaderIcons center">
-                <a class="icons" href="">
+                <a class="icons position-relative" asp-controller="Carrinho" asp-action="Index">
                     <i class="icones fa-solid fa-cart-shopping"></i>
+                    <span
+                        class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        @ViewBag.CarrinhoCount
+                    </span>
                 </a>
+
+
                 <a class="icons" href="/PagFavoritos/pagFavoritos.html">
                     <i class="icones fa-regular fa-heart"></i>
                 </a>
@@ -134,8 +140,7 @@
                     {
 
                         <div class="slideshow fade ativo">
-                            <a  asp-action="Produto" asp-route-id="@produto.Id"
-                                class="w100 h100 d-block">
+                            <a asp-action="Produto" asp-route-id="@produto.Id" class="w100 h100 d-block">
                                 <div class="numeracao">@produto.Id</div>
                                 <img src="@(produto.Fotos.Count <= 0 ? 
             "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
@@ -186,6 +191,11 @@
                         <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
                         <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
                     </div>
+                    <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
+                        <input type="hidden" name="produtoId" value="@produto.Id" />
+                        <button type="submit" class="btn btn-success">Adicionar ao Carrinho</button>
+                    </form>
+
                 </div>
             }
         }
