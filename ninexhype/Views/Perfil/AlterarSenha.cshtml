@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Alterar Senha";
+}
+
+<div class="container mt-4">
+    <h2>Alterar Senha</h2>
+    <hr />
+
+    <form asp-action="AlterarSenha" method="post">
+        <div class="mb-3">
+            <label>Senha Atual</label>
+            <input type="password" name="senhaAtual" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label>Nova Senha</label>
+            <input type="password" name="novaSenha" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+
+    <div asp-validation-summary="All" class="text-danger mt-2"></div>
+
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["Sucesso"]</div>
+    }
+</div>

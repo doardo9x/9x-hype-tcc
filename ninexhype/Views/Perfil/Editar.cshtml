@@ -1,0 +1,26 @@
+@model ninexhype.Models.Usuario
+@{
+    ViewData["Title"] = "Editar Perfil";
+}
+
+<div class="container mt-4">
+    <h2>Editar Perfil</h2>
+    <hr />
+
+    <form asp-action="Editar" method="post">
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input asp-for="Nome" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+
+    <div asp-validation-summary="All" class="text-danger mt-2"></div>
+</div>
