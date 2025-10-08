@@ -44,6 +44,10 @@
 - **LinkedIn:** [eduardo-ribeiro-b65826304](https://www.linkedin.com/in/eduardo-ribeiro-b65826304/)
 - **Email:** [eduardo010304@gmail.com](mailto:eduardo010304@gmail.com)
 
+## Login Admistrador 9xhype
+- **Email** [ninexhype@9xhype.com]
+- **Senha** [123456]
+
 
 git config --global user.name doardo9x
 git config --global user.email eduardo010304@gmail.com

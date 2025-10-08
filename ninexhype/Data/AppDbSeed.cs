@@ -9,14 +9,14 @@ public class AppDbSeed
 {
     public AppDbSeed(ModelBuilder builder)
     {
-        List<TipoRoupa> tiposRoupa = new() 
+        List<TipoRoupa> tiposRoupa = new()
         {
             new TipoRoupa { Id = 1, Nome= "Roupa"},
             new TipoRoupa { Id = 2, Nome= "Tenis"},
         };
         builder.Entity<TipoRoupa>().HasData(tiposRoupa);
 
-        List<Categoria> categorias = new() 
+        List<Categoria> categorias = new()
         {
             new Categoria { Id = 1, Nome = "Tênis", TipoRoupaId = 2 },
             new Categoria { Id = 2, Nome = "Camisas", TipoRoupaId = 1  },
@@ -250,19 +250,21 @@ public class AppDbSeed
         #endregion
 
         #region Populate Usuário
-        List<Usuario> usuarios = new() {
-            new Usuario(){
+        List<Usuario> usuarios = new()
+        {
+            new Usuario()
+            {
                 Id = "ddf093a6-6cb5-4ff7-9a64-83da34aee005",
-                Email = "gallojunior@gmail.com",
-                NormalizedEmail = "GALLOJUNIOR@GMAIL.COM",
-                UserName = "GalloJunior",
-                NormalizedUserName = "GALLOJUNIOR",
+                Email = "ninexhype@9xhype.com",
+                NormalizedEmail = "NINEXHYPE@9XHYPE.COM",
+                UserName = "9xHype",
+                NormalizedUserName = "9XHYPE",
                 LockoutEnabled = true,
                 EmailConfirmed = true,
-                Nome = "José Antonio Gallo Junior",
+                Nome = "9x Hype",
                 DataNascimento = DateTime.Parse("05/08/1981"),
-                Foto = "/img/usuarios/ddf093a6-6cb5-4ff7-9a64-83da34aee005.png"
-            },
+                Foto = "~/img/usuarios/ddf093a6-6cb5-4ff7-9a64-83da34aee005.png"
+            }
         };
         foreach (var user in usuarios)
         {
