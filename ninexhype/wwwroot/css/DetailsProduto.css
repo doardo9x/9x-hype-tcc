@@ -8,7 +8,8 @@
     padding: 0;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: auto;
 }
@@ -46,7 +47,7 @@ body, html {
 .main {
     width: 80%;
     height: 80%;
-    border: 1px solid var(--VermelhoFav-color);
+    border: 1px solid var(--Destaque-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,14 +55,11 @@ body, html {
     justify-content: space-between;
 }
 
+
 .detalhesTitulo {
     color: white;
     font-family: Rajdhani;
     font-weight: 600;
-}
-
-.detalhesSubtitulo {
-    color: white;
 }
 
 .areaTitulo {
@@ -71,17 +69,19 @@ body, html {
     justify-content: center;
     display: flex;
     margin-top: 10px;
-    flex-direction: column;
 }
 
 .quadradoEsq {
     width: 50%;
     height: 100%;
-    /* min-height: 742px; */
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    flex-direction: column;
+}
+
+form {
+    width: 100%;
 }
 
 .quadradoDir {
@@ -109,7 +109,7 @@ body, html {
     width: 100%;
 }
 
-.areaTexto { /* antigo inputCampo */
+.inputCampo {
     width: 100%;
     height: 40%;
     border-radius: 5px;
@@ -119,6 +119,23 @@ body, html {
     font-weight: 400;
     padding: 5px;
     margin-top: 10px;
+}
+
+.inputCampoDesc {
+    width: 100%;
+    height: 40%;
+    border-radius: 5px;
+    background-color: var(--CinzaFraco-color);
+    color: white;
+    font-family: Rajdhani;
+    font-weight: 400;
+    padding: 5px;
+    margin-top: 10px;
+
+    resize: vertical;        /* permite redimensionar verticalmente */
+    max-height: 7.5em;       /* altura máxima aproximada p/ 5 linhas */
+    overflow-y: auto;        /* adiciona scrollbar vertical se passar */
+    line-height: 1.5em;      /* altura de cada linha */
 }
 
 .segundaLinha {
@@ -147,29 +164,28 @@ body, html {
 }
 
 .quartaLinha {
-    width: 100%;
-    height: 20%;
-    padding: 10px;
-
-    /* display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     height: 20%;
-    padding: 10px; */
+    padding: 10px;
 }
 
 .quintaLinha {
-    width: 100%;
-    height: 20%;
-    padding: 10px;
-
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
     height: 20%;
-    padding: 10px; */
+    padding: 10px;
+}
+
+.sextaLinha {
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .inputDesc {
@@ -187,6 +203,14 @@ body, html {
     font-family: Rajdhani;
     font-weight: 600;
     border-radius: 5px;
+}
+
+.fotoGrande:hover,
+.fotoPequena:hover {
+    filter: brightness(0.8);   /* escurece um pouco */
+    cursor: pointer;
+    transition: 0.3s ease;     /* animação suave */
+    border: 1px solid var(--RoxoClaroHover-color);
 }
 
 .fotoPequena {
@@ -270,19 +294,47 @@ body, html {
     justify-content: space-around;
 }
 
-.botaoCreate {
-    background-color: var(--Destaque-color);
-    border: var(--RoxoClaro-color);
-    justify-self: center;
-    align-self: center;
+.botoes {
     display: flex;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botoes:hover {
+    background-color: transparent;
+}
+
+.botaoSalvar {
     width: 20%;
     height: 40px;
+    background-color: var(--VerdeCarrinho-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.botaoSalvar:hover {
+    box-shadow: 0px 4px 8px var(--VerdeCarrinhoHover-color);
+    transform: translateY(-2px);
+}
+
+.botaoSalvarTextoDentroInferno {
+    background-color: transparent;
+    color: white;
     font-weight: 600;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
+
 
 .botaoCreate:hover {
     box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
@@ -298,8 +350,8 @@ body, html {
 }
 
 .botaoVoltar {
-    width: 20%;
-    height: 40px;
+    width: 10%;
+    height: 10%;
     background-color: var(--Destaque-color);
     display: flex;
     align-items: center;
@@ -316,45 +368,51 @@ body, html {
     transform: translateY(-2px);
 }
 
-.botoes {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.botoes:hover {
-    background-color: transparent;
-}
-
-.botaoDeletar {
-    width: 20%;
-    height: 40px;
-    background-color: var(--VermelhoFav-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 20px;
+.botaoMobile {
+    display: none;
+    justify-self: center;
+    align-self: center;
     margin-bottom: 20px;
+    margin-top: 10px;
+    width: 30%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botaoCreateMobile:hover {
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+    background-color: var(--Destaque-color);
+}
+
+.botaoCreateMobile {
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: var(--Destaque-color);
+    border: 0;
+}
+
+.uploadArea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
-.botaoDeletar:hover {
-    box-shadow: 0px 4px 8px var(--VermelhoRemFavHover-color);
-    transform: translateY(-2px);
-}
-
-.botaoDeleteTextoDentroInferno {
-    background-color: transparent;
-    color: white;
-    font-weight: 600;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
+.previewImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 /* -------------------------------------------------------------------------------------- */

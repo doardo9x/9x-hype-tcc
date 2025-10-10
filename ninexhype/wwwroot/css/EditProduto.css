@@ -55,6 +55,7 @@ html {
     justify-content: space-between;
 }
 
+
 .detalhesTitulo {
     color: white;
     font-family: Rajdhani;
@@ -73,12 +74,13 @@ html {
 .quadradoEsq {
     width: 50%;
     height: 100%;
-    /* min-height: 742px; */
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 10px;
+}
 
-    border: 1px solid white;
+form {
+    width: 100%;
 }
 
 .quadradoDir {
@@ -103,6 +105,7 @@ html {
     color: white;
     font-family: Rajdhani;
     font-weight: 600;
+    width: 100%;
 }
 
 .inputCampo {
@@ -165,13 +168,20 @@ html {
     padding: 10px;
 }
 
+.sextaLinha {
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
 .inputDesc {
     height: 50%;
 }
 
 .fotoGrande {
     width: 80%;
-    height: 250px;
+    height: 200px;
     background-color: var(--CinzaFraco-color);
     display: flex;
     align-items: center;
@@ -271,19 +281,47 @@ html {
     justify-content: space-around;
 }
 
-.botaoCreate {
-    background-color: var(--Destaque-color);
-    border: var(--RoxoClaro-color);
-    justify-self: center;
-    align-self: center;
+.botoes {
     display: flex;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botoes:hover {
+    background-color: transparent;
+}
+
+.botaoSalvar {
     width: 20%;
     height: 40px;
+    background-color: var(--VerdeCarrinho-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.botaoSalvar:hover {
+    box-shadow: 0px 4px 8px var(--VerdeCarrinhoHover-color);
+    transform: translateY(-2px);
+}
+
+.botaoSalvarTextoDentroInferno {
+    background-color: transparent;
+    color: white;
     font-weight: 600;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
+
 
 .botaoCreate:hover {
     box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);

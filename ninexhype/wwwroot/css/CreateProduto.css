@@ -169,7 +169,7 @@ html {
 
 .fotoGrande {
     width: 80%;
-    height: 250px;
+    height: 200px;
     background-color: var(--CinzaFraco-color);
     display: flex;
     align-items: center;
