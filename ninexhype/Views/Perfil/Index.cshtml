@@ -7,12 +7,45 @@
     <h2>Meu Perfil</h2>
     <hr />
 
-    <div class="card p-3 shadow-sm">
-        <p><strong>Nome:</strong> @Model.Nome</p>
-        <p><strong>Email:</strong> @Model.Email</p>
+    <div class="card p-4 shadow-sm">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                @if (!string.IsNullOrEmpty(Model.Foto))
+                {
+                    <img src="@Model.Foto" alt="Foto de Perfil" class="img-fluid rounded-circle mb-3" />
+                }
+                else
+                {
+                    <img src="/img/usuarios/default.png" alt="Foto de Perfil" class="img-fluid rounded-circle mb-3" />
+                }
+            </div>
+            <div class="col-md-9">
+                <p><strong>Nome:</strong> @Model.Nome</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>CPF:</strong> @Model.Cpf</p>
+                <p><strong>Data de Nascimento:</strong> @Model.DataNascimento.ToString("dd/MM/yyyy")</p>
+                <p><strong>Gênero:</strong> @Model.Genero</p>
+                <p><strong>Telefone Alternativo:</strong> @Model.TelefoneAlternativo</p>
 
-        <a asp-action="Editar" class="btn btn-primary">Editar Perfil</a>
-        <a asp-action="AlterarSenha" class="btn btn-outline-secondary">Alterar Senha</a>
+                @if (Model.Endereco != null)
+                {
+                    <hr />
+                    <h5>Endereço</h5>
+                    <p><strong>Rua:</strong> @Model.Endereco.Logradouro</p>
+                    <p><strong>Número:</strong> @Model.Endereco.Numero</p>
+                    <p><strong>Complemento:</strong> @Model.Endereco.Complemento</p>
+                    <p><strong>Bairro:</strong> @Model.Endereco.Bairro</p>
+                    <p><strong>Cidade:</strong> @Model.Endereco.Cidade</p>
+                    <p><strong>Estado:</strong> @Model.Endereco.Estado</p>
+                    <p><strong>CEP:</strong> @Model.Endereco.Cep</p>
+                }
+
+                <div class="mt-3">
+                    <a asp-action="Editar" class="btn btn-primary">Editar Perfil</a>
+                    <a asp-action="AlterarSenha" class="btn btn-outline-secondary">Alterar Senha</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     @if (TempData["Sucesso"] != null)
