@@ -107,7 +107,7 @@ public class AccountController : Controller
         {
             var usuario = Activator.CreateInstance<Usuario>();
             usuario.Nome = registro.Nome;
-            usuario.DataNascimento = registro.DataNascimento;
+            usuario.DataNascimento = registro.DataNascimento ?? DateTime.MinValue;
             usuario.UserName = registro.Email;
             usuario.NormalizedUserName = registro.Email.ToUpper();
             usuario.Email = registro.Email;

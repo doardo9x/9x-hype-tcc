@@ -18,7 +18,7 @@ public class Endereco
     public string Numero { get; set; } = string.Empty;
 
     [StringLength(100)]
-    public string? Complemento { get; set; }
+    public string Complemento { get; set; }
 
     [Required, StringLength(50)]
     public string Bairro { get; set; } = string.Empty;
