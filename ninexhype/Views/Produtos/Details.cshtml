@@ -5,6 +5,7 @@
 @{
     ViewData["Title"] = "Details";
 }
+
 <div class="container">
     <div class="areaTitulo">
         <h1 class="detalhesTitulo">Detalhes do Produto</h1>
@@ -82,40 +83,19 @@
         </div>
 
         <div class="quadradoDir">
-            <!-- FOTO GRANDE -->
-            <div class="fotoGrande">
-                <input type="file" id="uploadGrande1" accept="image/*" hidden>
-                <label for="uploadGrande1" class="uploadArea">
-                    <i class="fa-solid fa-circle-plus fa-2x" style="color: #515151;"></i>
-                </label>
-                <img id="previewGrande1" class="previewImg" style="display:none;">
-            </div>
-
-            <div class="fotoGrande">
-                <input type="file" id="uploadGrande2" accept="image/*" hidden>
-                <label for="uploadGrande2" class="uploadArea">
-                    <i class="fa-solid fa-circle-plus fa-2x" style="color: #515151;"></i>
-                </label>
-                <img id="previewGrande2" class="previewImg" style="display:none;">
-            </div>
-
-            <!-- FOTOS PEQUENAS -->
-            <div class="divFotoPequena">
-                <div class="fotoPequena">
-                    <input type="file" id="uploadPequena1" accept="image/*" hidden>
-                    <label for="uploadPequena1" class="uploadArea">
-                        <i class="fa-solid fa-circle-plus fa-2x" style="color: #515151;"></i>
-                    </label>
-                    <img id="previewPequena1" class="previewImg" style="display:none;">
-                </div>
-
-                <div class="fotoPequena">
-                    <input type="file" id="uploadPequena2" accept="image/*" hidden>
-                    <label for="uploadPequena2" class="uploadArea">
-                        <i class="fa-solid fa-circle-plus fa-2x" style="color: #515151;"></i>
-                    </label>
-                    <img id="previewPequena2" class="previewImg" style="display:none;">
-                </div>
+            <h3 class="fs-4 mb-3">Fotos do Produto</h3>
+            <div class="fotosProduto">
+                @if (Model.Fotos != null && Model.Fotos.Count > 0)
+                {
+                    foreach (var foto in Model.Fotos)
+                    {
+                        <img src="@foto.ArquivoFoto" class="previewImg" style="max-width:150px; margin:5px; border-radius:8px;" />
+                    }
+                }
+                else
+                {
+                    <p>Nenhuma foto disponível para este produto.</p>
+                }
             </div>
         </div>
     </div>
@@ -123,5 +103,4 @@
     <div class="botaoVoltar">
         <a asp-action="Index" class="botaoVoltarLista">Voltar</a>
     </div>
-
 </div>
