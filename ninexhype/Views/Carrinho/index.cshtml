@@ -15,49 +15,75 @@
     @if (Model.Itens.Count == 0)
     {
         <p class="letraBranca fs-5">Seu carrinho está vazio 😢</p>
+        <div class="carrinhoVazio"></div>
     }
     else
     {
 
         <div class="main">
-            <h1 class="tituloProdutos"> Produto (1)</h1>
 
+            <div class="cabecalho">
+                <h1 class="tituloProdutos"> Produto (1)</h1>
+                <h4 class="totalCarrinho">Total: <strong>R$ @ViewBag.Total.ToString("N2")</strong></h4>
+            </div>
+            
             @foreach (var item in Model.Itens)
             {
-                <div class="produtoCarrinho">
-                    <div class="fotoProduto"></div>
+                <div class="section">
+                    <div class="produtoCarrinho">
+                        <div class="fotoProduto"></div>
 
-                    <div class="infoProduto">
-                        <div class="textoInfoProduto letraBranca fs-1">lorem</div>
+                        <div class="infoProduto">
+                            <div class="textoInfoProduto letraBranca fs-1">@item.Produto.Nome</div>
 
-                        <div class="textoInfoProduto letraBranca fs-4">lorem</div>
+                            <div class="textoInfoProduto letraBranca fs-4">
+                                <div class="textoRosa">
+                                    Preço:
+                                </div>
+                                
+                                R$ @item.Produto.ValorVenda.ToString("N2")</div>
 
-                        <div class="textoInfoProduto letraBranca fs-4">lorem</div>
+                            <div class="textoInfoProduto letraBranca fs-4">
+                                <div  class="textoRosa">
+                                    Marca:
+                                </div>
+                                @item.Produto.Marca</div>
 
-                        <div class="textoInfoProduto letraBranca fs-4">lorem</div>
+                            <div class="textoInfoProduto letraBranca fs-4">
+                                <div  class="textoRosa">
+                                    Cor:
+                                </div>
+                                @item.Produto.Cor</div>
 
-                        <div class="textoInfoProduto letraBranca fs-4">lorem</div>
+                            <div class="opcoesProduto letraBranca fs-4">
+                                <div class="quantidadeProduto">
+                                    <form asp-action="AtualizarQuantidade" method="post">
+                                        <h1 class="textoRosa fs-4">Quantidade: </h1>
 
-                        <div class="opcoesProduto letraBranca fs-4">
-                            <div class="quantidadeProduto">
-                                <form asp-action="AtualizarQuantidade" method="post" class="d-flex">
-                                    <h1 class="letraBranca fs-5">Quantidade:</h1>
-                                    <input type="hidden" name="itemId" value="@item.Id" />
-                                    <input type="number" name="novaQuantidade" value="@item.Quantidade" min="1"
-                                        class="form-control w-50" />
-                                    <button type="submit" class="btn btn-sm btn-primary ms-2">Atualizar</button>
-                                </form>
+                                        <input type="hidden" name="itemId" value="@item.Id" />
+                                        <input type="number" class="labelQuantidade" name="novaQuantidade" value="@item.Quantidade" min="1" />
+                                        
+                                        <button type="submit" class="btnAtualizar">Atualizar</button>
+                                    </form>
+                                </div>
+
+                                <div class="divBotaoExcluir">
+                                    <form asp-action="Remover" method="post">
+                                        <input type="hidden" name="itemId" value="@item.Id" />
+                                        <button type="submit" class="btnRemover">
+                                            <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>
+                                        </button>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             }
         </div>
-
-        <h4 class="totalCarrinho">Total: <strong>R$ @ViewBag.Total.ToString("N2")</strong></h4>
-
         <form asp-action="Limpar" method="post">
-            <button type="submit" class="btn btn-warning">Limpar Carrinho</button>
+            <button type="submit" class="limparCarrinho">Limpar Carrinho</button>
         </form>
     }
 </div>

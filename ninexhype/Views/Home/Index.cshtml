@@ -187,11 +187,6 @@
                         <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
                         <p class="card-text precoProduto">R$ @produto.ValorVenda.ToString("N2")</p>
                     </div>
-                    <form asp-controller="Carrinho" asp-action="Adicionar" method="post">
-                        <input type="hidden" name="produtoId" value="@produto.Id" />
-                        <button type="submit" class="btn btn-success">Adicionar ao Carrinho</button>
-                    </form>
-
                 </div>
             }
         }

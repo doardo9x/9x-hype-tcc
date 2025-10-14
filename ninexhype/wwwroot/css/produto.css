@@ -433,6 +433,8 @@ input[type="radio"]:checked+label {
 
 .btnCar {
     background-color: transparent;
+    width: 100%;
+    height: 100%;
 }
 
 .btnCarrinho:hover {
