@@ -10,7 +10,7 @@
         @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 2))
         {
 
-            var produtosTipo = tipo.Categorias.SelectMany(c => c.Produtos).Take(7);
+            var produtosTipo = tipo.Categorias.SelectMany(c => c.Produtos);
 
             @foreach (var produto in produtosTipo)
             {
@@ -32,7 +32,7 @@
         @foreach (var tipo in Model.TiposRoupa.Where(tr => tr.Id == 1))
         {
 
-            var produtosTipo = tipo.Categorias.SelectMany(c => c.Produtos).Take(7);
+            var produtosTipo = tipo.Categorias.SelectMany(c => c.Produtos);
 
             @foreach (var produto in produtosTipo)
             {
@@ -50,7 +50,5 @@
                 }
             }
         }
-
-
     </div>
 </section>

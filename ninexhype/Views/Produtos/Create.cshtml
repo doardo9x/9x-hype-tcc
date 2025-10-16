@@ -13,7 +13,6 @@
 
     <div class="main">
         <div class="quadradoEsq">
-            <!-- ⚠ enctype necessário para upload de arquivos -->
             <form asp-action="Create" method="post" enctype="multipart/form-data">
                 <div class="primeiraLinha">
                     <label asp-for="Nome" class="tituloCampo fs-3"></label>
@@ -29,7 +28,8 @@
                     </div>
                     <div class="campoDuplo">
                         <label asp-for="Genero" class="tituloCampo fs-3"></label>
-                        <select asp-for="Genero" asp-items="Html.GetEnumSelectList<Genero>()" class="inputCampo"></select>
+                        <select asp-for="Genero" asp-items="Html.GetEnumSelectList<Genero>()"
+                            class="inputCampo"></select>
                     </div>
                 </div>
 
@@ -60,17 +60,36 @@
                     <span asp-validation-for="Descricao" class="text-danger"></span>
                 </div>
 
-                <!-- ⚠ Upload de imagens -->
-                <div class="form-group">
-                    <label>Fotos do Produto</label>
-                    <input type="file" name="Fotos" accept="image/*" multiple />
-                </div>
-
                 <div class="form-group">
                     <input type="submit" value="Criar" class="btn btn-primary botaoCreate" />
                 </div>
             </form>
         </div>
+
+        <div class="quadradoDir">
+
+            @* <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input class="letraBranca" type="file" name="Fotos" accept="image/*" multiple />
+                </div>
+            </form> *@
+
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="custom-file">
+
+                        <div class="botaoSelecionarImagem">
+                            <span class="letraBranca bold btn-upload">Selecionar Imagens</span>
+                        </div>
+                        
+                        <input type="file" name="Fotos" accept="image/*" multiple id="fileInput">
+                    </label>
+                </div>
+
+                <div class="preview-container" id="preview"></div>
+            </form>
+        </div>
+
     </div>
 
     <div class="botaoVoltar">
@@ -79,5 +98,32 @@
 </div>
 
 @section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const previewContainer = document.getElementById('preview');
+
+    fileInput.addEventListener('change', function () {
+        previewContainer.innerHTML = ''; // Limpa o preview anterior
+
+        const files = fileInput.files;
+
+        if (files.length > 0) {
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        previewContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    });
+</script>

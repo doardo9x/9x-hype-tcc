@@ -57,14 +57,15 @@
                 </div>
 
                 <div class="sextaLinha">
-                    <input type="submit" value="Salvar" class="btn btn-success" />
-                    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    <input type="submit" value="Salvar" class="btnSalvar" />
+
+                    <a asp-action="Index" class="btnVoltar">Voltar</a>
                 </div>
             </form>
         </div>
 
         <div class="quadradoDir">
-            <h3>Fotos Existentes</h3>
+
             <div class="fotosExistentes">
                 @foreach (var foto in Model.Fotos)
                 {
@@ -72,19 +73,51 @@
                         <img src="@foto.ArquivoFoto" class="previewImg" />
                         <form asp-action="ExcluirFoto" method="post">
                             <input type="hidden" name="fotoId" value="@foto.Id" />
-                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                            <button class="botaoExcluirFoto" type="submit" class="btn btn-danger btn-sm">Excluir
+                                Imagem</button>
                         </form>
                     </div>
                 }
             </div>
 
-            <h3>Adicionar Novas Fotos</h3>
             <form asp-action="AdicionarFoto" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="produtoId" value="@Model.Id" />
-                <input type="file" name="novasFotos" multiple />
-                <button type="submit" class="btn btn-primary">Adicionar Foto</button>
+                <div class="containerEditFoto">
+
+                    <input type="hidden" name="produtoId" value="@Model.Id" />
+
+                    <!-- Botão personalizado -->
+
+                    @* Problema no pointer *@
+
+                    <div class="divBotoes">
+                        <div class="file-upload-wrapper">
+
+                            <label class="file-upload-label">
+                                Selecionar Imagens
+                                <input class="hidden-file-input" type="file" name="novasFotos" multiple
+                                    accept="image/*" />
+                            </label>
+
+                        </div>
+
+                        <button type="submit" class="btnAddFoto">Adicionar Foto</button>
+                    </div>
+                </div>
+
             </form>
+
+
+            @* <form asp-action="AdicionarFoto" method="post" enctype="multipart/form-data">
+                <div class="containerEditFoto">
+
+                    <input type="hidden" name="produtoId" value="@Model.Id" />
+                    <input type="file" name="novasFotos" multiple />
+
+                    <button type="submit" class="btnAddFoto btn btn-primary">Adicionar Foto</button>
+                </div>
+            </form> *@
         </div>
+
     </div>
 </div>
 
