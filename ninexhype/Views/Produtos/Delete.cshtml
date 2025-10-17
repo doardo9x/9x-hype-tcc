@@ -104,12 +104,10 @@
     </div>
 
     <div class="botoes">
-        <div class="botaoDeletar">
-            <form asp-action="Delete">
-                <input type="hidden" asp-for="Id" />
-                <input type="submit" value="Delete" class="botaoDeleteTextoDentroInferno" />
-            </form>
-        </div>
+        <form asp-action="Delete" class="botaoDeletar">
+            <input type="hidden" asp-for="Id" class="botaoDeleteTextoDentroInferno" />
+            <input type="submit" value="Delete" class="botaoDeleteTextoDentroInferno" />
+        </form>
 
         <div class="botaoVoltar">
             <a asp-action="Index" class="botaoVoltarLista">Voltar</a>

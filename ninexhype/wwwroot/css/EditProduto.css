@@ -397,10 +397,24 @@ form {
 }
 
 .previewImg {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.fotosExistentes {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.fotoExistente {
+    display: flex;
+    flex-direction: column;
 }
 
 .btnVoltar {
@@ -504,6 +518,7 @@ form {
     font-size: 20px;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .botaoExcluirFoto:hover {

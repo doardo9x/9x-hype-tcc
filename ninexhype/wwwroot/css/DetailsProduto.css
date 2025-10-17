@@ -427,8 +427,16 @@ form {
 }
 
 .previewFoto {
-    width: 100% !important;
-    height: 100% !important;
+    width: 50% ;
+    height: 50% ;
+}
+
+.fotosProduto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .previewImg {

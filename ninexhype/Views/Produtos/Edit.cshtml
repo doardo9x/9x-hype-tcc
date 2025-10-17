@@ -22,45 +22,44 @@
                 </div>
 
                 <div class="segundaLinha">
-                    <label asp-for="Categoria" class="tituloCampo fs-3"></label>
-                    <select asp-for="CategoriaId" class="form-control inputCampo"
-                        asp-items="@(ViewData["CategoriaId"] as SelectList)"></select>
-                    <span asp-validation-for="CategoriaId" class="text-danger"></span>
+                        <label asp-for="Categoria" class="tituloCampo fs-3"></label>
+                        <select asp-for="CategoriaId" class="form-control inputCampo"
+                            asp-items="@(ViewData["CategoriaId"] as SelectList)"></select>
+                        <span asp-validation-for="CategoriaId" class="text-danger"></span>
 
-                    <label asp-for="Genero" class="tituloCampo fs-3"></label>
-                    <select asp-for="Genero" class="form-control inputCampo"
-                        asp-items="@(ViewBag.Generos as SelectList)"></select>
-                    <span asp-validation-for="Genero" class="text-danger"></span>
-                </div>
+                        <label asp-for="Genero" class="tituloCampo fs-3"></label>
+                        <select asp-for="Genero" class="form-control inputCampo"
+                            asp-items="@(ViewBag.Generos as SelectList)"></select>
+                        <span asp-validation-for="Genero" class="text-danger"></span>
 
 
-                <div class="terceiraLinha">
-                    <label asp-for="ValorCusto" class="tituloCampo fs-3"></label>
-                    <input asp-for="ValorCusto" class="form-control inputCampo" />
-                    <span asp-validation-for="ValorCusto" class="text-danger"></span>
+                    <div class="terceiraLinha">
+                        <label asp-for="ValorCusto" class="tituloCampo fs-3"></label>
+                        <input asp-for="ValorCusto" class="form-control inputCampo" />
+                        <span asp-validation-for="ValorCusto" class="text-danger"></span>
 
-                    <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
-                    <input asp-for="ValorVenda" class="form-control inputCampo" />
-                    <span asp-validation-for="ValorVenda" class="text-danger"></span>
-                </div>
+                        <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
+                        <input asp-for="ValorVenda" class="form-control inputCampo" />
+                        <span asp-validation-for="ValorVenda" class="text-danger"></span>
+                    </div>
 
-                <div class="quintaLinha">
-                    <label asp-for="QtdeEstoque" class="tituloCampo fs-3"></label>
-                    <input asp-for="QtdeEstoque" class="form-control inputCampo" />
-                    <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
-                </div>
+                    <div class="quintaLinha">
+                        <label asp-for="QtdeEstoque" class="tituloCampo fs-3"></label>
+                        <input asp-for="QtdeEstoque" class="form-control inputCampo" />
+                        <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
+                    </div>
 
-                <div class="quintaLinha">
-                    <label asp-for="Descricao" class="tituloCampo fs-3"></label>
-                    <input asp-for="Descricao" class="form-control inputCampo" />
-                    <span asp-validation-for="Descricao" class="text-danger"></span>
-                </div>
+                    <div class="quintaLinha">
+                        <label asp-for="Descricao" class="tituloCampo fs-3"></label>
+                        <input asp-for="Descricao" class="form-control inputCampo" />
+                        <span asp-validation-for="Descricao" class="text-danger"></span>
+                    </div>
 
-                <div class="sextaLinha">
-                    <input type="submit" value="Salvar" class="btnSalvar" />
+                    <div class="sextaLinha">
+                        <input type="submit" value="Salvar" class="btnSalvar" />
 
-                    <a asp-action="Index" class="btnVoltar">Voltar</a>
-                </div>
+                        <a asp-action="Index" class="btnVoltar">Voltar</a>
+                    </div>
             </form>
         </div>
 
@@ -70,7 +69,9 @@
                 @foreach (var foto in Model.Fotos)
                 {
                     <div class="fotoExistente">
+
                         <img src="@foto.ArquivoFoto" class="previewImg" />
+
                         <form asp-action="ExcluirFoto" method="post">
                             <input type="hidden" name="fotoId" value="@foto.Id" />
                             <button class="botaoExcluirFoto" type="submit" class="btn btn-danger btn-sm">Excluir
