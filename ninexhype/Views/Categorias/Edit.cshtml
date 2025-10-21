@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="~/css/editCategoria.css">
 @model ninexhype.Models.Categoria
 
 @{
@@ -5,33 +6,32 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Edit</h1>
+<div class="cont-body">
+    <h1 class="letraBranca">Editar Categoria</h1>
+    <div class="main">
 
-<h4>Categoria</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
-                <input asp-for="Foto" class="form-control" />
-                <span asp-validation-for="Foto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        <div class="conteudo">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="campo">
+                    <label asp-for="Nome" class="tituloCampo control-label fs-3"></label>
+                    <input asp-for="Nome" class="inputCampo" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="campo">
+                    <label asp-for="TipoRoupaId" class="tituloCampo fs-3">Tipo do Produto</label>
+                    <input asp-for="TipoRoupa" class="inputCampo" />
+                </div>
+
+                <div class="divBotoes">
+                    <input type="submit" value="Salvar" class="btn botaoSalvar" />
+                    <a asp-action="Index" class="btn botaoVoltar">Voltar</a>
+                </div>
+            </form>
+        </div>
+
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

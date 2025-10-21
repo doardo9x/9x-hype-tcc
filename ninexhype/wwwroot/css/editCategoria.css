@@ -78,14 +78,14 @@ html {
     background-color: var(--RoxoClaroHover-color);
 }
 
-.botaoCreate {
+.botaoSalvar {
     color: white;
     background-color: var(--VerdeCarrinho-color);
     font-weight: 600;
     min-width: 100px;
 }
 
-.botaoCreate:hover {
+.botaoSalvar:hover {
     background-color: var(--VerdeCarrinhoHover-color);
 }
 
@@ -111,4 +111,5 @@ html {
 
 .conteudo {
     width: 50%;
+
 }

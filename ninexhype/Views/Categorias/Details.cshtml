@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="~/css/detailsCategoria.css">
 @model ninexhype.Models.Categoria
 
 @{
@@ -5,27 +6,24 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Details</h1>
+<div class="cont-body">
+    <h1 class="letraBranca">Detalhes Categoria</h1>
+    <div class="main">
 
-<div>
-    <h4>Categoria</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
-    <a asp-action="Index">Back to List</a>
+        <div class="conteudo">
+            <div class="nome">
+                <dt class="fs-3">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="labelDetalhe">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </div>
+
+            <div class="divBotoes">
+                <a asp-action="Edit" class="btn botaoEdit" asp-route-id="@Model?.Id">Editar</a>
+                <a asp-action="Index" class="btn botaoVoltar">Voltar</a>
+            </div>
+        </div>
+    </div>
 </div>

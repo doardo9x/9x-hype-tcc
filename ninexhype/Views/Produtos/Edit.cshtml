@@ -17,41 +17,48 @@
 
                 <div class="primeiraLinha">
                     <label asp-for="Nome" class="tituloCampo fs-3"></label>
-                    <input asp-for="Nome" class="form-control inputCampo" />
+                    <input asp-for="Nome" class="form-control inputCampo border0" />
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
 
                 <div class="segundaLinha">
+                    <div class="campoDuplo">
                         <label asp-for="Categoria" class="tituloCampo fs-3"></label>
-                        <select asp-for="CategoriaId" class="form-control inputCampo"
+                        <select asp-for="CategoriaId" class="form-control inputCampo border0"
                             asp-items="@(ViewData["CategoriaId"] as SelectList)"></select>
                         <span asp-validation-for="CategoriaId" class="text-danger"></span>
-
+                    </div>
+                    <div class="campoDuplo">
                         <label asp-for="Genero" class="tituloCampo fs-3"></label>
-                        <select asp-for="Genero" class="form-control inputCampo"
+                        <select asp-for="Genero" class="form-control inputCampo border0"
                             asp-items="@(ViewBag.Generos as SelectList)"></select>
                         <span asp-validation-for="Genero" class="text-danger"></span>
-
+                    </div>
+                </div>
 
                     <div class="terceiraLinha">
-                        <label asp-for="ValorCusto" class="tituloCampo fs-3"></label>
-                        <input asp-for="ValorCusto" class="form-control inputCampo" />
-                        <span asp-validation-for="ValorCusto" class="text-danger"></span>
+                        <div class="campoDuplo">
+                            <label asp-for="ValorCusto" class="tituloCampo fs-3"></label>
+                            <input asp-for="ValorCusto" class="form-control inputCampo border0" />
+                            <span asp-validation-for="ValorCusto" class="text-danger"></span>
+                        </div>
 
-                        <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
-                        <input asp-for="ValorVenda" class="form-control inputCampo" />
-                        <span asp-validation-for="ValorVenda" class="text-danger"></span>
+                        <div class="campoDuplo">
+                            <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
+                            <input asp-for="ValorVenda" class="form-control inputCampo border0" />
+                            <span asp-validation-for="ValorVenda" class="text-danger"></span>
+                        </div>
                     </div>
 
                     <div class="quintaLinha">
                         <label asp-for="QtdeEstoque" class="tituloCampo fs-3"></label>
-                        <input asp-for="QtdeEstoque" class="form-control inputCampo" />
+                        <input asp-for="QtdeEstoque" class="form-control inputCampo border0" />
                         <span asp-validation-for="QtdeEstoque" class="text-danger"></span>
                     </div>
 
                     <div class="quintaLinha">
                         <label asp-for="Descricao" class="tituloCampo fs-3"></label>
-                        <input asp-for="Descricao" class="form-control inputCampo" />
+                        <input asp-for="Descricao" class="form-control inputCampo border0" />
                         <span asp-validation-for="Descricao" class="text-danger"></span>
                     </div>
 
@@ -86,13 +93,11 @@
 
                     <input type="hidden" name="produtoId" value="@Model.Id" />
 
+                    @* cursor pointer não funciona *@
+
                     <!-- Botão personalizado -->
-
-                    @* Problema no pointer *@
-
                     <div class="divBotoes">
                         <div class="file-upload-wrapper">
-
                             <label class="file-upload-label">
                                 Selecionar Imagens
                                 <input class="hidden-file-input" type="file" name="novasFotos" multiple

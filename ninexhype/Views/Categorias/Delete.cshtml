@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="~/css/deleteCategoria.css">
 @model ninexhype.Models.Categoria
 
 @{
@@ -5,30 +6,31 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Delete</h1>
+<div class="cont-body">
+    <h1 class="letraBranca">Delete</h1>
+    <h3 class="letraBranca">Tem certeza que deseja deletar esta categoria?</h3>
 
-<h3>Are you sure you want to delete this?</h3>
+    <div class="main">
+        <div class="conteudo">
+            <div class="nome">
+                <dt class="fs-3">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="labelDetalhe">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+            </div>
+
+            <div class="divBotoes">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Deletar" class="btn botaoDeletar" />
+                    <a asp-action="Index" class="btn botaoVoltar">Voltar</a>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div>
-    <h4>Categoria</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" />
-        <a asp-action="Index">Back to List</a>
-    </form>
 </div>
