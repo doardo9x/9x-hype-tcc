@@ -1,25 +1,31 @@
+<link rel="stylesheet" href="~/css/perfil.css">
+
 @{
     ViewData["Title"] = "Alterar Senha";
 }
 
-<div class="container mt-4">
-    <h2>Alterar Senha</h2>
-    <hr />
+<div class="container">
+    <h2 class="letraBranca">Alterar Senha</h2>
+    <div class="main">
+        <form asp-action="AlterarSenha" class="formMerda center" method="post">
+            <div class="conteudo">
+                <div class="campos">
+                    <label class="letraBranca fs-3">Senha Atual</label>
+                    <input type="password" name="senhaAtual" class="inputCampo form-control" required />
+                </div>
 
-    <form asp-action="AlterarSenha" method="post">
-        <div class="mb-3">
-            <label>Senha Atual</label>
-            <input type="password" name="senhaAtual" class="form-control" required />
-        </div>
+                <div class="campos">
+                    <label class="letraBranca fs-3">Nova Senha</label>
+                    <input type="password" name="novaSenha" class="inputCampo form-control" required />
+                </div>
 
-        <div class="mb-3">
-            <label>Nova Senha</label>
-            <input type="password" name="novaSenha" class="form-control" required />
-        </div>
-
-        <button type="submit" class="btn btn-primary">Salvar</button>
-        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-    </form>
+                <div class="divBotoes">
+                    <button type="submit" class="btn btnSalvar">Salvar</button>
+                    <a asp-action="Index" class="btn btnCancelar">Cancelar</a>    
+                </div>
+            </div>
+        </form>
+    </div>
 
     <div asp-validation-summary="All" class="text-danger mt-2"></div>
 
