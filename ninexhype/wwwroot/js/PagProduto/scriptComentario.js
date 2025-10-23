@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="imgComentario">
-                    <img src="${imgSrc}" alt="" class="imgRevilComentario">
+                    <img src="${imgSrc}" alt="" class="imgReviewComentario">
                 </div>
                 <button type="button" class="btnDeletarComentario">Deletar Comentário</button>
         `;
