@@ -59,6 +59,9 @@ a.crie-conta:hover {
 
 .cardLogin{
     background-color: var(--RoxoForte-color);
+    border-radius: 15px;
+
+    border: 1px solid var(--RoxoClaro-color) !important;
 }
 
 .TextWhite{
@@ -85,4 +88,28 @@ label{
 .form-control {
     padding: 0;
     border: 0;
+}
+
+.main {
+    width: 50%;
+    border-radius: 15px;   
+}
+
+.campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    padding: 10px;
+}
+
+.letraBranca {
+    color: white;
+}
+
+.inputCampo {
+    background-color: var(--CinzaFraco-color);   
+    padding: 10px;
+    border-radius: 5px;
 }

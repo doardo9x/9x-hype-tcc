@@ -9,34 +9,42 @@
     <div class="row justify-content-center ">
         <a asp-controller="Home" asp-action="Index" class="display-5 text-center ninexLogo">9xHype</a>
 
-        <div class="col-lg-5">
+        <div class="main">
             <div class="card  border-0 rounded-lg cardLogin">
                 <div class="card-header TextWhite">
                     <h3 class="text-center font-weight-light my-4 TextWhite">Login</h3>
                 </div>
+
                 <div class="card-body">
+                
                     <form asp-action="Login" method="post">
                         <div asp-validation-summary="ModelOnly" hidden></div>
                         <input type="hidden" asp-for="UrlRetorno" />
-                        <div class="form-floating mb-3">
-                            <input class="form-control formularios" asp-for="Email" />
-                            <label asp-for="Email" class="formularios"></label>
+
+                        <div class="campo">
+                            <label asp-for="Email" class="letraBranca"></label>
+                            <input class="letraBranca inputCampo" asp-for="Email" />
                             <span asp-validation-for="Email" class="text-danger text-sm"></span>
                         </div>
+                        
                         <div class="form-floating mb-3">
                             <input class="form-control" asp-for="Senha" />
                             <label asp-for="Senha"></label>
                             <span asp-validation-for="Senha" class="text-danger text-sm"></span>
                         </div>
+                        
                         <div class="form-check mb-3 TextWhite">
                             <input class="form-check-input TextWhite" asp-for="Lembrar" type="checkbox" value="" />
                             <label class="form-check-label TextWhite" asp-for="Lembrar"></label>
                         </div>
+                        
                         <div class="d-flex flex-column align-items-center justify-content-center mt-4 mb-0">
                             <input type="submit" class="btn btn-primary w-100 mb-3" value="Entrar">
                             <a class="small TextRosa" href="password.html">Esqueceu sua Senha?</a>
                         </div>
+                    
                     </form>
+                
                 </div>
                 <div class="card-footer text-center py-3">
                     <div class="small TextWhite">Novo por aqui? <a asp-action="Registro" class="TextRosa">Cria sua conta!</a></div>

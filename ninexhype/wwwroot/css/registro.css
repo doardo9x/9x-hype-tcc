@@ -46,3 +46,25 @@ main {
 .letraBranca {
     color: white;
 }
+
+.ninexLogo {
+    color: var(--Destaque-color);
+    font-family: 'Dancing Script';
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 20px;
+}
+.ninexLogo:hover {
+    color: var(--Destaque-color);
+    font-family: 'Dancing Script';
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 20px;
+}
+
+.containerLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
