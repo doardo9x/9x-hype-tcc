@@ -17,10 +17,11 @@
     --VermelhoRemFavHover-color: #6b0101;
 }
 
-body{
+body {
     background-color: var(--main-BG-color);
 }
-.center{
+
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +35,7 @@ body{
     text-transform: none;
     padding-bottom: 20px;
 }
+
 .ninexLogo:hover {
     color: var(--Destaque-color);
     font-family: 'Dancing Script';
@@ -47,44 +49,47 @@ a.crie-conta {
     color: var(--Destaque-color) !important;
     text-decoration: underline;
 }
+
 a.esqueci-senha:hover,
 a.crie-conta:hover {
     color: var(--RosaClarinho-color) !important;
 }
 
-.containerLogin{
+.containerLogin {
     display: flex;
 
 }
 
-.cardLogin{
+.cardLogin {
     background-color: var(--RoxoForte-color);
     border-radius: 15px;
 
-    border: 1px solid var(--RoxoClaro-color) !important;
+
 }
 
-.TextWhite{
+.TextWhite {
     color: white;
 }
 
-.TextRosa{
+.TextRosa {
     color: var(--Destaque-color);
     text-decoration: none;
+    font-weight: 600;
 }
 
-input{
+input {
     background-color: #171925;
     color: white;
     border: 0;
 }
 
-label{
+label {
     background-color: #171925;
     color: rgb(0, 0, 0);
     border: 0;
     background-color: transparent !important;
 }
+
 .form-control {
     padding: 0;
     border: 0;
@@ -92,11 +97,29 @@ label{
 
 .main {
     width: 50%;
-    border-radius: 15px;   
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease;
+    padding: 0;
+
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Animação */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);   
+    }
+}
+
+.main:focus-within {
+    outline: 2px solid var(--RoxoClaro-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaro-color);
 }
 
 .campo {
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 
@@ -109,7 +132,117 @@ label{
 }
 
 .inputCampo {
-    background-color: var(--CinzaFraco-color);   
+    background-color: var(--CinzaFraco-color);
     padding: 10px;
     border-radius: 5px;
 }
+
+.inputCampo:focus {
+    outline: none;
+    border: 1px solid var(--RoxoClaro-color);
+    box-shadow: 0 0 0 1px var(--RoxoClaro-color);
+    transition: all 0.1s ease;
+}
+
+.texto-erro {
+    color: red;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--CinzaFraco-color) inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+    border: none !important;
+    outline: none !important;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--CinzaFraco-color) inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.inputCampo:focus,
+input:-webkit-autofill:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+.divBotao {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botaoEntrar {
+    background-color: var(--RoxoClaro-color) !important;
+    border-radius: 50px;
+    width: 50%;
+    padding: 5px;
+    font-weight: 600;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.botaoEntrar:hover {
+    transition: 0.2s;
+    background-color: var(--Destaque-color);
+    box-shadow: 0px 4px 8px var(--RoxoClaroHover-color);
+    transform: translateY(-2px);
+}
+
+.containerManterConectado {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+input.checkboxConexao[type="checkbox"] {
+    /* remove estilo padrão */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* aparência base */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #a259ff;
+    /* borda roxa */
+    border-radius: 50%;
+    /* deixa redondo */
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* quando estiver marcado */
+input.checkboxConexao[type="checkbox"]:checked {
+    background-color: #a259ff;
+    /* roxo de fundo */
+    border-color: #a259ff;
+}
+
+/* desenha o "check" (✔) manualmente */
+input.checkboxConexao[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* opcional: efeito hover */
+input.checkboxConexao[type="checkbox"]:hover {
+    border-color: #b57cff;
+    box-shadow: 0 0 6px #a259ff55;
+}
+

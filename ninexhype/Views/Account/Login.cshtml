@@ -27,19 +27,21 @@
                             <span asp-validation-for="Email" class="text-danger text-sm"></span>
                         </div>
                         
-                        <div class="form-floating mb-3">
-                            <input class="form-control" asp-for="Senha" />
-                            <label asp-for="Senha"></label>
+                        <div class="campo">
+                            <label class="letraBranca" asp-for="Senha"></label>
+                            <input class="letraBranca inputCampo" asp-for="Senha" />
                             <span asp-validation-for="Senha" class="text-danger text-sm"></span>
                         </div>
                         
-                        <div class="form-check mb-3 TextWhite">
-                            <input class="form-check-input TextWhite" asp-for="Lembrar" type="checkbox" value="" />
+                        @* manter conectado *@
+                        <div class="containerManterConectado">
+                            <input class="checkboxConexao" asp-for="Lembrar" type="checkbox" value="" />
+                            
                             <label class="form-check-label TextWhite" asp-for="Lembrar"></label>
                         </div>
                         
-                        <div class="d-flex flex-column align-items-center justify-content-center mt-4 mb-0">
-                            <input type="submit" class="btn btn-primary w-100 mb-3" value="Entrar">
+                        <div class="divBotao">
+                            <input type="submit" class="botaoEntrar fs-4" value="Entrar">
                             <a class="small TextRosa" href="password.html">Esqueceu sua Senha?</a>
                         </div>
                     
@@ -47,7 +49,7 @@
                 
                 </div>
                 <div class="card-footer text-center py-3">
-                    <div class="small TextWhite">Novo por aqui? <a asp-action="Registro" class="TextRosa">Cria sua conta!</a></div>
+                    <div class="small TextWhite">Novo por aqui? <a asp-action="Registro" class="TextRosa">Crie sua conta!</a></div>
                 </div>
             </div>
         </div>
