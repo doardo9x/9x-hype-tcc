@@ -14,7 +14,11 @@
 
             @if (!string.IsNullOrEmpty(Model.Foto))
             {
-                <img src="@Model.Foto" class="fotoUsuario" />
+                <div class="fotoInput">
+                    <img src="@Model.Foto" class="fotoUsuario" id="previewImage" />
+                    <label for="fileInput" class="btnAdicionarFoto letraBranca">Adicionar Foto</label>
+                    <input type="file" class="inputFoto" id="fileInput" accept="image/*" />
+                </div>
             }
             else
             {
@@ -67,7 +71,7 @@
                 <p><strong>CEP:</strong> @Model.Endereco.Cep</p>
             }
 
-            <div class="mt-3">
+            <div class="mt-3 divBotoes">
                 <a asp-action="Editar" class="btn btn-primary">Editar Perfil</a>
                 <a asp-action="AlterarSenha" class="btn btn-outline-secondary">Alterar Senha</a>
             </div>
@@ -79,3 +83,16 @@
         <div class="alert alert-success mt-3">@TempData["Sucesso"]</div>
     }
 </div>
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('previewImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
