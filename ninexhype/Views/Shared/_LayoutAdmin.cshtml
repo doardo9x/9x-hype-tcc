@@ -11,25 +11,23 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/home.css">
+    <link rel="stylesheet" href="~/css/Layout.css">
     <link rel="stylesheet" href="~/css/admin.css">
-    
 </head>
 
 <body>
-    @{
-        var isHomeIndex = (ViewContext.RouteData.Values["controller"]?.ToString() == "Home" &&
-        ViewContext.RouteData.Values["action"]?.ToString() == "Index");
-    }
-    @if (!isHomeIndex)
-    {
-        <partial name="_Header" />
-    }
+    <header class=" headerLayout center ">
+        <div class="center ">
+            <a class="ninexLogo" asp-controller="Admin" asp-action="Index"><img src="/img/logo/9xHype.png"
+                    class="imgLogo" alt=""></a>
+        </div>
+    </header>
 
     @RenderBody()
 
     <!-- Footer-->
     <footer>
-        <div class="tituloFooter fs-1">9xHype</div>
+        <a class="tituloFooter fs-1" asp-controller="Home" asp-action="Index">9xHype</a>
         <div class="contatoFooter">
             <div class="redesSociais">
                 <div class="headerFooter fs-5">Redes Sociais</div>
@@ -54,7 +52,7 @@
         </div>
         <div class="direitosAutorais">© 2025 9xHype. Todos os direitos reservados</div>
     </footer>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/home.js"></script>

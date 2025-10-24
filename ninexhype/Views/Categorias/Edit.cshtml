@@ -23,7 +23,7 @@
 
                 <div class="campo">
                     <label asp-for="TipoRoupaId" class="tituloCampo fs-3">Tipo do Produto</label>
-                    <input asp-for="TipoRoupa" class="inputCampo" />
+                   <select asp-for="TipoRoupaId" class="inputCampo" asp-items="ViewBag.TipoRoupaId"></select>
                 </div>
 
                 <div class="divBotoes">

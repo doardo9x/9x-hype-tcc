@@ -34,7 +34,9 @@ namespace ninexhype.Controllers
             }
 
             var categoria = await _context.Categorias
+                .Include(c => c.TipoRoupa) // 🔹 Carrega o tipo associado
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (categoria == null)
             {
                 return NotFound();
@@ -42,6 +44,7 @@ namespace ninexhype.Controllers
 
             return View(categoria);
         }
+
 
         // GET: Categorias/Create
         public IActionResult Create()
@@ -88,15 +91,23 @@ namespace ninexhype.Controllers
             {
                 return NotFound();
             }
+
+            // Busca todos os tipos de roupa
+            var tipos = await _context.TiposRoupa.ToListAsync();
+
+            // Cria a SelectList com a opção atual selecionada
+            ViewBag.TipoRoupaId = new SelectList(tipos, "Id", "Nome", categoria.TipoRoupaId);
+
             return View(categoria);
         }
+
 
         // POST: Categorias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Foto")] Categoria categoria)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Foto,TipoRoupaId")] Categoria categoria)
         {
             if (id != categoria.Id)
             {
@@ -109,6 +120,7 @@ namespace ninexhype.Controllers
                 {
                     _context.Update(categoria);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -121,10 +133,15 @@ namespace ninexhype.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
+
+            // Se der erro de validação, recarrega as opções do select
+            var tipos = await _context.TiposRoupa.ToListAsync();
+            ViewBag.TipoRoupaId = new SelectList(tipos, "Id", "Nome", categoria.TipoRoupaId);
+
             return View(categoria);
         }
+
 
         // GET: Categorias/Delete/5
         public async Task<IActionResult> Delete(int? id)

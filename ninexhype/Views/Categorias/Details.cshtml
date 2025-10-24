@@ -19,6 +19,14 @@
                     @Html.DisplayFor(model => model.Nome)
                 </dd>
             </div>
+            <div class="nome">
+                <dt class="fs-3">
+                    Tipo do Produto
+                </dt>
+                <dd class="labelDetalhe">
+                    @Html.DisplayFor(model =>  model.TipoRoupa.Nome)
+                </dd>
+            </div>
 
             <div class="divBotoes">
                 <a asp-action="Edit" class="btn botaoEdit" asp-route-id="@Model?.Id">Editar</a>
