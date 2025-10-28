@@ -144,10 +144,6 @@ label {
     transition: all 0.1s ease;
 }
 
-.texto-erro {
-    color: red;
-}
-
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px var(--CinzaFraco-color) inset !important;
     -webkit-text-fill-color: #fff !important;
@@ -246,3 +242,8 @@ input.checkboxConexao[type="checkbox"]:hover {
     box-shadow: 0 0 6px #a259ff55;
 }
 
+#Nome-error, #Email-error, 
+#Senha-error, #ConfirmacaoSenha-error
+{
+    color: red;
+}
