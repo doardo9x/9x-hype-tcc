@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="~/css/carrossel.css">
+
 @model ninexhype.ViewModels.ProdutoVM
 @{
     ViewData["Title"] = "Detalhes do Produto";
@@ -11,42 +13,40 @@
     <div class="pagProduto">
 
         <!-- Carrossel -->
-        <div class="carrossel">
-            <div id="carouselProduto" class="carousel slide" data-bs-ride="carousel">
+        <div class="carrossel" id="tranding">
+            <div class="containerCarrossel">
+                <div class="swiper tranding-slider">
 
-                <!-- Indicadores (bolinhas) -->
-                <div class="carousel-indicators">
-                    @for (int i = 0; i < Model.Produto.Fotos.Count; i++)
-                    {
-                        <button type="button" data-bs-target="#carouselProduto" data-bs-slide-to="@i"
-                            class="@(i == 0 ? "active" : "")" aria-current="@(i == 0 ? "true" : "false")"
-                            aria-label="Slide @(i + 1)"></button>
-                    }
-                </div>
-
-                <!-- Itens do carrossel -->
-                <div class="carousel-inner">
-                    @for (int i = 0; i < Model.Produto.Fotos.Count; i++)
-                    {
-                        var foto = Model.Produto.Fotos[i];
-                        <div class="carousel-item @(i == 0 ? "active" : "")">
-                            <img src="@foto.ArquivoFoto" class="d-block w-100" alt="@Model.Produto.Nome"
-                                style="object-fit: contain; max-height: 600px;">
+                    <div class="swiper-wrapper">
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="~/img/500x500/AdidasUltraboost.png" alt="Tranding">
+                            </div>
                         </div>
-                    }
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="~/img/500x500/AdidasUltraboost1.png" alt="Tranding">
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="~/img/500x500/AdidasUltraboost2.png" alt="Tranding">
+                            </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                            <div class="tranding-slide-img">
+                                <img src="~/img/500x500/AdidasUltraboost3.png" alt="Tranding">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Controles -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduto"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselProduto"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
             </div>
         </div>
         <!-- Fim Carrossel -->
@@ -417,7 +417,7 @@
                         </div>
 
                         <!-- Upload da imagem -->
-                       
+
                     </div>
 
                     <div class="linhaDoisComentarioNovo">
@@ -533,6 +533,10 @@
 
         </div> <!--Fim Comentários-->
 
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script src="~/js/scriptCarrossel.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -547,4 +551,5 @@
         <script src="~/js/PagProduto/scriptDescricoes.js"></script>
         <script src="~/js/PagProduto/scriptOpcoesTamanho.js"></script>
         <link rel="stylesheet" href="~/css/produto.css">
+
     </div> <!--Fim Pag Produto-->
