@@ -855,7 +855,7 @@ input[type="radio"]:checked+label {
 
 .imgComentario {
     width: 45%;
-    min-width: ;
+    min-width: 300px;
     max-width: 100%;
     height: auto;
     max-height: 95%;
@@ -864,15 +864,6 @@ input[type="radio"]:checked+label {
     justify-content: center !important;
 
     border: 1px solid yellow;
-}
-
-#previewImagem {
-    width: 90%;
-    height: 18.75rem;
-    max-width: 100%;
-    border: 2px solid var(--Destaque-color);
-    border-radius: 10px;
-    object-fit: cover;
 }
 
 /* ---------- Comentário Novo ---------- */
@@ -886,7 +877,7 @@ input[type="radio"]:checked+label {
 }
 
 .comentarioNovo {
-    border: 1px solid white;
+    border: 1px solid white;    
     border-radius: 15px;
     background-color: var(--RoxoForte-color);
 }
@@ -896,11 +887,6 @@ input[type="radio"]:checked+label {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.fotoComentario {
-    width: 100%;
-    border: 1px solid white;
 }
 
 .oculto {
@@ -968,12 +954,15 @@ input[type="radio"]:checked+label {
 }
 
 .imgReviewComentario {
-    width: 90%;
-    height: 18.75rem;
+    
+    min-width: 90%;
+    height: 300px;
+    min-height: 300px;
     max-width: 100%;
-    border: 2px solid var(--Destaque-color);
     border-radius: 10px;
     object-fit: cover;
+
+    border: 2px solid var(--Destaque-color);
 }
 
 textarea {
