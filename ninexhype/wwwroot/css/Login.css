@@ -19,6 +19,7 @@
 
 body {
     background-color: var(--main-BG-color);
+    padding: 20px;
 }
 
 .center {
@@ -63,8 +64,6 @@ a.crie-conta:hover {
 .cardLogin {
     background-color: var(--RoxoForte-color);
     border-radius: 15px;
-
-
 }
 
 .TextWhite {

@@ -12,19 +12,28 @@
     color: white;
     max-width: 100vw;
     margin: 0;
-    /* Adicionado para evitar espaçamento externo em dispositivos pequenos */
     padding: 0;
 }
 
-.t-nome {
-    text-decoration: none;
+:root {
+    --main-BG-color: #101524;
+    --RoxoForte-color: #171925;
+    --CinzaFraco-color: #192026;
+    --Destaque-color: #E75DFF;
+    --RosaClarinho-color: #FFA3FD;
+    --RoxoClaro-color: #865DFF;
+    --RoxoClaroHover-color: #622efe;
+    --VerdeCarrinho-color: #008000;
+    --VerdeCarrinhoHover-color: #005c00;
+    --VermelhoFav-color: #BA1B1B;
+    --VermelhoFavHover-color: #a31b1b;
+    --VermelhoRemFav-color: #8b0000;
+    --VermelhoRemFavHover-color: #6b0101;
 }
 
-html,
-body {
+html {
     background-color: var(--main-BG-color);
     overflow-x: hidden;
-    /* Evita rolagem horizontal indesejada */
 }
 
 .btn {
@@ -170,13 +179,8 @@ body {
 
 /* ---------------------------------------------- Carrossel ---------------------------------------------- */
 
-.carrossel {
-    border: 1px solid white;
-    width: 80%;
-    height: auto;
-    max-height: 500px;
-    margin-bottom: 20px;
-} 
+
+
 /* ---------------------------------------------- Opções Cores ---------------------------------------------- */
 
 .opcoesCores {
@@ -223,65 +227,6 @@ input[type="radio"]:checked+label {
     justify-content: space-between;
     margin-bottom: 1.875rem;
     gap: 1rem;
-}
-
-/* ---------------------------------------------- Info Tamanho ---------------------------------------------- */
-
-.tamanhoProduto {
-    background-color: var(--RoxoForte-color);
-    width: 25%;
-    max-width: 100%;
-    max-height: 37.5rem;
-    max-height: 37.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-}
-
-.tamanhoProduto::-webkit-scrollbar {
-    width: 4px;
-    background-color: var(--main-BG-color);
-}
-
-.tamanhoProduto::-webkit-scrollbar-thumb {
-    background-color: var(--RoxoClaro-color);
-    border-radius: 5px;
-}
-
-.btnOpcoesTamanho {
-    width: 100%;
-    height: 6.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: 0;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    box-sizing: border-box;
-}
-
-.btnOpcoesTamanho:hover {
-    border: 2px solid var(--RoxoClaro-color);
-    cursor: pointer;
-}
-
-.OpcoesTamanho {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-bottom: 3px solid var(--main-BG-color);
-}
-
-.btnOpcoesTamanho.first-item {
-    border-top-left-radius: 15px;
-}
-
-.btnOpcoesTamanho.last-item {
-    border-bottom-left-radius: 15px;
 }
 
 /* ---------------------------------------------- Info Principal ---------------------------------------------- */
@@ -342,10 +287,6 @@ input[type="radio"]:checked+label {
     gap: 1.25rem;
     justify-content: center;
     align-items: center;
-}
-
-.botoes:hover {
-    background-color: transparent;
 }
 
 .btnComp {
@@ -476,30 +417,13 @@ input[type="radio"]:checked+label {
     display: none;
 }
 
-/* ---------------------------------------------- Descrição e Pagamento ---------------------------------------------- */
-
-.contDescricaoMetodoPagamento {
-    width: 80%;
-    max-width: 100%;
-    height: auto;
-    min-height: 37.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 60px;
-}
 
 /* ---------------------------------------------- Descricão ---------------------------------------------- */
 
 .descricao {
-    width: 74%;
+    width: 80%;
     max-width: 100%;
-}
-
-.descricaoOculta {
-    width: 74%;
-    max-width: 100%;
-    display: none;
+    margin-bottom: 40px;
 }
 
 .descricaoSimples {
@@ -509,6 +433,7 @@ input[type="radio"]:checked+label {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .headerDescSimples {
@@ -537,64 +462,6 @@ input[type="radio"]:checked+label {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-}
-
-.descricaoCompleta {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 20em;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    text-indent: 2em;
-    overflow: hidden;
-    transition: max-height 0.6s ease;
-}
-
-.descricaoCompleta.active {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: 0;
-    max-height: 2000px;
-}
-
-
-.txtDescCompleta {
-    color: whitesmoke;
-    font-weight: 400;
-    font-size: 1.25rem;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-}
-
-.txtDescCompleta p {
-    margin-bottom: 1rem;
-    text-indent: 2em;
-    line-height: 1.6;
-    word-break: break-word;
-    white-space: normal;
-}
-
-#btnDescCompleta {
-    background-color: transparent;
-    border: 0;
-    margin-top: 1rem;
-    font-weight: 400;
-    font-size: 1.25rem;
-    color: var(--RoxoClaro-color);
-}
-
-#btnDescCompleta:hover {
-    color: var(--RoxoClaroHover-color);
 }
 
 /* ---------------------------------------------- Método Pagamento ---------------------------------------------- */
@@ -658,13 +525,21 @@ input[type="radio"]:checked+label {
 }
 
 
-/* ---------------------------------------------- Comentários ---------------------------------------------- */
+/* ---------------------------------------------- Relacionados ---------------------------------------------- */
 
-.listaCometarios {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.relacionados {
+    width: 80%;
 }
+
+.cardCarrossel {
+    margin-top: 20px;
+}
+
+.cardCarrossel:hover {
+    transform: scale(1.01) !important;  
+}
+
+/* ---------------------------------------------- Comentários ---------------------------------------------- */
 
 .comentarios {
     width: 80%;
@@ -717,8 +592,9 @@ input[type="radio"]:checked+label {
     justify-content: space-around;
     flex-direction: row;
     padding-top: 10px;
+    margin-bottom: 1.25rem;
     border-radius: 15px;
-    flex-wrap: wrap;
+    padding-bottom: 2rem;
 }
 
 .infoEscritas {
@@ -789,7 +665,10 @@ input[type="radio"]:checked+label {
     height: auto;
     background-color: var(--main-BG-color);
     border-radius: 10px;
-    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
     margin-bottom: 1rem;
 }
 
@@ -799,44 +678,25 @@ input[type="radio"]:checked+label {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: justify;
-    word-wrap: break-word;
-    white-space: normal;
 }
 
 .imgComentario {
     width: 45%;
-    min-width: 300px;
     max-width: 100%;
     height: auto;
     max-height: 95%;
     display: flex;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border: 1px solid yellow;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ---------- Comentário Novo ---------- */
-
 .comentarioNovoEstilo {
     display: flex;
     flex-direction: column;
     outline: 2px solid var(--RoxoClaro-color);
     box-shadow: 0px 4px 8px var(--RoxoClaro-color);
     transform: translateY(-2px);
-}
-
-.comentarioNovo {
-    border: 1px solid white;    
-    border-radius: 15px;
-    background-color: var(--RoxoForte-color);
-}
-
-.containerBotaoDeletar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .oculto {
@@ -870,7 +730,6 @@ input[type="radio"]:checked+label {
     font-weight: 400;
     font-size: 1.2rem;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    padding: 5px;
 }
 
 .btnEnviarComentario:hover {
@@ -894,7 +753,6 @@ input[type="radio"]:checked+label {
     font-weight: 400;
     font-size: 1.2rem;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    padding: 5px;
 }
 
 .btnDeletarComentario:hover {
@@ -904,15 +762,33 @@ input[type="radio"]:checked+label {
 }
 
 .imgReviewComentario {
-    
-    min-width: 90%;
-    height: 300px;
-    min-height: 300px;
+    width: 37.5rem;
     max-width: 100%;
+    height: 18.75rem;
+    border: 2px solid var(--Destaque-color);
     border-radius: 10px;
     object-fit: cover;
+}
 
+.previewImagemNovoComentario {
+    width: 37.5rem;
+    max-width: 100%;
+    height: 18.75rem;
+    border-radius: 12px;
+    object-fit: cover;
     border: 2px solid var(--Destaque-color);
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.previewImagemNovoComentario:hover {
+    transform: scale(1.02);
+}
+
+/* Animação suave ao trocar imagem */
+.previewImagemNovoComentario.fade {
+    opacity: 0;
 }
 
 textarea {
@@ -931,13 +807,6 @@ textarea {
 textarea::placeholder {
     color: whitesmoke;
 }
-
-/* ---------------------------------------------- Relacionados ---------------------------------------------- */
-
-.relacionados {
-    background-color: var(--main-BG-color);
-}
-
 
 /* ---------------------- Responsividade ---------------------- */
 

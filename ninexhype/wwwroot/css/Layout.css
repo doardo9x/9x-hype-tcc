@@ -19,10 +19,11 @@
 /* Header */
 header {
     width: 100%;
-    height: 80px;
+    height: 120px;
     background-color: rgb(16, 21, 36);
     display: flex;
     flex-wrap: wrap;
+
 }
 /* Footer */
 footer {
@@ -117,11 +118,6 @@ footer {
     padding-left: 0;
     display: flex;
     justify-content: center;
-}
-@media screen and (min-width: 700px) {
-    .HeaderLogo{
-        display: none;
-    }
 }
 
 /* Responsividade do footer */
