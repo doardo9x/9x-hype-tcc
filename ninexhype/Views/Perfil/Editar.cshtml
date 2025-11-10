@@ -12,18 +12,18 @@
         <form asp-action="Editar" method="post" enctype="multipart/form-data" class="formMerda">
 
             <div class="quadradoEsq">
-                <div>
-                    <div class="campoFoto">
-                        @if (!string.IsNullOrEmpty(Model.Foto))
-                        {
-                            <img src="@Model.Foto" class="fotoUsuario" />
-                        }
-                        else
-                        {
-                            <img src="/img/usuarios/default.png" class="fotoUsuario" />
-                        }
-                        <input type="file" name="Foto" class="form-control inputFoto" />
-                    </div>
+                <div class="campoFoto">
+                    @if (!string.IsNullOrEmpty(Model.Foto))
+                    {
+                        <img src="~/img/usuarios/@Model.Foto" class="fotoUsuario" id="previewImage" />
+                    }
+                    else
+                    {
+                        <img src="~/img/usuarios/default.png" class="fotoUsuario" id="previewImage" />
+                    }
+
+                    <label for="fotoInput" class="btnAdicionarFoto letraBranca">Alterar Foto</label>
+                    <input type="file" name="foto" id="fotoInput" class="inputFoto" accept="image/*" />
                 </div>
             </div>
 
@@ -33,27 +33,27 @@
                     <input asp-for="Nome" class="form-control inputCampo" />
                 </div>
 
-                <div  class="campos">
+                <div class="campos">
                     <label class="letraBranca fs-3">Email</label>
                     <input asp-for="Email" class="form-control inputCampo" />
                 </div>
 
-                <div  class="campos">
+                <div class="campos">
                     <label class="letraBranca fs-3">CPF</label>
                     <input asp-for="Cpf" class="form-control inputCampo" />
                 </div>
 
-                <div  class="campos">
+                <div class="campos">
                     <label class="letraBranca fs-3">Data de Nascimento</label>
                     <input asp-for="DataNascimento" class="form-control inputCampo" type="date" />
                 </div>
 
-                <div  class="campos">
+                <div class="campos">
                     <label class="letraBranca fs-3">Gênero</label>
                     <input asp-for="Genero" class="form-control inputCampo" />
                 </div>
 
-                <div  class="campos">
+                <div class="campos">
                     <label class="letraBranca fs-3">Telefone Alternativo</label>
                     <input asp-for="TelefoneAlternativo" class="form-control inputCampo" />
                 </div>
@@ -61,7 +61,8 @@
 
             @if (Model.Endereco != null)
             {
-                <h5>Endereço</h5>
+                <h5 class="letraRosa mt-4">Endereço</h5>
+
                 <div class="mb-3">
                     <label class="form-label">Rua</label>
                     <input asp-for="Endereco.Logradouro" class="form-control" />
@@ -101,3 +102,17 @@
 
     <div asp-validation-summary="All" class="text-danger mt-2"></div>
 </div>
+
+<script>
+    // pré-visualização da imagem antes do upload
+    document.getElementById('fotoInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

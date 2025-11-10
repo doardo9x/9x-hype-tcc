@@ -1,21 +1,26 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ninexhype.Models;
+using System.IO;
 using System.Threading.Tasks;
+using System;
 
 namespace ninexhype.Controllers
 {
-    [Authorize] // garante que só usuários logados acessem
+    [Authorize]
     public class PerfilController : Controller
     {
         private readonly UserManager<Usuario> _userManager;
         private readonly SignInManager<Usuario> _signInManager;
+        private readonly IWebHostEnvironment _env;
 
-        public PerfilController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager)
+        public PerfilController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, IWebHostEnvironment env)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _env = env;
         }
 
         // GET: /Perfil
@@ -31,13 +36,15 @@ namespace ninexhype.Controllers
         public async Task<IActionResult> Editar()
         {
             var usuario = await _userManager.GetUserAsync(User);
+            if (usuario == null) return RedirectToAction("Login", "Account");
+
             return View(usuario);
         }
 
         // POST: /Perfil/Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Editar(Usuario model)
+        public async Task<IActionResult> Editar(Usuario model, IFormFile foto)
         {
             var usuario = await _userManager.GetUserAsync(User);
             if (usuario == null) return RedirectToAction("Login", "Account");
@@ -45,6 +52,35 @@ namespace ninexhype.Controllers
             usuario.Nome = model.Nome;
             usuario.Email = model.Email;
             usuario.UserName = model.Email;
+
+            // Se uma nova foto foi enviada
+            if (foto != null && foto.Length > 0)
+            {
+                var uploadDir = Path.Combine(_env.WebRootPath, "img", "usuarios");
+                if (!Directory.Exists(uploadDir))
+                    Directory.CreateDirectory(uploadDir);
+
+                // Gera nome único baseado no ID do usuário
+                var fileName = $"{usuario.Id}{Path.GetExtension(foto.FileName)}";
+                var filePath = Path.Combine(uploadDir, fileName);
+
+                // Exclui foto antiga se existir
+                if (!string.IsNullOrEmpty(usuario.Foto))
+                {
+                    var oldFile = Path.Combine(uploadDir, usuario.Foto);
+                    if (System.IO.File.Exists(oldFile))
+                        System.IO.File.Delete(oldFile);
+                }
+
+                // Salva a nova imagem
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await foto.CopyToAsync(stream);
+                }
+
+                // Atualiza o campo no banco
+                usuario.Foto = fileName;
+            }
 
             var result = await _userManager.UpdateAsync(usuario);
 

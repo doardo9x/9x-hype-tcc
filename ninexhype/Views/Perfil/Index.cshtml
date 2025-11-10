@@ -11,20 +11,19 @@
 
     <div class="main">
         <div class="quadradoEsq">
+            <div class="fotoInput">
+                @if (!string.IsNullOrEmpty(Model.Foto))
+                {
+                    <!-- Mostra a imagem salva -->
+                    <img src="~/img/usuarios/@Model.Foto" class="fotoUsuario" id="previewImage" />
+                }
+                else
+                {
+                    <!-- Imagem padrão -->
+                    <img src="~/img/PerfilUsuario/perfilVazio.png" class="fotoUsuario" id="previewImage" />
+                }
 
-            @if (!string.IsNullOrEmpty(Model.Foto))
-            {
-                <div class="fotoInput">
-                    <img src="@Model.Foto" class="fotoUsuario" id="previewImage" />
-                    <label for="fileInput" class="btnAdicionarFoto letraBranca">Adicionar Foto</label>
-                    <input type="file" class="inputFoto" id="fileInput" accept="image/*" />
-                </div>
-            }
-            else
-            {
-                <img src="~/img/PerfilUsuario/perfilVazio.png" class="fotoUsuario" />
-            }
-        
+            </div>
         </div>
 
         <div class="quadradoDir">
@@ -85,11 +84,11 @@
 </div>
 
 <script>
-    document.getElementById('fileInput').addEventListener('change', function(event) {
+    document.getElementById('fileInput').addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 document.getElementById('previewImage').src = e.target.result;
             };
             reader.readAsDataURL(file);
