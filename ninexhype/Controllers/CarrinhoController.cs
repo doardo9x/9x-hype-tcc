@@ -134,7 +134,8 @@ namespace ninexhype.Controllers
         {
             var carrinho = await _context.Carrinhos
                 .Include(c => c.Itens)
-                .ThenInclude(i => i.Produto)
+                    .ThenInclude(i => i.Produto)
+                        .ThenInclude(p => p.Fotos) // ✅ Adicionado para carregar as fotos do produto
                 .FirstOrDefaultAsync(c => c.UsuarioId == usuarioId);
 
             if (carrinho == null)
