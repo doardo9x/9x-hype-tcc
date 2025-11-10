@@ -143,6 +143,7 @@ public class AppDbSeed
             // Produto 16 - Camiseta Oversized Branca
             new ProdutoFoto { Id = 28, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
             new ProdutoFoto { Id = 29, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
+            new ProdutoFoto { Id = 29, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca3.png"},
 
             // Produto 17 - Calça Cargo Preta
             new ProdutoFoto { Id = 30, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
@@ -161,7 +162,8 @@ public class AppDbSeed
 
             // Produto 20 - Bermuda de Sarja Bege
             new ProdutoFoto { Id = 39, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
-            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege2.png"},
+            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege3.png"},
 
             // Produto 21 - Camisa Social Slim
             new ProdutoFoto { Id = 41, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
@@ -190,6 +192,7 @@ public class AppDbSeed
             // Produto 26 - Camiseta Polo Preta Feminina
             new ProdutoFoto { Id = 55, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
             new ProdutoFoto { Id = 56, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
+            new ProdutoFoto { Id = 56, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina3.png"},
 
             // Produto 27 - Macacão Feminino
             new ProdutoFoto { Id = 57, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
@@ -204,11 +207,12 @@ public class AppDbSeed
             // Produto 29 - Camisa Polo Texturizada Masculina Marrom
             new ProdutoFoto { Id = 63, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
             new ProdutoFoto { Id = 64, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
+            new ProdutoFoto { Id = 64, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
 
             // Produto 30 - Regata Dry Fit
             new ProdutoFoto { Id = 65, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
             new ProdutoFoto { Id = 66, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
-
+            new ProdutoFoto { Id = 66, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
     
 
             // Imagens produtos Destaques
