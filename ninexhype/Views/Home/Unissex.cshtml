@@ -1,0 +1,47 @@
+@model IEnumerable<ninexhype.Models.Produto>
+
+@{
+    ViewData["Title"] = "Produtos Unissex";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Produtos Unissex</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Nenhum produto disponível no momento.
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach (var produto in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        @if (produto.Fotos != null && produto.Fotos.Any())
+                        {
+                            <img src="@produto.Fotos.First().ArquivoFoto" class="card-img-top" alt="@produto.Nome" />
+                        }
+                        else
+                        {
+                            <img src="/img/sem-imagem.png" class="card-img-top" alt="Sem imagem" />
+                        }
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@produto.Nome</h5>
+                            <p class="card-text text-muted">@produto.Categoria?.Nome</p>
+                            <p class="card-text fw-bold">R$ @produto.ValorVenda.ToString("N2")</p>
+
+                            <a href="@Url.Action("Produto", "Home", new { id = produto.Id })"
+                               class="btn btn-dark w-100">
+                                Ver detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

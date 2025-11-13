@@ -16,11 +16,14 @@
 </head>
 
 <body>
-    <header class=" headerLayout center ">
-        <div class="center ">
-            <a class="ninexLogo" asp-controller="Admin" asp-action="Index"><img src="/img/logo/9xHype.png"
-                    class="imgLogo" alt=""></a>
+    <header>
+        <div class="HeaderLogo center desktop">
+            <a asp-controller="Home" asp-action="Index" class="fs-1 ninexLogo center">9xHype</a>
         </div>
+        <div class="fs-1 ADM w100 center">
+            <a asp-controller="Admin" asp-action="Index" class="fs-1 ADM">ADMINISTRADOR</a>
+        </div>
+
     </header>
 
     @RenderBody()

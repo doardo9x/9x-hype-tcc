@@ -18,45 +18,45 @@ public class HomeController : Controller
         _db = db;
     }
 
-public IActionResult Index()
-{
-    var produtos = _db.Produtos
-        .Where(p => p.CategoriaId != 8)
-        .Include(p => p.Categoria)
-        .Include(p => p.Fotos)
-        .ToList();
-
-    var destaques = _db.Produtos
-        .Where(p => p.CategoriaId == 8)
-        .OrderBy(p => EF.Functions.Random())
-        .Include(p => p.Fotos)
-        .Take(4)
-        .ToList();
-
-    var tiposRoupa = _db.TiposRoupa
-        .Include(t => t.Categorias)
-        .ThenInclude(c => c.Produtos)
-        .ToList();
-
-    // Filtrar produtos de cada categoria, removendo destaques
-    foreach (var tipo in tiposRoupa)
+    public IActionResult Index()
     {
-        foreach (var categoria in tipo.Categorias)
+        var produtos = _db.Produtos
+            .Where(p => p.CategoriaId != 8)
+            .Include(p => p.Categoria)
+            .Include(p => p.Fotos)
+            .ToList();
+
+        var destaques = _db.Produtos
+            .Where(p => p.CategoriaId == 8)
+            .OrderBy(p => EF.Functions.Random())
+            .Include(p => p.Fotos)
+            .Take(4)
+            .ToList();
+
+        var tiposRoupa = _db.TiposRoupa
+            .Include(t => t.Categorias)
+            .ThenInclude(c => c.Produtos)
+            .ToList();
+
+        // Filtrar produtos de cada categoria, removendo destaques
+        foreach (var tipo in tiposRoupa)
         {
-            categoria.Produtos = categoria.Produtos
-                .Where(p => p.CategoriaId != 8)
-                .ToList();
+            foreach (var categoria in tipo.Categorias)
+            {
+                categoria.Produtos = categoria.Produtos
+                    .Where(p => p.CategoriaId != 8)
+                    .ToList();
+            }
         }
-}
-    var indexVM = new IndexVM
-    {
-        Produtos = produtos,
-        Destaques = destaques,
-        TiposRoupa = tiposRoupa
-    };
+        var indexVM = new IndexVM
+        {
+            Produtos = produtos,
+            Destaques = destaques,
+            TiposRoupa = tiposRoupa
+        };
 
-    return View(indexVM);
-}
+        return View(indexVM);
+    }
 
 
     public IActionResult Produto(int id)
@@ -66,7 +66,7 @@ public IActionResult Index()
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
             .SingleOrDefault();
-        
+
         List<Produto> semelhantes = _db.Produtos
             .Where(p => p.Id != id && p.CategoriaId == produto.CategoriaId)
             .OrderBy(p => EF.Functions.Random())
@@ -74,12 +74,13 @@ public IActionResult Index()
             .Include(p => p.Fotos)
             .Take(4)
             .ToList();
-        
-        ProdutoVM produtoVM = new() {
+
+        ProdutoVM produtoVM = new()
+        {
             Produto = produto,
             Semelhantes = semelhantes
         };
-        
+
         return View(produtoVM);
     }
 
@@ -120,7 +121,7 @@ public IActionResult Index()
 
         return View(indexVM);
     }
- public IActionResult PagMulher()
+    public IActionResult PagMulher()
     {
         var produtos = _db.Produtos
             .Where(p => p.Genero == Genero.Feminino)
@@ -145,7 +146,7 @@ public IActionResult Index()
                     .ToList() ?? new List<Produto>();
             }
         }
-        
+
         var indexVM = new IndexVM
         {
             Produtos = produtos,
@@ -154,8 +155,39 @@ public IActionResult Index()
 
         return View(indexVM);
     }
+    public IActionResult Unissex()
+    {
+        var produtos = _db.Produtos
+            .Include(p => p.Categoria)
+            .Include(p => p.Fotos)
+            .ToList();
+
+        if (produtos == null || !produtos.Any())
+        {
+            ViewBag.Mensagem = "Nenhum produto disponível no momento.";
+            return View(new List<Produto>());
+        }
+
+        return View(produtos);
+    }
 
 
+    // Filtros de produtoss
+    public async Task<IActionResult> Filtro(string categoria)
+    {
+        if (string.IsNullOrEmpty(categoria))
+            return RedirectToAction("Index");
+
+        // Busca produtos que pertençam à categoria informada
+        var produtos = await _db.Produtos
+            .Include(p => p.Categoria)
+            .Include(p => p.Fotos)
+            .Where(p => p.Categoria.Nome.ToLower() == categoria.ToLower())
+            .ToListAsync();
+
+        ViewBag.Categoria = categoria;
+        return View("Filtro", produtos);
+    }
 
     public IActionResult Privacy()
     {
