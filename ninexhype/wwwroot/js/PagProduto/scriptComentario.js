@@ -1,88 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const botaoAdicionar = document.getElementById('botaoAddComentario');
-    const areaComentario = document.getElementById('comentarioNovo');
-
-    botaoAdicionar.addEventListener('click', () => {
-        areaComentario.classList.toggle('oculto');
-        botaoAdicionar.textContent = areaComentario.classList.contains('oculto') ? 'Adicionar Comentário' : 'Cancelar';
-    });
-
+document.addEventListener("DOMContentLoaded", function () {
+    const botaoAdd = document.getElementById("botaoAddComentario");
+    const formComentario = document.getElementById("comentarioNovo");
+    const btnDeletar = formComentario.querySelector(".btnDeletarComentario");
+    const inputFoto = document.getElementById("fotoComentario");
+    const preview = document.getElementById("previewImagem");
+    const imagemPadrao = "../assets/PagProduto/Cometarios/ImagemVazia.png";
+    const textarea = document.getElementById("comentarioAutoAltura");
+    const notaInput = document.getElementById("notaSelecionada");
     const stars = document.querySelectorAll('#avaliacaoNova .fa-star');
-    const notaSelecionadaInput = document.getElementById('notaSelecionada');
 
-    stars.forEach((star, index) => {
-        star.addEventListener('click', () => {
-            stars.forEach(s => s.classList.remove('checked'));
-            for (let i = 0; i <= index; i++) stars[i].classList.add('checked');
-            notaSelecionadaInput.value = index + 1;
-        });
+    let comentarioAtivo = false;
+    let comentarioGerado = null;
+
+    // === Mostrar o formulário ===
+    botaoAdd.addEventListener("click", function () {
+        if (comentarioAtivo) {
+            // se já há um comentário, deleta ele
+            if (comentarioGerado) comentarioGerado.remove();
+            comentarioAtivo = false;
+            botaoAdd.textContent = "Adicionar";
+            return;
+        }
+
+        formComentario.classList.remove("oculto");
+        formComentario.style.display = "flex";
+        botaoAdd.style.display = "none";
     });
 
-    const textarea = document.getElementById('comentarioAutoAltura');
-    textarea.addEventListener('input', function () {
-        this.style.height = 'auto';
-        this.style.height = this.scrollHeight + 'px';
-    });
-    textarea.dispatchEvent(new Event('input'));
-
-    const formComentario = document.getElementById('comentarioNovo');
-    const comentariosContainer = document.getElementById('comentariosContainer');
-
-    formComentario.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const nome = document.querySelector('.nomePerfil').textContent;
-        const comentario = textarea.value.trim();
-        const nota = parseInt(notaSelecionadaInput.value);
-        const inputImagem = document.getElementById('fotoComentario');
-        const imgSrc = inputImagem.files[0] ? URL.createObjectURL(inputImagem.files[0]) : '/assets/PagProduto/Perfis/PerfilVazio.png';
-
-        const novoComentario = document.createElement('div');
-        novoComentario.classList.add('comentario');
-        novoComentario.innerHTML = `
-
-        <div class="linhaUmComentarioNovo">
-            <div class="infoEscritas">
-                <div class="perfil">
-                    <img src="/assets/PagProduto/Perfis/exemploImgPerfil2.jpg" alt="" class="imgPerfil">
-                    <p class="nomePerfil">${nome}</p>
-                </div>
-                <div class="avaliacao">
-                    ${[1,2,3,4,5].map(i => `<span class="fa fa-star ${i <= nota ? 'checked' : ''}"></span>`).join('')}
-                </div>
-                <div class="txtComentario">
-                    <p class="paragrafoComentario">${comentario}</p>
-                </div>
-            </div>
-            <div class="imgComentario">
-                <img src="${imgSrc}" alt="" class="imgReviewComentario">
-            </div>
-
-            <div class="linhaDoisComentarioNovo">
-                <button type="button" class="btnDeletarComentario">Deletar Comentário</button>
-            </div>
-        </div>
-        `;
-
-        novoComentario.querySelector('.btnDeletarComentario').addEventListener('click', () => {
-            novoComentario.remove();
-        });
-
-        comentariosContainer.prepend(novoComentario);
-
-        formComentario.reset();
-        notaSelecionadaInput.value = 0;
-        document.getElementById('previewImagem').src = '../assets/PagProduto/Cometarios/ImagemVazia.png';
-        textarea.style.height = 'auto';
-        stars.forEach(s => s.classList.remove('checked'));
-        areaComentario.classList.add('oculto');
-        botaoAdicionar.textContent = 'Adicionar Comentário';
-    });
-});
-    
-// PREVIEW COMENTÁRIO
-
-inputFoto.addEventListener("change", function () {
+    // === Preview da imagem ===
     inputFoto.addEventListener("change", function () {
         const arquivo = this.files[0];
         if (arquivo) {
@@ -96,8 +41,99 @@ inputFoto.addEventListener("change", function () {
             };
             leitor.readAsDataURL(arquivo);
         } else {
-            // Se o usuário cancelar o upload, volta a imagem padrão
             preview.src = imagemPadrao;
         }
+    });
+
+    // === Deletar comentário ===
+    btnDeletar.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        textarea.value = "";
+        notaInput.value = "0";
+        preview.src = imagemPadrao;
+        inputFoto.value = "";
+        stars.forEach(s => s.classList.remove("checked"));
+
+        if (comentarioGerado) {
+            comentarioGerado.remove();
+            comentarioGerado = null;
+        }
+
+        comentarioAtivo = false;
+        botaoAdd.textContent = "Adicionar";
+        botaoAdd.style.display = "inline-block";
+        formComentario.classList.add("oculto");
+        formComentario.style.display = "none";
+    });
+
+    // === Envio do formulário ===
+    formComentario.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (comentarioAtivo) return;
+
+        const nomeUsuario = formComentario.querySelector(".nomePerfil").textContent.trim() || "Usuário Anônimo";
+        const textoComentario = textarea.value.trim();
+        const nota = parseInt(notaInput.value);
+        const fotoURL = preview.src !== imagemPadrao ? preview.src : null;
+
+        if (!textoComentario) return;
+
+        // cria o novo comentário
+        const novoComentario = document.createElement("div");
+        novoComentario.classList.add("comentario");
+
+        let estrelasHTML = "";
+        for (let i = 1; i <= 5; i++) {
+            estrelasHTML += `<span class="fa fa-star ${i <= nota ? "checked" : ""}"></span>`;
+        }
+
+        novoComentario.innerHTML = `
+            <div class="infoEscritas">
+                <div class="perfil">
+                    <img src="~/img/PerfilUsuario/perfilVazio.png" class="imgPerfil">
+                    <p class="nomePerfil">${nomeUsuario}</p>
+                </div>
+                <div class="avaliacao">${estrelasHTML}</div>
+                <div class="txtComentario">
+                    <p class="paragrafoComentario">${textoComentario}</p>
+                </div>
+            </div>
+            ${fotoURL ? `
+            <div class="imgComentario">
+                <img src="${fotoURL}" alt="" class="imgReviewComentario">
+            </div>` : ""}
+        `;
+
+        // adiciona o comentário
+        const containerComentarios = formComentario.parentElement;
+        containerComentarios.insertBefore(novoComentario, formComentario);
+
+        comentarioGerado = novoComentario;
+        comentarioAtivo = true;
+
+        // troca o botão principal pra "Deletar Comentário"
+        botaoAdd.textContent = "Deletar Comentário";
+        botaoAdd.style.display = "inline-block";
+
+        // limpa e esconde o formulário
+        textarea.value = "";
+        notaInput.value = "0";
+        preview.src = imagemPadrao;
+        inputFoto.value = "";
+        stars.forEach(s => s.classList.remove("checked"));
+        formComentario.classList.add("oculto");
+        formComentario.style.display = "none";
+    });
+
+    // === Sistema de estrelas ===
+    stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+            stars.forEach(s => s.classList.remove("checked"));
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.add("checked");
+            }
+            notaInput.value = index + 1;
+        });
     });
 });
