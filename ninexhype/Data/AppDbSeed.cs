@@ -143,76 +143,76 @@ public class AppDbSeed
             // Produto 16 - Camiseta Oversized Branca
             new ProdutoFoto { Id = 28, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
             new ProdutoFoto { Id = 29, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
-            new ProdutoFoto { Id = 29, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca3.png"},
+            new ProdutoFoto { Id = 30, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca3.png"},
 
             // Produto 17 - Calça Cargo Preta
-            new ProdutoFoto { Id = 30, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
-            new ProdutoFoto { Id = 31, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
-            new ProdutoFoto { Id = 32, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
+            new ProdutoFoto { Id = 31, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
+            new ProdutoFoto { Id = 32, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
+            new ProdutoFoto { Id = 33, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
 
             // Produto 18 - Jaqueta Corta-Vento
-            new ProdutoFoto { Id = 33, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCortaVento.png"},
-            new ProdutoFoto { Id = 34, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
-            new ProdutoFoto { Id = 35, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
+            new ProdutoFoto { Id = 34, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCortaVento.png"},
+            new ProdutoFoto { Id = 35, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
+            new ProdutoFoto { Id = 36, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
 
             // Produto 19 - Moletom Liso com Capuz
-            new ProdutoFoto { Id = 36, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
-            new ProdutoFoto { Id = 37, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
-            new ProdutoFoto { Id = 38, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
+            new ProdutoFoto { Id = 37, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
+            new ProdutoFoto { Id = 38, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
+            new ProdutoFoto { Id = 39, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
 
             // Produto 20 - Bermuda de Sarja Bege
-            new ProdutoFoto { Id = 39, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
-            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege2.png"},
-            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege3.png"},
+            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+            new ProdutoFoto { Id = 41, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege2.png"},
+            new ProdutoFoto { Id = 42, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege3.png"},
 
             // Produto 21 - Camisa Social Slim
-            new ProdutoFoto { Id = 41, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
-            new ProdutoFoto { Id = 42, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim2.png"},
-            new ProdutoFoto { Id = 43, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim3.png"},
+            new ProdutoFoto { Id = 43, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
+            new ProdutoFoto { Id = 44, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim2.png"},
+            new ProdutoFoto { Id = 45, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim3.png"},
 
             // Produto 22 - Vestido Midi Floral
-            new ProdutoFoto { Id = 44, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral1.png"},
-            new ProdutoFoto { Id = 45, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral2.png"},
-            new ProdutoFoto { Id = 46, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral3.png"},
+            new ProdutoFoto { Id = 46, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral1.png"},
+            new ProdutoFoto { Id = 47, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral2.png"},
+            new ProdutoFoto { Id = 48, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral3.png"},
 
             // Produto 23 - Calça Jeans Skinny
-            new ProdutoFoto { Id = 47, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny1.png"},
-            new ProdutoFoto { Id = 48, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny2.png"},
-            new ProdutoFoto { Id = 49, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
+            new ProdutoFoto { Id = 49, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny1.png"},
+            new ProdutoFoto { Id = 50, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny2.png"},
+            new ProdutoFoto { Id = 51, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
 
             // Produto 24 - Jaqueta Jeans Feminina
-            new ProdutoFoto { Id = 50, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
-            new ProdutoFoto { Id = 51, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
+            new ProdutoFoto { Id = 52, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
+            new ProdutoFoto { Id = 53, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
 
             // Produto 25 - Shorts de Moletom
-            new ProdutoFoto { Id = 52, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
-            new ProdutoFoto { Id = 53, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom2.png"},
-            new ProdutoFoto { Id = 54, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom3.png"},
+            new ProdutoFoto { Id = 54, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
+            new ProdutoFoto { Id = 55, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom2.png"},
+            new ProdutoFoto { Id = 56, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom3.png"},
 
             // Produto 26 - Camiseta Polo Preta Feminina
-            new ProdutoFoto { Id = 55, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
-            new ProdutoFoto { Id = 56, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
-            new ProdutoFoto { Id = 56, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina3.png"},
+            new ProdutoFoto { Id = 57, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
+            new ProdutoFoto { Id = 58, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
+            new ProdutoFoto { Id = 59, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina3.png"},
 
             // Produto 27 - Macacão Feminino
-            new ProdutoFoto { Id = 57, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
-            new ProdutoFoto { Id = 58, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino2.png"},
-            new ProdutoFoto { Id = 59, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino3.png"},
+            new ProdutoFoto { Id = 60, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
+            new ProdutoFoto { Id = 61, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino2.png"},
+            new ProdutoFoto { Id = 62, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino3.png"},
 
             // Produto 28 - Blusa Cropped Texturizada
-            new ProdutoFoto { Id = 60, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada1.png"},
-            new ProdutoFoto { Id = 61, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada2.png"},
-            new ProdutoFoto { Id = 62, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada3.png"},
+            new ProdutoFoto { Id = 63, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada1.png"},
+            new ProdutoFoto { Id = 64, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada2.png"},
+            new ProdutoFoto { Id = 65, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada3.png"},
 
             // Produto 29 - Camisa Polo Texturizada Masculina Marrom
-            new ProdutoFoto { Id = 63, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
-            new ProdutoFoto { Id = 64, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
-            new ProdutoFoto { Id = 64, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
+            new ProdutoFoto { Id = 66, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
+            new ProdutoFoto { Id = 67, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
+            new ProdutoFoto { Id = 68, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
 
             // Produto 30 - Regata Dry Fit
-            new ProdutoFoto { Id = 65, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
-            new ProdutoFoto { Id = 66, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
-            new ProdutoFoto { Id = 66, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
+            new ProdutoFoto { Id = 69, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
+            new ProdutoFoto { Id = 70, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
+            new ProdutoFoto { Id = 71, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
     
 
             // Imagens produtos Destaques
