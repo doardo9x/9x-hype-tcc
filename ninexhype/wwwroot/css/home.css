@@ -513,11 +513,12 @@ nav {
 }
 .carrosselRoupas {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-self: center;
     flex-wrap: wrap;
     width: 100%;
     max-width: 1300px;
+    gap: 20px;
 }
 .card {
     background-color: var(--RoxoForte-color);
