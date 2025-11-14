@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Globalization;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,14 +23,64 @@ namespace ninexhype.Controllers
             _context = context;
         }
 
-        // GET: Produtos
+        // -------------------------- FUNÇÃO PARA REMOVER ACENTOS --------------------------
+        private string Normalizar(string texto)
+        {
+            if (string.IsNullOrWhiteSpace(texto)) return "";
+
+            return new string(
+                texto.Normalize(NormalizationForm.FormD)
+                     .Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                     .ToArray()
+            ).ToLower();
+        }
+
+        // -------------------------------- LISTAGEM --------------------------------------
         public async Task<IActionResult> Index()
         {
-            var produtos = _context.Produtos.Include(p => p.Categoria).Include(p => p.Fotos);
+            var produtos = _context.Produtos
+                .Include(p => p.Categoria)
+                    .ThenInclude(c => c.TipoRoupa)
+                .Include(p => p.Fotos);
+
             return View(await produtos.ToListAsync());
         }
 
-        // GET: Produtos/Details/5
+        // -------------------------------- PESQUISA GLOBAL --------------------------------
+        public async Task<IActionResult> Pesquisar(string termo)
+        {
+            if (string.IsNullOrWhiteSpace(termo))
+                return View("Pesquisar", new List<Produto>());
+
+            string termoNormalizado = Normalizar(termo);
+
+            var produtos = await _context.Produtos
+                .Include(p => p.Categoria)
+                    .ThenInclude(c => c.TipoRoupa)
+                .Include(p => p.Fotos)
+                .ToListAsync();
+
+            var resultados = produtos.Where(p =>
+                Normalizar(p.Nome).Contains(termoNormalizado) ||
+                Normalizar(p.Marca).Contains(termoNormalizado) ||
+                Normalizar(p.Descricao).Contains(termoNormalizado) ||
+                Normalizar(p.Cor).Contains(termoNormalizado) ||
+
+                // Categoria (Camisa, Jaqueta, Calça...)
+                Normalizar(p.Categoria.Nome).Contains(termoNormalizado) ||
+
+                // Tipo de roupa (Roupa, Tênis...)
+                Normalizar(p.Categoria.TipoRoupa.Nome).Contains(termoNormalizado) ||
+
+                // Gênero (Masculino, Feminino, Unissex)
+                Normalizar(p.Genero.ToString()).Contains(termoNormalizado)
+
+            ).ToList();
+
+            return View("Pesquisar", resultados);
+        }
+
+        // -------------------------------- DETALHES ---------------------------------------
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
@@ -43,7 +95,7 @@ namespace ninexhype.Controllers
             return View(produto);
         }
 
-        // GET: Produtos/Create
+        // -------------------------------- CRIAR ----------------------------------------
         public IActionResult Create()
         {
             ViewData["CategoriaId"] = new SelectList(_context.Categorias, "Id", "Nome");
@@ -51,7 +103,6 @@ namespace ninexhype.Controllers
             return View();
         }
 
-        // POST: Produtos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(
@@ -77,10 +128,8 @@ namespace ninexhype.Controllers
                             var nomeArquivo = Guid.NewGuid() + Path.GetExtension(foto.FileName);
                             var caminhoCompleto = Path.Combine(pastaDestino, nomeArquivo);
 
-                            using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
-                            {
-                                await foto.CopyToAsync(stream);
-                            }
+                            using var stream = new FileStream(caminhoCompleto, FileMode.Create);
+                            await foto.CopyToAsync(stream);
 
                             _context.ProdutoFoto.Add(new ProdutoFoto
                             {
@@ -100,7 +149,7 @@ namespace ninexhype.Controllers
             return View(produto);
         }
 
-        // GET: Produtos/Edit/5
+        // -------------------------------- EDITAR ----------------------------------------
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -116,7 +165,6 @@ namespace ninexhype.Controllers
             return View(produto);
         }
 
-        // POST: Produtos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id,
@@ -134,8 +182,10 @@ namespace ninexhype.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProdutoExists(produto.Id)) return NotFound();
-                    else throw;
+                    if (!_context.Produtos.Any(e => e.Id == produto.Id))
+                        return NotFound();
+                    else
+                        throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -145,7 +195,7 @@ namespace ninexhype.Controllers
             return View(produto);
         }
 
-        // POST: Produtos/AdicionarFoto
+        // -------------------------------- ADICIONAR FOTO --------------------------------
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AdicionarFoto(int produtoId, List<IFormFile> novasFotos)
@@ -179,7 +229,7 @@ namespace ninexhype.Controllers
             return RedirectToAction("Edit", new { id = produtoId });
         }
 
-        // POST: Produtos/ExcluirFoto
+        // -------------------------------- EXCLUIR FOTO ----------------------------------
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ExcluirFoto(int fotoId)
@@ -198,43 +248,30 @@ namespace ninexhype.Controllers
             return RedirectToAction("Edit", new { id = foto?.ProdutoId });
         }
 
-        // GET: Produtos/Delete/5
+        // -------------------------------- DELETAR ----------------------------------------
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var produto = await _context.Produtos
                 .Include(p => p.Categoria)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
-            {
-                return NotFound();
-            }
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (produto == null) return NotFound();
 
             return View(produto);
         }
 
-        // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);
             if (produto != null)
-            {
                 _context.Produtos.Remove(produto);
-            }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool ProdutoExists(int id)
-        {
-            return _context.Produtos.Any(e => e.Id == id);
         }
     }
 }
