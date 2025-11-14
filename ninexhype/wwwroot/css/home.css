@@ -155,6 +155,29 @@ img {
     z-index: 2;
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+
+.tituloResultado {
+    width: 100%;
+    padding-left: 10%;
+    height: auto;
+    display: flex;
+    margin-bottom: 10px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--Destaque-color);
+}
+
+.HeaderSearchBar {
+    padding: 20px;
+}
+
+.searchBar {
+    padding: 10px;
+}
+
 header {
     background-color: transparent;
     padding: 15px 0;
@@ -764,7 +787,6 @@ footer {
     }
 
     .HeaderIcons {
-        padding: 5px 10% 0 0;
         width: 27%;
         height: 100%;
         gap: 20px;
