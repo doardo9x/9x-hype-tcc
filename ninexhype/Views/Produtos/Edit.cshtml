@@ -79,20 +79,22 @@
 
         <div class="quadradoDir">
 
-            <div class="fotosExistentes">
-                @foreach (var foto in Model.Fotos)
-                {
-                    <div class="fotoExistente">
+            <div class="rolagemVertical">
+                <div class="fotosExistentes">
+                    @foreach (var foto in Model.Fotos)
+                    {
+                        <div class="fotoExistente">
 
-                        <img src="@foto.ArquivoFoto" class="previewImg" />
+                            <img src="@foto.ArquivoFoto" class="previewImg" />
 
-                        <form asp-action="ExcluirFoto" method="post">
-                            <input type="hidden" name="fotoId" value="@foto.Id" />
-                            <button class="botaoExcluirFoto" type="submit" class="btn btn-danger btn-sm">Excluir
-                                Imagem</button>
-                        </form>
-                    </div>
-                }
+                            <form asp-action="ExcluirFoto" class="divBtnExcluir" method="post">
+                                <input type="hidden" name="fotoId" value="@foto.Id" />
+                                <button class="botaoExcluirFoto" type="submit" class="btn btn-danger btn-sm">Excluir
+                                    Imagem</button>
+                            </form>
+                        </div>
+                    }
+                </div>
             </div>
 
             <form asp-action="AdicionarFoto" method="post" enctype="multipart/form-data">
@@ -105,15 +107,15 @@
                     <!-- Botão personalizado -->
                     <div class="divBotoes">
                         <div class="file-upload-wrapper">
-                            <label class="file-upload-label">
-                                Selecionar Imagens
+                            <label class="btnSelecionarImagem file-upload-label">
+                                Selecionar
                                 <input class="hidden-file-input" type="file" name="novasFotos" multiple
                                     accept="image/*" />
                             </label>
 
                         </div>
 
-                        <button type="submit" class="btnAddFoto">Adicionar Foto</button>
+                        <button type="submit" class="btnAddFoto">Adicionar</button>
                     </div>
                 </div>
 

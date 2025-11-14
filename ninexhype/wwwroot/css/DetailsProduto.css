@@ -87,6 +87,7 @@ form {
 .quadradoDir {
     width: 50%;
     height: auto;
+    max-height: 600px;
     gap: 10px;
     display: flex;
     justify-content: center;
@@ -94,6 +95,7 @@ form {
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+    overflow: hidden;
 }
 
 .primeiraLinha {
@@ -103,7 +105,6 @@ form {
 }
 
 .tituloCampo {
-    color: white;
     font-family: Rajdhani;
     font-weight: 600;
     width: 100%;
@@ -427,8 +428,8 @@ form {
 }
 
 .previewFoto {
-    width: 50% ;
-    height: 50% ;
+    width: 50%;
+    height: 50%;
 }
 
 .fotosProduto {
@@ -444,6 +445,19 @@ form {
     height: 100%;
 }
 
+.rolagemVertical {
+    overflow-y: auto;
+}
+
+.rolagemVertical::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--CinzaFraco-color);
+}
+
+.rolagemVertical::-webkit-scrollbar-thumb {
+    background-color: var(--RoxoClaro-color);
+    border-radius: 10px;
+}
 /* -------------------------------------------------------------------------------------- */
 
 @media (max-width: 960px) {
