@@ -23,63 +23,13 @@
     <!-- Info Produto -->
     <div class="infoProduto">
 
-        <div class="metodosPagamento">
-            <div class="metodoPagamento">
-                <div class="txtOpcoes">Métodos de Pagamento</div>
-                <div class="linhaCredito">
-                    <div class="txtOpcoes2 seinao">Linha de Crédito</div>
-                    <div class="pngsPagamento">
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/mercadoPago.png" alt="">
-                        </div>
-                    </div>
-                </div>
+        <div class="descricao">
+            <div class="tituloDescricao">
+                Descrição
+            </div>
 
-                <div class="cartoesCredito">
-                    <div class="txtOpcoes2 seinao">Cartões de Crédito</div>
-                    <div class="txtOpcoes3 seinao">Em até 12x</div>
-                    <div class="pngsPagamento">
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/mastercard.png" alt="">
-                        </div>
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/elo.png" alt="">
-                        </div>
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/visa.png" alt="">
-                        </div>
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/hipercard.png" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cartoesDebito">
-                    <div class="txtOpcoes2 seinao">Cartões de Débito</div>
-                    <div class="pngsPagamento">
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/caixa.png" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pix">
-                    <div class="txtOpcoes2 seinao">Pix</div>
-                    <div class="pngsPagamento">
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/pix.png" alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="boleto">
-                    <div class="txtOpcoes2 seinao">Boleto</div>
-                    <div class="pngsPagamento">
-                        <div class="pngPagamento">
-                            <img class="pngPagamento" src="~/img/Comentarios/MetodosPag/boleto.png" alt="">
-                        </div>
-                    </div>
-                </div>
+            <div class="txtDescricao">
+                @Model.Produto.Descricao
             </div>
         </div>
 
@@ -143,7 +93,7 @@
 
     </div> <!--Fim Info Produto-->
 
-    <div class="descricao">
+    <div class="ContDescricaoSimples">
         <div class="descricaoSimples">
             <div class="headerDescSimples">
                 <h1 class="titleDesc">Descrição</h1>

@@ -186,100 +186,67 @@ html {
     max-width: 1170px;
     margin: 0 auto;
     padding: 40px 0;
-  }
-  
-  /* Mantém os slides em linha horizontal */
-  .screenshot_slider .owl-stage {
+}
+
+/* Mantém os slides em linha horizontal */
+.screenshot_slider .owl-stage {
     display: flex;
     align-items: center;
-  }
-  
-  /* Cada item */
-  .screenshot_slider .item {
+}
+
+/* Cada item */
+.screenshot_slider .item {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  /* Imagens */
-  .screenshot_slider .item img {
+}
+
+/* Imagens */
+.screenshot_slider .item img {
     width: 410px;
     height: 300px;
     object-fit: cover;
     border-radius: 15px;
     transform: scale(0.85);
     opacity: 0.7;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
-  }
-  
-  /* Imagem central destacada */
-  .screenshot_slider .owl-item.center .item img {
+}
+
+/* Imagem central destacada */
+.screenshot_slider .owl-item.center .item img {
     transform: scale(1.1);
     opacity: 1;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-  }
-  
-  /* Navegação */
-  .screenshot_slider .owl-nav {
+}
+
+/* Navegação */
+.screenshot_slider .owl-nav {
     text-align: center;
     margin-top: 30px;
-  }
-  
-  .screenshot_slider .owl-nav button {
+}
+
+.screenshot_slider .owl-nav button {
     font-size: 32px !important;
     margin: 0 20px;
     color: #033aff !important;
     transition: color 0.3s ease;
-  }
-  
-  .screenshot_slider .owl-nav button:hover {
+}
+
+.screenshot_slider .owl-nav button:hover {
     color: #001fa3 !important;
-  }
+}
 
-  .screenshot_slider, 
-  .owl-carousel, 
-  .owl-loaded, 
-  .owl-drag{
+.screenshot_slider,
+.owl-carousel,
+.owl-loaded,
+.owl-drag {
     overflow: hidden;
-  }
+}
 
-  .owl-nav {
+.owl-nav {
     display: none;
-  }
-
-/* ---------------------------------------------- Opções Cores ---------------------------------------------- */
-
-.opcoesCores {
-    width: 80%;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.cor {
-    width: 130px;
-    background-color: var(--RoxoForte-color);
-    border-radius: 5px;
-    border: 1px solid white;
-    font-size: 1.3rem;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-input[type="radio"] {
-    display: none;
-    /* Esconde o radio padrão */
-}
-
-input[type="radio"]:checked+label {
-    border: 2px solid var(--RoxoClaro-color);
-    color: var(--RosaClarinho-color);
-    box-shadow: 0 0 5px var(--RoxoClaro-color);
 }
 
 
@@ -472,23 +439,10 @@ input[type="radio"]:checked+label {
     margin: 0;
 }
 
-.metodosPagamentoOculto {
-    width: 25%;
-    max-width: 100%;
-    height: 37.5rem;
-    background-color: var(--RoxoForte-color);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2rem;
-    display: none;
-}
 
+/* ---------------------------------------------- Descricão Simples ---------------------------------------------- */
 
-/* ---------------------------------------------- Descricão ---------------------------------------------- */
-
-.descricao {
+.ContDescricaoSimples {
     width: 80%;
     max-width: 100%;
     margin-bottom: 40px;
@@ -532,9 +486,9 @@ input[type="radio"]:checked+label {
     gap: 10px;
 }
 
-/* ---------------------------------------------- Método Pagamento ---------------------------------------------- */
+/* ---------------------------------------------- Descrição ---------------------------------------------- */
 
-.metodosPagamento {
+.descricao {
     width: 25%;
     max-width: 100%;
     height: 37.5rem;
@@ -542,56 +496,40 @@ input[type="radio"]:checked+label {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-bottom: 2rem;
-}
-
-.metodoPagamento {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     gap: 10px;
-    margin-top: 1.875rem;
+    padding-top: 20px;
 }
 
-.linhaCredito,
-.cartoesCredito,
-.cartoesDebito,
-.pix,
-.boleto {
-    width: 80%;
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-}
-
-.cartoesCredito,
-.cartoesDebito,
-.pix,
-.boleto {
-    margin-top: 1.25rem;
-}
-
-.pngsPagamento {
+.tituloDescricao {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding-left: 1rem;
+    color: var(--Destaque-color);
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: justify;
 }
 
-.pngPagamento {
-    width: 70px;
-    max-width: 100%;
-    height: auto;
+.txtDescricao {
+    color: whitesmoke;
+    max-height: 85%;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: justify;
+    overflow-y: auto;
+    padding-right: 1rem;
 }
 
+.txtDescricao::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--main-BG-color);
+}
+
+.txtDescricao::-webkit-scrollbar-thumb {
+    background-color: var(--RoxoClaro-color);
+    border-radius: 5px;
+}
 
 /* ---------------------------------------------- Relacionados ---------------------------------------------- */
 
@@ -604,7 +542,7 @@ input[type="radio"]:checked+label {
 }
 
 .cardCarrossel:hover {
-    transform: scale(1.01) !important;  
+    transform: scale(1.01) !important;
 }
 
 /* ---------------------------------------------- Comentários ---------------------------------------------- */
@@ -879,13 +817,6 @@ textarea::placeholder {
 /* ---------------------- Responsividade ---------------------- */
 
 @media (max-width: 1080px) {
-    .desktop {
-        display: none;
-    }
-
-    .mobile {
-        display: block;
-    }
 
     .pagProduto {
         width: 100%;
@@ -942,11 +873,8 @@ textarea::placeholder {
         display: none;
     }
 
-    .contDescricaoMetodoPagamento {
-        width: 95%;
-    }
 
-    .descricao {
+    .ContDescricaoSimples {
         width: 100%;
     }
 
