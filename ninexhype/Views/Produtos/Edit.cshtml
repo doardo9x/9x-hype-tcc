@@ -50,7 +50,6 @@
                         <label asp-for="ValorVenda" class="tituloCampo fs-3"></label>
                         <input asp-for="ValorVenda" type="number" class="form-control inputCampo border0" step="0.01"
                             value="@Model.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)" />
-                        <small class="text-muted">R$ @Model.ValorVenda.ToString("N2")</small>
                         <span asp-validation-for="ValorVenda" class="text-danger"></span>
                     </div>
 
@@ -65,7 +64,7 @@
 
                 <div class="quintaLinha">
                     <label asp-for="Descricao" class="tituloCampo fs-3"></label>
-                    <input asp-for="Descricao" class="form-control inputCampo border0" />
+                    <textarea asp-for="Descricao" class="form-control inputCampo border0"></textarea>
                     <span asp-validation-for="Descricao" class="text-danger"></span>
                 </div>
 
