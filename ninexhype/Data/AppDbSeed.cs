@@ -122,9 +122,9 @@ public class AppDbSeed
             new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor3.png" },
 
             // Produto 7 - Asics Gel-Kayano 28
-            new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicGel-Kayano28_1.png" },
-            new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicGel-Kayano28_2.png" },
-            new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicGel-Kayano28_3.png" },
+            new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_1.png" },
+            new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_2.png" },
+            new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicsGel-Kayano28_3.png" },
 
             // Produto 8 - Nike Dunk Low
 

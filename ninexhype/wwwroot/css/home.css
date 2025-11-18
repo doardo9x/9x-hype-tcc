@@ -130,7 +130,9 @@ img {
     font-weight: 500;
 
 }
-
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active,.dropdown-toggle:active{
+    background-color: #101524;
+}
 
 .botoes {
     font-size: x-large;
