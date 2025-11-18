@@ -65,9 +65,13 @@ body {
 }
 
 .ninexLogo {
+    width: 100%;
+    height: 100%;
     color: var(--Destaque-color);
     font-family: 'Dancing Script';
     text-decoration: none;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .center {
@@ -700,6 +704,12 @@ footer {
     padding: 5px;
     font-weight: 400;
     gap: 10px;
+}
+
+.HeaderLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media(max-width: 1000px) {

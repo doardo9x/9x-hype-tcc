@@ -14,12 +14,7 @@
     justify-content: center;
 }
 .carrosselRoupas {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1300px;
+gap: 40px;
 }
 
 /* Linhas de título */
@@ -49,7 +44,6 @@
     color: white;
     border: 0;
     min-width: 300px;
-    margin: 2rem;
 }
 .cardCarrossel {
     max-width: 20%;
