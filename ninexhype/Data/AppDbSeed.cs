@@ -32,26 +32,26 @@ public class AppDbSeed
         List<Produto> produtos = new List<Produto>{
 
             // ===== TÊNIS =====
-            new Produto { Id = 1, CategoriaId = 1, Nome = "Nike Air Force 1", Descricao = "Confortável, durável e atemporal: não é à toa que ele é o número 1. A construção clássica dos anos 80 combina com detalhes arrojados para um estilo que acompanha você na quadra ou em qualquer lugar.", ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Genero = Genero.Unissex, Marca="Nike", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual" },
-            new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost", Descricao = "Seja nas pistas ou nos treinos mais desafiadores, experimente um impulso a cada passo com este tênis de corrida Ultraboost adidas. Feito com nosso amortecimento BOOST mais leve de todos, ele devolve energia a cada passo. Combinado com o Torsion System para estabilidade do calcanhar à ponta do pé, ele oferece uma corrida suave e confortável que você precisa sentir para acreditar.", ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Genero = Genero.Unissex, Marca="Adidas", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida" },
-            new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", Descricao = "O RS-X está de volta. A silhueta retrofuturista deste tênis retorna com uma estética progressiva e detalhes angulares, completos com sobreposições em nubuck e em suede. Essa combinação tem tudo a ver com um design inovador para mostrar seu estilo revolucionário.", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20, Genero = Genero.Masculino, Marca="Puma", Cor="Colorido", Material="Tecido e Sintético", AtividadeRecomendada="Casual" },
-            new Produto { Id = 4, CategoriaId = 1, Nome = "Vans Old Skool", Descricao = "Em 1977, o tênis Old Skool, originalmente nomeado de Vans #36 foi lançado sendo o primeiro a conter a icônica sidestripe na lateral. O que começou como um rabisco de Paul Van Doren, originalmente chamado de “Jazz Stripe”, se tornou um dos ícones da marca Vans. O Tênis Old Skool Black White é um tênis de cano baixo com cadarço que possui cabedal de lona têxtil e camurça resistente na cor preta, sidestripe em couro branco e viras laterais borracha na cor branca com biqueiras reforçadas para suportar o desgaste por repetição, cano acolchoado para dar suporte e flexibilidade e a clássica sola de borracha waffle vulcanizada exclusiva Vans.", ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22, Genero = Genero.Masculino, Marca="Vans", Cor="Preto", Material="Lona e Camurça", AtividadeRecomendada="Skate" },
+            new Produto { Id = 1, CategoriaId = 1, Nome = "Nike Air Force 1",  ValorCusto = 300.00m, ValorVenda = 449.99m, QtdeEstoque = 25, Genero = Genero.Unissex, Marca="Nike", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual", Descricao = "Confortável, durável e atemporal: não é à toa que ele é o número 1. A construção clássica dos anos 80 combina com detalhes arrojados para um estilo que acompanha você na quadra ou em qualquer lugar."},
+            new Produto { Id = 2, CategoriaId = 1, Nome = "Adidas Ultraboost",  ValorCusto = 380.00m, ValorVenda = 599.99m, QtdeEstoque = 18, Genero = Genero.Unissex, Marca="Adidas", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida", Descricao = "Seja nas pistas ou nos treinos mais desafiadores, experimente um impulso a cada passo com este tênis de corrida Ultraboost adidas. Feito com nosso amortecimento BOOST mais leve de todos, ele devolve energia a cada passo. Combinado com o Torsion System para estabilidade do calcanhar à ponta do pé, ele oferece uma corrida suave e confortável que você precisa sentir para acreditar."},
+            new Produto { Id = 3, CategoriaId = 1, Nome = "Puma RS-X", ValorCusto = 320.00m, ValorVenda = 489.90m, QtdeEstoque = 20, Genero = Genero.Masculino, Marca="Puma", Cor="Colorido", Material="Tecido e Sintético", AtividadeRecomendada="Casual",  Descricao = "O RS-X está de volta. A silhueta retrofuturista deste tênis retorna com uma estética progressiva e detalhes angulares, completos com sobreposições em nubuck e em suede. Essa combinação tem tudo a ver com um design inovador para mostrar seu estilo revolucionário."},
+            new Produto { Id = 4, CategoriaId = 1, Nome = "Vans Old Skool",  ValorCusto = 200.00m, ValorVenda = 349.99m, QtdeEstoque = 22, Genero = Genero.Masculino, Marca="Vans", Cor="Preto", Material="Lona e Camurça", AtividadeRecomendada="Skate", Descricao = "Em 1977, o tênis Old Skool, originalmente nomeado de Vans #36 foi lançado sendo o primeiro a conter a icônica sidestripe na lateral. O que começou como um rabisco de Paul Van Doren, originalmente chamado de “Jazz Stripe”, se tornou um dos ícones da marca Vans. O Tênis Old Skool Black White é um tênis de cano baixo com cadarço que possui cabedal de lona têxtil e camurça resistente na cor preta, sidestripe em couro branco e viras laterais borracha na cor branca com biqueiras reforçadas para suportar o desgaste por repetição, cano acolchoado para dar suporte e flexibilidade e a clássica sola de borracha waffle vulcanizada exclusiva Vans."},
             new Produto { Id = 5, CategoriaId = 1, Nome = "New Balance 574", Descricao = "A partir da silhueta exclusiva dos anos 80, o Tênis Casual Unissex New Balance 574V2 garante estilo clássico ao seu visual. O modelo traz amortecimento na entressola em ENCAP, que combina espuma leve com borda de poliuretano durável para oferecer conforto o dia todo.", ValorCusto = 280.00m, ValorVenda = 419.99m, QtdeEstoque = 15, Genero = Genero.Unissex, Marca="New Balance", Cor="Cinza", Material="Suede e Malha", AtividadeRecomendada="Casual" },
-            new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", Descricao = "Desde 1917, o Chuck Taylor All Star tem sido o ícone do dia a dia. Você já conhece os detalhes icônicos como o cabedal em lona de algodão, solado com padrão de diamante e a indistinguível biqueira de borracha. Finalizado com palmilha em EVA para ajudar a manter os pés confortáveis.", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30, Genero = Genero.Unissex, Marca="Converse", Cor="Preto", Material="Lona", AtividadeRecomendada="Casual" },
-            new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28", Descricao = "O Tênis Asics Gel Kayano 28 é perfeito para mulheres que buscam desempenho e conforto em suas corridas. Desenvolvido com as melhores tecnologias da Asics, este tênis proporciona uma experiência de corrida superior. A tecnologia FF BLAST™ na entressola oferece uma sensação suave e de suporte em cada passo, garantindo conforto e eficiência. O amortecimento GEL™ proporciona uma passada suave, permitindo uma aterrissagem mais confortável sem perder velocidade.", ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12, Genero = Genero.Unissex, Marca="Asics", Cor="Azul", Material="Mesh", AtividadeRecomendada="Corrida" },
-            new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", Descricao = "Originalmente criado para as quadras, o Dunk mais tarde foi para as ruas - e como se costuma dizer, o resto é história. Mais de 35 anos após sua estreia, a silhueta ainda oferece um estilo ousado e desafiador. Agora, o tênis OG do basquete universitário retorna com camadas sobrepostas em couro premium e color blocking tradicional. O conforto fica por conta da tecnologia mais atual em calçados, enquanto uma combinação clássica de preto e branco remete ao legado das quadras.", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10, Genero = Genero.Unissex, Marca="Nike", Cor="Colorido", Material="Couro e Sintético", AtividadeRecomendada="Casual" },
-            new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy", Descricao = "A entressola possui a tecnologia Infinity Wave em toda a sua extensão dando a ele um visual moderno e tecnológico. O cabedal feito em mesh laminado proporciona maior respirabilidade e ajuste aos seus pés para um estilo mais casual. Além disso, o solado tem a tecnologia X10, um composto de borracha com carbono que garante maior durabilidade.", ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8, Genero = Genero.Masculino, Marca="Mizuno", Cor="Preto", Material="Mesh e Borracha", AtividadeRecomendada="Corrida" },
-            new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II", Descricao = "Modelo atemporal da Fila, febre mundial e vencedor de 2018 do prêmio de Shoe of the Year - Esse é o tênis Fila Disruptor II. Seu design autêntico e robusto une o estilo retrô e moderno em um modelo casual, destaque para a sola tratorada que garante alta durabilidade e maior aderência ao solo.", ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14, Genero = Genero.Feminino, Marca="Fila", Cor="Branco", Material="Sintético", AtividadeRecomendada="Casual" },
-            new Produto { Id = 11, CategoriaId = 1, Nome = "Reebok Classic", Descricao = "O Reebok Classic Leather é um ícone dos anos 80 que continua sendo uma referência de estilo e conforto até hoje. Com uma história única, o Reebok Classic Leather foi lançado originalmente em 1983, sendo o primeiro tênis de corrida a utilizar couro no cabedal.", ValorCusto = 180.00m, ValorVenda = 299.99m, QtdeEstoque = 16, Genero = Genero.Unissex, Marca="Reebok", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual" },
-            new Produto { Id = 12, CategoriaId = 1, Nome = "Under Armour HOVR", Descricao = "Estes calçados de caminhada unissex repletos de tecnologia desenvolvida para corrida e atividades ao ar livre são feitos para ir a qualquer lugar: Amortecimento UA HOVR ™ de nossos tênis de corrida, parte inferior em Michelin inspirada em pneus de bicicleta.", ValorCusto = 310.00m, ValorVenda = 459.99m, QtdeEstoque = 10, Genero = Genero.Masculino, Marca="Under Armour", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida" },
-            new Produto { Id = 13, CategoriaId = 1, Nome = "Jordan 1 Mid", Descricao = "Trouxemos os recibos com esta edição especial do AJ1. Feito de couro macio e cremoso, este favorito de todos os tempos vem adornado com detalhes sutis de design para um estilo de dar água na boca.", ValorCusto = 450.00m, ValorVenda = 749.99m, QtdeEstoque = 6, Genero = Genero.Masculino, Marca="Nike Jordan", Cor="Preto/Vermelho", Material="Couro", AtividadeRecomendada="Casual" },
-            new Produto { Id = 14, CategoriaId = 1, Nome = "Oakley Modoc", Descricao = "Pertencente a linha Outdoor, o modelo MODOC LOW II possui um solado de borracha garantindo máxima durabilidade e resistência a abrasão, a entressola em EVA proporciona maior conforto, parte superior em camurça e tecido com logotipo da marca em metal revelam a robustez do produto, garantem durabilidade e design único.", ValorCusto = 280.00m, ValorVenda = 399.99m, QtdeEstoque = 18, Genero = Genero.Masculino, Marca="Oakley", Cor="Marrom", Material="Couro e Borracha", AtividadeRecomendada="Trilha" },
-            new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly", Descricao = "Pegue-os se puder. Dando a você a velocidade do dia da corrida para conquistar qualquer distância, o Nike Vaporfly 3 é feito para aqueles que buscam, os pilotos, os pacers elevados que não conseguem diminuir a emoção da busca. Retrabalhamos o líder do super pacote de calçados e ajustamos o motor embaixo para ajudá-lo a buscar recordes pessoais de 10 km até a maratona. De corredores de elite a novatos em corridas, este cavalo de batalha versátil para corridas de rua é para aqueles que veem a velocidade como uma porta de entrada para mais quilômetros e elevações aparentemente inatingíveis.", ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5, Genero = Genero.Masculino, Marca="Nike", Cor="Branco/Verde", Material="Mesh", AtividadeRecomendada="Corrida" },
+            new Produto { Id = 6, CategoriaId = 1, Nome = "Converse Chuck Taylor", ValorCusto = 150.00m, ValorVenda = 269.99m, QtdeEstoque = 30, Genero = Genero.Unissex, Marca="Converse", Cor="Preto", Material="Lona", AtividadeRecomendada="Casual", Descricao = "Desde 1917, o Chuck Taylor All Star tem sido o ícone do dia a dia. Você já conhece os detalhes icônicos como o cabedal em lona de algodão, solado com padrão de diamante e a indistinguível biqueira de borracha. Finalizado com palmilha em EVA para ajudar a manter os pés confortáveis."},
+            new Produto { Id = 7, CategoriaId = 1, Nome = "Asics Gel-Kayano 28",  ValorCusto = 400.00m, ValorVenda = 649.99m, QtdeEstoque = 12, Genero = Genero.Unissex, Marca="Asics", Cor="Azul", Material="Mesh", AtividadeRecomendada="Corrida", Descricao = "O Tênis Asics Gel Kayano 28 é perfeito para mulheres que buscam desempenho e conforto em suas corridas. Desenvolvido com as melhores tecnologias da Asics, este tênis proporciona uma experiência de corrida superior. A tecnologia FF BLAST™ na entressola oferece uma sensação suave e de suporte em cada passo, garantindo conforto e eficiência. O amortecimento GEL™ proporciona uma passada suave, permitindo uma aterrissagem mais confortável sem perder velocidade."},
+            new Produto { Id = 8, CategoriaId = 1, Nome = "Nike Dunk Low", ValorCusto = 360.00m, ValorVenda = 549.99m, QtdeEstoque = 10, Genero = Genero.Unissex, Marca="Nike", Cor="Colorido", Material="Couro e Sintético", AtividadeRecomendada="Casual",  Descricao = "Originalmente criado para as quadras, o Dunk mais tarde foi para as ruas - e como se costuma dizer, o resto é história. Mais de 35 anos após sua estreia, a silhueta ainda oferece um estilo ousado e desafiador. Agora, o tênis OG do basquete universitário retorna com camadas sobrepostas em couro premium e color blocking tradicional. O conforto fica por conta da tecnologia mais atual em calçados, enquanto uma combinação clássica de preto e branco remete ao legado das quadras."},
+            new Produto { Id = 9, CategoriaId = 1, Nome = "Mizuno Wave Prophecy",  ValorCusto = 500.00m, ValorVenda = 799.99m, QtdeEstoque = 8, Genero = Genero.Masculino, Marca="Mizuno", Cor="Preto", Material="Mesh e Borracha", AtividadeRecomendada="Corrida", Descricao = "A entressola possui a tecnologia Infinity Wave em toda a sua extensão dando a ele um visual moderno e tecnológico. O cabedal feito em mesh laminado proporciona maior respirabilidade e ajuste aos seus pés para um estilo mais casual. Além disso, o solado tem a tecnologia X10, um composto de borracha com carbono que garante maior durabilidade."},
+            new Produto { Id = 10, CategoriaId = 1, Nome = "Fila Disruptor II",  ValorCusto = 220.00m, ValorVenda = 369.99m, QtdeEstoque = 14, Genero = Genero.Feminino, Marca="Fila", Cor="Branco", Material="Sintético", AtividadeRecomendada="Casual", Descricao = "Modelo atemporal da Fila, febre mundial e vencedor de 2018 do prêmio de Shoe of the Year - Esse é o tênis Fila Disruptor II. Seu design autêntico e robusto une o estilo retrô e moderno em um modelo casual, destaque para a sola tratorada que garante alta durabilidade e maior aderência ao solo."},
+            new Produto { Id = 11, CategoriaId = 1, Nome = "Reebok Classic", ValorCusto = 180.00m, ValorVenda = 299.99m, QtdeEstoque = 16, Genero = Genero.Unissex, Marca="Reebok", Cor="Branco", Material="Couro", AtividadeRecomendada="Casual", Descricao = "O Reebok Classic Leather é um ícone dos anos 80 que continua sendo uma referência de estilo e conforto até hoje. Com uma história única, o Reebok Classic Leather foi lançado originalmente em 1983, sendo o primeiro tênis de corrida a utilizar couro no cabedal."},
+            new Produto { Id = 12, CategoriaId = 1, Nome = "Under Armour HOVR",  ValorCusto = 310.00m, ValorVenda = 459.99m, QtdeEstoque = 10, Genero = Genero.Masculino, Marca="Under Armour", Cor="Preto", Material="Tecido Knit", AtividadeRecomendada="Corrida", Descricao = "Estes calçados de caminhada unissex repletos de tecnologia desenvolvida para corrida e atividades ao ar livre são feitos para ir a qualquer lugar: Amortecimento UA HOVR ™ de nossos tênis de corrida, parte inferior em Michelin inspirada em pneus de bicicleta."},
+            new Produto { Id = 13, CategoriaId = 1, Nome = "Jordan 1 Mid",  ValorCusto = 450.00m, ValorVenda = 749.99m, QtdeEstoque = 6, Genero = Genero.Masculino, Marca="Nike Jordan", Cor="Preto/Vermelho", Material="Couro", AtividadeRecomendada="Casual", Descricao = "Trouxemos os recibos com esta edição especial do AJ1. Feito de couro macio e cremoso, este favorito de todos os tempos vem adornado com detalhes sutis de design para um estilo de dar água na boca."},
+            new Produto { Id = 14, CategoriaId = 1, Nome = "Oakley Modoc", ValorCusto = 280.00m, ValorVenda = 399.99m, QtdeEstoque = 18, Genero = Genero.Masculino, Marca="Oakley", Cor="Marrom", Material="Couro e Borracha", AtividadeRecomendada="Trilha",  Descricao = "Pertencente a linha Outdoor, o modelo MODOC LOW II possui um solado de borracha garantindo máxima durabilidade e resistência a abrasão, a entressola em EVA proporciona maior conforto, parte superior em camurça e tecido com logotipo da marca em metal revelam a robustez do produto, garantem durabilidade e design único."},
+            new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly",  ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5, Genero = Genero.Masculino, Marca="Nike", Cor="Branco/Verde", Material="Mesh", AtividadeRecomendada="Corrida", Descricao = "Pegue-os se puder. Dando a você a velocidade do dia da corrida para conquistar qualquer distância, o Nike Vaporfly 3 é feito para aqueles que buscam, os pilotos, os pacers elevados que não conseguem diminuir a emoção da busca. Retrabalhamos o líder do super pacote de calçados e ajustamos o motor embaixo para ajudá-lo a buscar recordes pessoais de 10 km até a maratona. De corredores de elite a novatos em corridas, este cavalo de batalha versátil para corridas de rua é para aqueles que veem a velocidade como uma porta de entrada para mais quilômetros e elevações aparentemente inatingíveis."},
 
             // ===== ROUPAS =====
-            new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca", Descricao = "100% algodão, modelagem larga", ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Genero = Genero.Masculino, Marca="9xHype", Cor="Branco", Material="Algodão", AtividadeRecomendada="Casual" },
-            new Produto { Id = 17, CategoriaId = 6, Nome = "Calça Cargo Preta", Descricao = "Com bolsos laterais e ajuste no tornozelo", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, Genero = Genero.Masculino, Marca="9xHype", Cor="Preto", Material="Algodão e Poliéster", AtividadeRecomendada="Casual" },
-            new Produto { Id = 18, CategoriaId = 4, Nome = "Jaqueta Corta-Vento", Descricao = "Impermeável e leve, ideal para dias chuvosos", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Poliéster", AtividadeRecomendada="Esportivo" },
+            new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca",  ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Genero = Genero.Masculino, Marca="9xHype", Cor="Branco", Material="Algodão", AtividadeRecomendada="Casual", Descricao = "100% algodão, modelagem larga"},
+            new Produto { Id = 17, CategoriaId = 6, Nome = "Calça Cargo Preta", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, Genero = Genero.Masculino, Marca="9xHype", Cor="Preto", Material="Algodão e Poliéster", AtividadeRecomendada="Casual",  Descricao = "Com bolsos laterais e ajuste no tornozelo"},
+            new Produto { Id = 18, CategoriaId = 4, Nome = "Jaqueta Corta-Vento", ValorCusto = 120.00m, ValorVenda = 219.99m, QtdeEstoque = 12, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Poliéster", AtividadeRecomendada="Esportivo", Descricao = "Impermeável e leve, ideal para dias chuvosos"},
             new Produto { Id = 19, CategoriaId = 3, Nome = "Moletom Liso com Capuz", Descricao = "Moletom peluciado unissex", ValorCusto = 80.00m, ValorVenda = 129.90m, QtdeEstoque = 25, Genero = Genero.Unissex, Marca="9xHype", Cor="Cinza", Material="Algodão", AtividadeRecomendada="Casual" },
             new Produto { Id = 20, CategoriaId = 5, Nome = "Bermuda de Sarja Bege", Descricao = "Estilo casual, com bolsos laterais", ValorCusto = 60.00m, ValorVenda = 99.99m, QtdeEstoque = 35, Genero = Genero.Masculino, Marca="9xHype", Cor="Bege", Material="Sarja", AtividadeRecomendada="Casual" },
             new Produto { Id = 21, CategoriaId = 2, Nome = "Camisa Social Slim", Descricao = "Camisa masculina, algodão, modelagem justa", ValorCusto = 70.00m, ValorVenda = 119.99m, QtdeEstoque = 20, Genero = Genero.Masculino, Marca="9xHype", Cor="Branca", Material="Algodão", AtividadeRecomendada="Social" },
@@ -84,148 +84,170 @@ public class AppDbSeed
         List<ProdutoFoto> produtoFotos = new List<ProdutoFoto>
         {
             // Produto 1 - Nike Air Force 1
-            new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4f37fca8-6bce-43e7-ad07-f57ae3c13142/AIR+FORCE+1+%2707.png" },
+            new ProdutoFoto { Id = 1, ProdutoId = 1, ArquivoFoto = "/img/500x500/NikeAirForceOne1.png"},
+            new ProdutoFoto { Id = 2, ProdutoId = 1, ArquivoFoto = "/img/500x500/NikeAirForceOne2.png"},
+            new ProdutoFoto { Id = 3, ProdutoId = 1, ArquivoFoto = "/img/500x500/NikeAirForceOne3.png"},
 
             // Produto 2 - Adidas Ultraboost
-            new ProdutoFoto { Id = 2, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost.png" },
+            new ProdutoFoto { Id = 4, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost1.png"},
+            new ProdutoFoto { Id = 5, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost2.png"},
+            new ProdutoFoto { Id = 6, ProdutoId = 2, ArquivoFoto = "/img/500x500/AdidasUltraboost3.png"},
 
             // Produto 3 - Puma RS-X
-            new ProdutoFoto { Id = 3, ProdutoId = 3, ArquivoFoto = "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395984/02/sv01/fnd/PNA/fmt/png/RS-X-Retro-Resort-Women's-Sneakers" },
+            new ProdutoFoto { Id = 7, ProdutoId = 3, ArquivoFoto = "/img/500x500/PumaRS-X1.png"},
+            new ProdutoFoto { Id = 8, ProdutoId = 3, ArquivoFoto = "/img/500x500/PumaRS-X2.png"},
+            new ProdutoFoto { Id = 9, ProdutoId = 3, ArquivoFoto = "/img/500x500/PumaRS-X3.png"},
 
             // Produto 4 - Vans Old Skool
-            new ProdutoFoto { Id = 4, ProdutoId = 4, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_812678-MLB84265928797_052025-O.webp" },
+            new ProdutoFoto { Id = 10, ProdutoId = 4, ArquivoFoto = "/img/500x500/VansOldSkool1.png"},
+            new ProdutoFoto { Id = 11, ProdutoId = 4, ArquivoFoto = "/img/500x500/VansOldSkool2.png"},
+            new ProdutoFoto { Id = 12, ProdutoId = 4, ArquivoFoto = "/img/500x500/VansOldSkool3.png"},
 
             // Produto 5 - New Balance 574
-            new ProdutoFoto { Id = 5, ProdutoId = 5, ArquivoFoto = "https://nb.scene7.com/is/image/NB/wl574cor_nb_05_i?$pdpflexf2$&qlt=80&fmt=webp&wid=440&hei=440" },
+            new ProdutoFoto { Id = 13, ProdutoId = 5, ArquivoFoto = "/img/500x500/NewBalance574_1.png" },
+            new ProdutoFoto { Id = 14, ProdutoId = 5, ArquivoFoto = "/img/500x500/NewBalance574_2.png" },
+            new ProdutoFoto { Id = 15, ProdutoId = 5, ArquivoFoto = "/img/500x500/NewBalance574_3.png" },
 
             // Produto 6 - Converse Chuck Taylor
-            new ProdutoFoto { Id = 6, ProdutoId = 6, ArquivoFoto = "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw187c312e/images/a_08/M7650_A_08X1.jpg?sw=406" },
+            new ProdutoFoto { Id = 16, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor1.png" },
+            new ProdutoFoto { Id = 17, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor2.png" },
+            new ProdutoFoto { Id = 18, ProdutoId = 6, ArquivoFoto = "/img/500x500/ConverseChuckTaylor3.png" },
 
             // Produto 7 - Asics Gel-Kayano 28
-            new ProdutoFoto { Id = 7, ProdutoId = 7, ArquivoFoto = "https://images.asics.com/is/image/asics/1011B189_001_SR_RT_GLB?$sfcc-product$" },
+            new ProdutoFoto { Id = 19, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicGel-Kayano28_1.png" },
+            new ProdutoFoto { Id = 20, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicGel-Kayano28_2.png" },
+            new ProdutoFoto { Id = 21, ProdutoId = 7, ArquivoFoto = "/img/500x500/AsicGel-Kayano28_3.png" },
 
             // Produto 8 - Nike Dunk Low
-            new ProdutoFoto { Id = 8, ProdutoId = 8, ArquivoFoto = "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d14fc386-1067-4a72-961e-9f8134680703/W+NIKE+DUNK+LOW.png" },
+
+            // AINDA NAO PEGAMOS AS FOTOS
+            new ProdutoFoto { Id = 22, ProdutoId = 8, ArquivoFoto = "/img/500x500/NikeDunkLow1.png" },
+            new ProdutoFoto { Id = 23, ProdutoId = 8, ArquivoFoto = "/img/500x500/NikeDunkLow2.png" },
+            new ProdutoFoto { Id = 24, ProdutoId = 8, ArquivoFoto = "/img/500x500/NikeDunkLow3.png" },
 
             // Produto 9 - Mizuno Wave Prophecy
-            new ProdutoFoto { Id = 9, ProdutoId = 9, ArquivoFoto = "https://http2.mlstatic.com/D_NQ_NP_825783-MLA74802964877_022024-O.webp" },
+            new ProdutoFoto { Id = 25, ProdutoId = 9, ArquivoFoto = "/img/500x500/MizunoWaveProphecy1.png" },
+            new ProdutoFoto { Id = 26, ProdutoId = 9, ArquivoFoto = "/img/500x500/MizunoWaveProphecy2.png" },
+            new ProdutoFoto { Id = 27, ProdutoId = 9, ArquivoFoto = "/img/500x500/MizunoWaveProphecy3.png" },
 
             // Produto 10 - Fila Disruptor II
-            new ProdutoFoto { Id = 10, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
-            new ProdutoFoto { Id = 11, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
-            new ProdutoFoto { Id = 12, ProdutoId = 10, ArquivoFoto = "https://tse3.mm.bing.net/th/id/OIP.Edb0M5R6mDPgYzo4vrq3dQHaFS?rs=1&pid=ImgDetMain" },
+            new ProdutoFoto { Id = 28, ProdutoId = 10, ArquivoFoto = "/img/500x500/FilaDisruptorII1.png"},
+            new ProdutoFoto { Id = 29, ProdutoId = 10, ArquivoFoto = "/img/500x500/FilaDisruptorII2.png"},
+            new ProdutoFoto { Id = 30, ProdutoId = 10, ArquivoFoto = "/img/500x500/FilaDisruptorII3.png"},
 
             // Produto 11 - Reebok Classic
-            new ProdutoFoto { Id = 13, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic1.png"},
-            new ProdutoFoto { Id = 14, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic2.png"},
-            new ProdutoFoto { Id = 15, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic3.png"},
+            new ProdutoFoto { Id = 31, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic1.png"},
+            new ProdutoFoto { Id = 32, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic2.png"},
+            new ProdutoFoto { Id = 33, ProdutoId = 11, ArquivoFoto = "/img/500x500/ReebokClassic3.png"},
 
             // Produto 12 - Under Armour HOVR
-            new ProdutoFoto { Id = 16, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR1.png"},
-            new ProdutoFoto { Id = 17, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR2.png"},
-            new ProdutoFoto { Id = 18, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR3.png"},
+            new ProdutoFoto { Id = 34, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR1.png"},
+            new ProdutoFoto { Id = 35, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR2.png"},
+            new ProdutoFoto { Id = 36, ProdutoId = 12, ArquivoFoto = "/img/500x500/UnderArmourHOVR3.png"},
 
             // Produto 13 - Jordan 1 Mid
-            new ProdutoFoto { Id = 19, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid1.png"},
-            new ProdutoFoto { Id = 20, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid2.png"},
-            new ProdutoFoto { Id = 21, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid3.png"},
+            new ProdutoFoto { Id = 37, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid1.png"},
+            new ProdutoFoto { Id = 38, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid2.png"},
+            new ProdutoFoto { Id = 39, ProdutoId = 13, ArquivoFoto = "/img/500x500/Jordan1Mid3.png"},
 
             // Produto 14 - Oakley Modoc
-            new ProdutoFoto { Id = 22, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc1.png"},
-            new ProdutoFoto { Id = 23, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc2.png"},
-            new ProdutoFoto { Id = 24, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc3.png"},
+            new ProdutoFoto { Id = 40, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc1.png"},
+            new ProdutoFoto { Id = 41, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc2.png"},
+            new ProdutoFoto { Id = 42, ProdutoId = 14, ArquivoFoto = "/img/500x500/OakleyModoc3.png"},
 
             // Produto 15 - Nike ZoomX Vaporfly
-            new ProdutoFoto { Id = 25, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly1.png"},
-            new ProdutoFoto { Id = 26, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly2.png"},
-            new ProdutoFoto { Id = 27, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly3.png"},
+            new ProdutoFoto { Id = 43, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly1.png"},
+            new ProdutoFoto { Id = 44, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly2.png"},
+            new ProdutoFoto { Id = 45, ProdutoId = 15, ArquivoFoto = "/img/500x500/NikeZoomXVaporfly3.png"},
 
             // Produto 16 - Camiseta Oversized Branca
-            new ProdutoFoto { Id = 28, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
-            new ProdutoFoto { Id = 29, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
-            new ProdutoFoto { Id = 30, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca3.png"},
+            new ProdutoFoto { Id = 46, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca1.png"},
+            new ProdutoFoto { Id = 47, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca2.png"},
+            new ProdutoFoto { Id = 48, ProdutoId = 16, ArquivoFoto = "/img/500x500/CamisetaOversizedBranca3.png"},
 
             // Produto 17 - Calça Cargo Preta
-            new ProdutoFoto { Id = 31, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
-            new ProdutoFoto { Id = 32, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
-            new ProdutoFoto { Id = 33, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
+            new ProdutoFoto { Id = 49, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta1.png"},
+            new ProdutoFoto { Id = 50, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta2.png"},
+            new ProdutoFoto { Id = 51, ProdutoId = 17, ArquivoFoto = "/img/500x500/CalcaCargoPreta3.png"},
 
             // Produto 18 - Jaqueta Corta-Vento
-            new ProdutoFoto { Id = 34, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCortaVento.png"},
-            new ProdutoFoto { Id = 35, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
-            new ProdutoFoto { Id = 36, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
+            new ProdutoFoto { Id = 52, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCortaVento.png"},
+            new ProdutoFoto { Id = 53, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento2.png"},
+            new ProdutoFoto { Id = 54, ProdutoId = 18, ArquivoFoto = "/img/500x500/JaquetaCorta-Vento3.png"},
 
             // Produto 19 - Moletom Liso com Capuz
-            new ProdutoFoto { Id = 37, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
-            new ProdutoFoto { Id = 38, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
-            new ProdutoFoto { Id = 39, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
+            new ProdutoFoto { Id = 55, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz1.png"},
+            new ProdutoFoto { Id = 56, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz2.png"},
+            new ProdutoFoto { Id = 57, ProdutoId = 19, ArquivoFoto = "/img/500x500/MoletomLisoCapuz3.png"},
 
             // Produto 20 - Bermuda de Sarja Bege
-            new ProdutoFoto { Id = 40, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
-            new ProdutoFoto { Id = 41, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege2.png"},
-            new ProdutoFoto { Id = 42, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege3.png"},
+            new ProdutoFoto { Id = 58, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege1.png"},
+            new ProdutoFoto { Id = 59, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege2.png"},
+            new ProdutoFoto { Id = 60, ProdutoId = 20, ArquivoFoto = "/img/500x500/BermudaSarjaBege3.png"},
 
             // Produto 21 - Camisa Social Slim
-            new ProdutoFoto { Id = 43, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
-            new ProdutoFoto { Id = 44, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim2.png"},
-            new ProdutoFoto { Id = 45, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim3.png"},
+            new ProdutoFoto { Id = 61, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim1.png"},
+            new ProdutoFoto { Id = 62, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim2.png"},
+            new ProdutoFoto { Id = 63, ProdutoId = 21, ArquivoFoto = "/img/500x500/CamisaSocialSlim3.png"},
 
             // Produto 22 - Vestido Midi Floral
-            new ProdutoFoto { Id = 46, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral1.png"},
-            new ProdutoFoto { Id = 47, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral2.png"},
-            new ProdutoFoto { Id = 48, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral3.png"},
+            new ProdutoFoto { Id = 64, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral1.png"},
+            new ProdutoFoto { Id = 65, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral2.png"},
+            new ProdutoFoto { Id = 66, ProdutoId = 22, ArquivoFoto = "/img/500x500/VestidoMidiFloral3.png"},
 
             // Produto 23 - Calça Jeans Skinny
-            new ProdutoFoto { Id = 49, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny1.png"},
-            new ProdutoFoto { Id = 50, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny2.png"},
-            new ProdutoFoto { Id = 51, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
+            new ProdutoFoto { Id = 67, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny1.png"},
+            new ProdutoFoto { Id = 68, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny2.png"},
+            new ProdutoFoto { Id = 69, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
 
             // Produto 24 - Jaqueta Jeans Feminina
-            new ProdutoFoto { Id = 52, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
-            new ProdutoFoto { Id = 53, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
+
+            // FALTA MAIS UMA FOTO
+            new ProdutoFoto { Id = 70, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
+            new ProdutoFoto { Id = 71, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
 
             // Produto 25 - Shorts de Moletom
-            new ProdutoFoto { Id = 54, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
-            new ProdutoFoto { Id = 55, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom2.png"},
-            new ProdutoFoto { Id = 56, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom3.png"},
+            new ProdutoFoto { Id = 73, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
+            new ProdutoFoto { Id = 74, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom2.png"},
+            new ProdutoFoto { Id = 75, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom3.png"},
 
             // Produto 26 - Camiseta Polo Preta Feminina
-            new ProdutoFoto { Id = 57, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
-            new ProdutoFoto { Id = 58, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
-            new ProdutoFoto { Id = 59, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina3.png"},
+            new ProdutoFoto { Id = 76, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina1.png"},
+            new ProdutoFoto { Id = 77, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina2.png"},
+            new ProdutoFoto { Id = 78, ProdutoId = 26, ArquivoFoto = "/img/500x500/CamisetaPoloPretaFeminina3.png"},
 
             // Produto 27 - Macacão Feminino
-            new ProdutoFoto { Id = 60, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
-            new ProdutoFoto { Id = 61, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino2.png"},
-            new ProdutoFoto { Id = 62, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino3.png"},
+            new ProdutoFoto { Id = 79, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino1.png"},
+            new ProdutoFoto { Id = 80, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino2.png"},
+            new ProdutoFoto { Id = 81, ProdutoId = 27, ArquivoFoto = "/img/500x500/MacacãoFeminino3.png"},
 
             // Produto 28 - Blusa Cropped Texturizada
-            new ProdutoFoto { Id = 63, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada1.png"},
-            new ProdutoFoto { Id = 64, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada2.png"},
-            new ProdutoFoto { Id = 65, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada3.png"},
+            new ProdutoFoto { Id = 82, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada1.png"},
+            new ProdutoFoto { Id = 83, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada2.png"},
+            new ProdutoFoto { Id = 84, ProdutoId = 28, ArquivoFoto = "/img/500x500/BlusaCroppedTexturizada3.png"},
 
             // Produto 29 - Camisa Polo Texturizada Masculina Marrom
-            new ProdutoFoto { Id = 66, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
-            new ProdutoFoto { Id = 67, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
-            new ProdutoFoto { Id = 68, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
+            new ProdutoFoto { Id = 85, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom1.png"},
+            new ProdutoFoto { Id = 86, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom2.png"},
+            new ProdutoFoto { Id = 87, ProdutoId = 29, ArquivoFoto = "/img/500x500/CamisaPoloTexturizadaMasculinaMarrom3.png"},
 
             // Produto 30 - Regata Dry Fit
-            new ProdutoFoto { Id = 69, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
-            new ProdutoFoto { Id = 70, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
-            new ProdutoFoto { Id = 71, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
+            new ProdutoFoto { Id = 88, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
+            new ProdutoFoto { Id = 89, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
+            new ProdutoFoto { Id = 90, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
     
 
             // Imagens produtos Destaques
-            new ProdutoFoto { Id = 97, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
-            new ProdutoFoto { Id = 98, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
-            new ProdutoFoto { Id = 99, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
-            new ProdutoFoto { Id = 100, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
-            new ProdutoFoto { Id = 101, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
-            new ProdutoFoto { Id = 102, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
-            new ProdutoFoto { Id = 103, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
-            new ProdutoFoto { Id = 104, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
-            new ProdutoFoto { Id = 105, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
-            new ProdutoFoto { Id = 106, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
+            new ProdutoFoto { Id = 91, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
+            new ProdutoFoto { Id = 92, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
+            new ProdutoFoto { Id = 93, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
+            new ProdutoFoto { Id = 94, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
+            new ProdutoFoto { Id = 95, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
+            new ProdutoFoto { Id = 96, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
+            new ProdutoFoto { Id = 97, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
+            new ProdutoFoto { Id = 98, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
+            new ProdutoFoto { Id = 99, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
+            new ProdutoFoto { Id = 100, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
 
         };
         builder.Entity<ProdutoFoto>().HasData(produtoFotos);
