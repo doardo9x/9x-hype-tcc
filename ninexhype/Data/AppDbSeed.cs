@@ -48,6 +48,14 @@ public class AppDbSeed
             new Produto { Id = 14, CategoriaId = 1, Nome = "Oakley Modoc", ValorCusto = 280.00m, ValorVenda = 399.99m, QtdeEstoque = 18, Genero = Genero.Masculino, Marca="Oakley", Cor="Marrom", Material="Couro e Borracha", AtividadeRecomendada="Trilha",  Descricao = "Pertencente a linha Outdoor, o modelo MODOC LOW II possui um solado de borracha garantindo máxima durabilidade e resistência a abrasão, a entressola em EVA proporciona maior conforto, parte superior em camurça e tecido com logotipo da marca em metal revelam a robustez do produto, garantem durabilidade e design único."},
             new Produto { Id = 15, CategoriaId = 1, Nome = "Nike ZoomX Vaporfly",  ValorCusto = 600.00m, ValorVenda = 999.99m, QtdeEstoque = 5, Genero = Genero.Masculino, Marca="Nike", Cor="Branco/Verde", Material="Mesh", AtividadeRecomendada="Corrida", Descricao = "Pegue-os se puder. Dando a você a velocidade do dia da corrida para conquistar qualquer distância, o Nike Vaporfly 3 é feito para aqueles que buscam, os pilotos, os pacers elevados que não conseguem diminuir a emoção da busca. Retrabalhamos o líder do super pacote de calçados e ajustamos o motor embaixo para ajudá-lo a buscar recordes pessoais de 10 km até a maratona. De corredores de elite a novatos em corridas, este cavalo de batalha versátil para corridas de rua é para aqueles que veem a velocidade como uma porta de entrada para mais quilômetros e elevações aparentemente inatingíveis."},
 
+            new Produto { Id = 41, CategoriaId = 1, Nome = "Tênis Nike Air Max Excee Feminino",  ValorCusto = 379.99m, ValorVenda = 799.99m, QtdeEstoque = 127, Genero = Genero.Feminino, Marca="Nike", Cor="Creme", Material="Couro e Material Sintético", AtividadeRecomendada="Dia a Dia", Descricao = "bléblébléblóblóbló"},
+            new Produto { Id = 42, CategoriaId = 1, Nome = "Tênis Nike MC Trainer 3 Feminino",  ValorCusto = 379.99m, ValorVenda = 499.99m, QtdeEstoque = 52, Genero = Genero.Feminino, Marca="Nike", Cor="Branco", Material="Malha, Espuma e Borracha", AtividadeRecomendada="Dia a Dia", Descricao = "bléblébléblóblóbló"},
+            new Produto { Id = 43, CategoriaId = 1, Nome = "Women's Air Force 1 '07 Low",  ValorCusto = 450.99m, ValorVenda = 999.99m, QtdeEstoque = 22, Genero = Genero.Feminino, Marca="Nike", Cor="Branco", Material="Couro Sintético", AtividadeRecomendada="Dia a Dia", Descricao = "bléblébléblóblóbló"},
+            new Produto { Id = 44, CategoriaId = 1, Nome = "COURTBLOCK",  ValorCusto = 116.67m, ValorVenda = 349.99m, QtdeEstoque = 37, Genero = Genero.Feminino, Marca="Adidas", Cor="Linen Green", Material="Couro", AtividadeRecomendada="Dia a Dia", Descricao = "bléblébléblóblóbló"},
+            new Produto { Id = 45, CategoriaId = 1, Nome = "Stella McCartney Ultraboost 5",  ValorCusto = 269.67m, ValorVenda = 1299.99m, QtdeEstoque = 12, Genero = Genero.Feminino, Marca="Adidas", Cor="Willow Grey", Material="Malha Elástica, Forro Sintético e Borracha", AtividadeRecomendada="Corrida", Descricao = "bléblébléblóblóbló"},
+            new Produto { Id = 46, CategoriaId = 1, Nome = "Tênis Jabbar Hi",  ValorCusto = 315.76m, ValorVenda = 1499.99m, QtdeEstoque = 15, Genero = Genero.Feminino, Marca="Adidas", Cor="Cream White", Material="Forro Sintético, Couro e Borracha", AtividadeRecomendada="Fashion", Descricao = "bléblébléblóblóbló"},
+            new Produto { Id = 47, CategoriaId = 1, Nome = "Tênis de Treino Prospect",  ValorCusto = 217.67m, ValorVenda = 449.99m, QtdeEstoque = 34, Genero = Genero.Feminino, Marca="Puma", Cor="Preto", Material="Tecido, Formstrip e Borracha", AtividadeRecomendada="Treino", Descricao = "bléblébléblóblóbló"},
+
             // ===== ROUPAS =====
             new Produto { Id = 16, CategoriaId = 2, Nome = "Camiseta Oversized Branca",  ValorCusto = 40.00m, ValorVenda = 79.90m, QtdeEstoque = 50, Genero = Genero.Masculino, Marca="9xHype", Cor="Branco", Material="Algodão", AtividadeRecomendada="Casual", Descricao = "100% algodão, modelagem larga"},
             new Produto { Id = 17, CategoriaId = 6, Nome = "Calça Cargo Preta", ValorCusto = 90.00m, ValorVenda = 149.99m, QtdeEstoque = 30, Genero = Genero.Masculino, Marca="9xHype", Cor="Preto", Material="Algodão e Poliéster", AtividadeRecomendada="Casual",  Descricao = "Com bolsos laterais e ajuste no tornozelo"},
@@ -201,10 +209,9 @@ public class AppDbSeed
             new ProdutoFoto { Id = 69, ProdutoId = 23, ArquivoFoto = "/img/500x500/CalçaJeansSkinny3.png"},
 
             // Produto 24 - Jaqueta Jeans Feminina
-
-            // FALTA MAIS UMA FOTO
             new ProdutoFoto { Id = 70, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina1.png"},
             new ProdutoFoto { Id = 71, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina2.png"},
+            new ProdutoFoto { Id = 72, ProdutoId = 24, ArquivoFoto = "/img/500x500/JaquetaJeansFeminina3.png"},
 
             // Produto 25 - Shorts de Moletom
             new ProdutoFoto { Id = 73, ProdutoId = 25, ArquivoFoto = "/img/500x500/ShortsMoletom1.png"},
@@ -235,19 +242,53 @@ public class AppDbSeed
             new ProdutoFoto { Id = 88, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit1.png"},
             new ProdutoFoto { Id = 89, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit2.png"},
             new ProdutoFoto { Id = 90, ProdutoId = 30, ArquivoFoto = "/img/500x500/RegataDryFit3.png"},
-    
+
+            // Produto 41 -
+            new ProdutoFoto { Id = 91, ProdutoId = 41, ArquivoFoto = "/img/500x500/TênisNikeAirMaxExcee1.png"},
+            new ProdutoFoto { Id = 92, ProdutoId = 41, ArquivoFoto = "/img/500x500/TênisNikeAirMaxExcee2.png"},
+            new ProdutoFoto { Id = 93, ProdutoId = 41, ArquivoFoto = "/img/500x500/TênisNikeAirMaxExcee3.png"},
+
+            // Produto 42 - 
+            new ProdutoFoto { Id = 94, ProdutoId = 42, ArquivoFoto = "/img/500x500/TênisNikeMCTrainerIII1.png"},
+            new ProdutoFoto { Id = 95, ProdutoId = 42, ArquivoFoto = "/img/500x500/TênisNikeMCTrainerIII2.png"},
+            new ProdutoFoto { Id = 96, ProdutoId = 42, ArquivoFoto = "/img/500x500/TênisNikeMCTrainerIII3.png"},
+
+            // Produto 43 -
+            new ProdutoFoto { Id = 97, ProdutoId = 43, ArquivoFoto = "/img/500x500/Women'sAirForce1'07Low1.png"},
+            new ProdutoFoto { Id = 98, ProdutoId = 43, ArquivoFoto = "/img/500x500/Women'sAirForce1'07Low2.png"},
+            new ProdutoFoto { Id = 99, ProdutoId = 43, ArquivoFoto = "/img/500x500/Women'sAirForce1'07Low3.png"},
+
+            // Produto 44 -
+            new ProdutoFoto { Id = 100, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK1.png"},
+            new ProdutoFoto { Id = 101, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK2.png"},
+            new ProdutoFoto { Id = 102, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK3.png"},
+
+            // Produto 45 -
+            new ProdutoFoto { Id = 103, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboosV1.png"},
+            new ProdutoFoto { Id = 104, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboosV2.png"},
+            new ProdutoFoto { Id = 105, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboosV3.png"},
+
+            // Produto 46 -
+            new ProdutoFoto { Id = 106, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi1.png"},
+            new ProdutoFoto { Id = 107, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi2.png"},
+            new ProdutoFoto { Id = 108, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi3.png"},
+
+            // Produto 47 -
+            new ProdutoFoto { Id = 109, ProdutoId = 47, ArquivoFoto = "/img/500x500/Prospect1.png"},
+            new ProdutoFoto { Id = 110, ProdutoId = 47, ArquivoFoto = "/img/500x500/Prospect1.png"},
+            new ProdutoFoto { Id = 111, ProdutoId = 47, ArquivoFoto = "/img/500x500/Prospect1.png"},
 
             // Imagens produtos Destaques
-            new ProdutoFoto { Id = 91, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
-            new ProdutoFoto { Id = 92, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
-            new ProdutoFoto { Id = 93, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
-            new ProdutoFoto { Id = 94, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
-            new ProdutoFoto { Id = 95, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
-            new ProdutoFoto { Id = 96, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
-            new ProdutoFoto { Id = 97, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
-            new ProdutoFoto { Id = 98, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
-            new ProdutoFoto { Id = 99, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
-            new ProdutoFoto { Id = 100, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
+            new ProdutoFoto { Id = 112, ProdutoId = 31, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeAirForce1.png" },
+            new ProdutoFoto { Id = 113, ProdutoId = 32, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AdidasUltraboost.png" },
+            new ProdutoFoto { Id = 114, ProdutoId = 33, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/PumaRS-X.png" },
+            new ProdutoFoto { Id = 115, ProdutoId = 34, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/VansOldSkool.png" },
+            new ProdutoFoto { Id = 116, ProdutoId = 35, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NewBalance574.png" },
+            new ProdutoFoto { Id = 117, ProdutoId = 36, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/ConverseChuckTaylor.png" },
+            new ProdutoFoto { Id = 118, ProdutoId = 37, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/AsicsGel-Kayano.png" },
+            new ProdutoFoto { Id = 119, ProdutoId = 38, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/NikeDunkLow.png" },
+            new ProdutoFoto { Id = 120, ProdutoId = 39, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/MizunoWaveProphecy.png" },
+            new ProdutoFoto { Id = 121, ProdutoId = 40, ArquivoFoto = "/img/FotosCarrossel/fotosGrandes/FilaDisruptorII.png" },
 
         };
         builder.Entity<ProdutoFoto>().HasData(produtoFotos);
