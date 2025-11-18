@@ -21,24 +21,25 @@ else
             <i class="icones fa-regular fa-circle-user"></i>
         </button>
         <ul class="dropdown-menu" style="position:absolute!important; margin-left: -200px!important; width:250px">
-            @if (User.IsInRole("Administrador") || User.IsInRole("Funcionário"))
-            {
-                <li>
-                    <a class="dropdown-item" asp-action="Index" asp-controller="Home">
-                        <i class="bi bi-house"></i> Acessar Área Pública
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" asp-action="Index" asp-controller="Admin">
-                        <i class="bi bi-receipt"></i> Acessar Área Administrativa
-                    </a>
-                </li>
-            }
             <li>
                 <a class="dropdown-item" asp-action="Index" asp-controller="Perfil">
                     <i class="bi bi-house"></i> Meu Perfil
                 </a>
             </li>
+            @if (User.IsInRole("Administrador") || User.IsInRole("Funcionário"))
+            {
+                <li>
+                    <a class="dropdown-item white" asp-action="Index" asp-controller="Home">
+                        <i class="bi bi-house "></i> Voltar para o Início
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-action="Index" asp-controller="Admin">
+                        <i class="bi bi-receipt"></i>Área Administrativa
+                    </a>
+                </li>
+            }
+
             <li>
                 <form method="POST" asp-action="Logout" asp-controller="Account">
                     <button type="submit" class="dropdown-item align-middle">
@@ -49,3 +50,5 @@ else
         </ul>
     </div>
 }
+
+<link rel="stylesheet" href="~/css/LoginPartial.css" />

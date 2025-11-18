@@ -262,3 +262,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         align-items: center;
     }
 }
+
+.HeaderSearchBar, .HeaderIcons {
+    display: none;
+}
+    
+header{
+    display: flex;
+    justify-content: center;
+}
