@@ -15,13 +15,13 @@
     <table class="table" id="tabelaProdutos">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(model => model.Categoria)</th>
-                <th>@Html.DisplayNameFor(model => model.Nome)</th>
-                <th>@Html.DisplayNameFor(model => model.Descricao)</th>
-                <th>@Html.DisplayNameFor(model => model.QtdeEstoque)</th>
-                <th>@Html.DisplayNameFor(model => model.ValorCusto)</th>
-                <th>@Html.DisplayNameFor(model => model.ValorVenda)</th>
-                <th>@Html.DisplayNameFor(model => model.Genero)</th>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th class="tdDesc">Descrição</th>
+                <th>Estoque</th>
+                <th>Custo</th>
+                <th>Venda</th>
+                <th>Gênero</th>
                 <th>Gerenciar</th>
             </tr>
         </thead>
@@ -31,7 +31,7 @@
                 <tr data-id="@item.Id" class="itemTabela">
                     <td>@Html.DisplayFor(modelItem => item.Categoria.Nome)</td>
                     <td>@Html.DisplayFor(modelItem => item.Nome)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Descricao)</td>
+                    <td class="tdDesc">@Html.DisplayFor(modelItem => item.Descricao)</td>
                     <td>@Html.DisplayFor(modelItem => item.QtdeEstoque)</td>
                     <td>@Html.DisplayFor(modelItem => item.ValorCusto)</td>
                     <td>@Html.DisplayFor(modelItem => item.ValorVenda)</td>

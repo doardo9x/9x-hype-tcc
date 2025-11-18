@@ -43,6 +43,26 @@
     align-items: center;
 }
 
+.itemTabela {
+    text-align: justify;
+}
+
+.itemTabela.td {
+    height: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+tr, td {
+    text-align: center;
+}
+
+.tdDesc {
+    text-align: justify !important;
+}
+
 .botaoEdit{
     height: auto;
     width: auto;
