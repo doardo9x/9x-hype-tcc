@@ -15,7 +15,8 @@
                 @if (!string.IsNullOrEmpty(Model.Foto))
                 {
                     <!-- Mostra a imagem salva -->
-                    <img src="~/img/usuarios/@Model.Foto" class="fotoUsuario" id="previewImage" />
+                    <img src="@Url.Content("~/img/usuarios/" + Model.Foto)" class="fotoUsuario" id="previewImage" />
+
                 }
                 else
                 {
