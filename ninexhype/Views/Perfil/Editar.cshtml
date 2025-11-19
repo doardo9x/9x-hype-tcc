@@ -15,11 +15,11 @@
                 <div class="campoFoto">
                     @if (!string.IsNullOrEmpty(Model.Foto))
                     {
-                        <img src="~/img/usuarios/@Model.Foto" class="fotoUsuario" id="previewImage" />
+                        <img src="@Url.Content("~/img/usuarios/" + Model.Foto)" id="previewImage" />
                     }
                     else
                     {
-                        <img src="~/img/usuarios/default.png" class="fotoUsuario" id="previewImage" />
+                        <img src="~/img/usuarios/perfilVazio.png" class="fotoUsuario" id="previewImage" />
                     }
 
                     <label for="fotoInput" class="btnAdicionarFoto letraBranca">Alterar Foto</label>
