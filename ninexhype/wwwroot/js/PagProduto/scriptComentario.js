@@ -137,3 +137,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+
+
+const cepInput = document.getElementById("cepInput");
+const prazoDiv = document.getElementById("prazoResultado");
+const infoCep = document.getElementById("infoCep");
+
+// Permitir apenas números e hífen
+cepInput.addEventListener("input", () => {
+    cepInput.value = cepInput.value
+        .replace(/[^\d-]/g, "")           // permite só números e hífen
+        .replace(/(\d{5})(\d)/, "$1-$2") // aplica o hífen automaticamente
+        .slice(0, 9);                    // limita ao formato XXXXX-XXX
+});
+
+// Ao apertar ENTER
+cepInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+
+        const cepVal = cepInput.value;
+        const cepValido = /^[0-9]{5}-[0-9]{3}$/.test(cepVal);
+
+        if (cepValido) {
+            prazoDiv.textContent = "Prazo estimado de entrega: 5 a 10 dias úteis";
+
+            // OCULTAR o texto "Informe o seu CEP..."
+            infoCep.style.display = "none";
+        } else {
+            prazoDiv.textContent = "CEP inválido! Digite no formato 17350-000.";
+
+            // Mostrar novamente caso esteja oculto
+            infoCep.style.display = "block";
+        }
+    }
+});
+
+
+

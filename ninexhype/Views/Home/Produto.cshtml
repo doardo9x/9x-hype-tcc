@@ -72,10 +72,14 @@
             <div class="OpcoesInfoEntrega">
                 <div class="txtOpcoes">Calcular Frete</div>
                 <nav class="SearchBarFrete">
-                    <input type="text" class="calcularFrete" placeholder="Digite Seu CEP" />
+                    <input type="text" id="cepInput" class="calcularFrete" placeholder="Digite Seu CEP" />
                 </nav>
-                <div class="txtOpcoes2">Informe o seu CEP no campo acima</div>
+                <div  id="infoCep" class="txtOpcoes2">Informe o seu CEP no campo acima</div>
+
+                <!-- Resultado do prazo -->
+                <div class="txtOpcoes2" id="prazoResultado"></div>
             </div>
+
             <div class="OpcoesInfoEntrega">
                 <div class="txtOpcoes">Prazo de Entrega</div>
                 <div class="txtOpcoes2">Entrega prevista para 05/04 a 12/04</div>
@@ -196,7 +200,7 @@
                     <div class="infoEscritas">
                         <div class="perfil">
                             <img src="~/img/PerfilUsuario/perfilVazio.png" class="imgPerfil">
-                            <p class="nomePerfil">Nome do Usuário</p>
+                            <p class="nomePerfil">@User.Identity.Name</p>
                         </div>
 
                         <!-- Avaliação -->
