@@ -3,8 +3,7 @@
     ViewData["Title"] = "Home";
 }
 
-<!-- Header-->
-<!-- Navigation-->
+
 <!------------------- HEADER ------------------->
 <div class="bg-carousel" id="bgCarousel">
     <div class="shadow-header">
@@ -13,7 +12,7 @@
                 <a asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
             </div>
             <div class="HeaderLogo center mobile">
-                <a href="index.html" class="fs-1 ninexLogo center">9x</a>
+                <a href="index.html" class="fs-1 ninexLogo center">9xHype</a>
             </div>
 
             <form asp-controller="Produtos" asp-action="Pesquisar" method="get" class="HeaderSearchBar">
@@ -46,15 +45,12 @@
             <!-- mobile -->
             <div class="contMobile-Icons">
                 <div class="HeaderIcons-mobile center">
-                    <a class="icons" href="">
+                    <a class="icons position-relative" asp-controller="Carrinho" asp-action="Index">
                         <i class="icones fa-solid fa-cart-shopping"></i>
                     </a>
-                    <a class="icons" href="">
-                        <i class="icones fa-regular fa-heart"></i>
-                    </a>
-                    <a class="icons" href="">
-                        <i class="icones fa-regular fa-circle-user"></i>
-                    </a>
+                    <div class="icons">
+                        <partial name="_LoginPartial">
+                    </div>
                 </div>
 
                 <!-- Botão do menu -->
@@ -65,11 +61,30 @@
                 <!-- Sidebar -->
                 <div id="sidebar" class="sidebar">
                     <button class="close-btn" id="closeSidebar">&times;</button>
-                    <a asp-action="PagHomem">HOMEM</a>
-                    <a asp-action="PagMulher">MULHER</a>
-                    <a href="#">ACESSÓRIOS</a>
-                    <a href="#">PEÇAS</a>
-                    <a href="#">MARCAS</a>
+                    <a asp-action="PagHomem" class="btn btn-secondary dropdown botoes" type="button">
+                        MASCULINO
+                    </a>
+                    <a asp-action="PagMulher" class="btn btn-secondary dropdown botoes" type="button">
+                        FEMININO
+                    </a>
+                    <a asp-action="Unissex" class="btn btn-secondary dropdown botoes" type="button">
+                        UNISSEX
+                    </a>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Tenis">Tênis</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Camisas">Camisas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Blusas">Blusas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Jaquetas">Jaquetas</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Shorts">Shorts</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Calcas">Calças</a></li>
+                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Filtro"
+                            asp-route-categoria="Acessorios">Acessórios</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
@@ -77,12 +92,12 @@
         <nav class="nav-computer center">
             <a class="dropdown">
                 <a asp-action="PagHomem" class="btn btn-secondary dropdown botoes" type="button">
-                    HOMEM
+                    MASCULINO
                 </a>
             </a>
             <div class="dropdown">
                 <a asp-action="PagMulher" class="btn btn-secondary dropdown botoes" type="button">
-                    MULHER
+                    FEMININO
                 </a>
             </div>
             <div class="dropdown">
@@ -135,8 +150,9 @@
                             <a asp-action="Produto" asp-route-id="@produto.Id" class="w100 h100 d-block">
                                 <div class="numeracao">@produto.Id</div>
                                 <img src="@(produto.Fotos.Count <= 0 ? 
-            "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
-            produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" />
+                                                                                                                                                                                                                                          "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" :
+                                                                                                                                                                                                                                          produto.Fotos[0].ArquivoFoto)"
+                                    alt="@produto.Nome" />
                                 <div class="legenda">
                                     <div class="fs-7 w100 NomeDestaque">@produto.Nome</div>
                                     <div class="fs-7 w100 valorVendaDestaque">R$@produto.ValorVenda</div>
@@ -176,8 +192,9 @@
                 <div class="card cardCarrossel" style="width: 12rem;">
                     <a asp-action="Produto" asp-route-id="@produto.Id">
                         <img src="@(produto.Fotos.Count <= 0 
-                                ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
-                                : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" class="card-img-top">
+                                                                                                                                                                                                              ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
+                                                                                                                                                                                                              : produto.Fotos[0].ArquivoFoto)"
+                            alt="@produto.Nome" class="card-img-top">
                     </a>
                     <div class="card-body">
                         <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>
@@ -199,8 +216,9 @@
                 <div class="card cardCarrossel" style="width: 12rem;">
                     <a asp-action="Produto" asp-route-id="@produto.Id">
                         <img src="@(produto.Fotos.Count <= 0 
-                                ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
-                                : produto.Fotos[0].ArquivoFoto)" alt="@produto.Nome" class="card-img-top">
+                                                                                                                                                                                                              ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg" 
+                                                                                                                                                                                                              : produto.Fotos[0].ArquivoFoto)"
+                            alt="@produto.Nome" class="card-img-top">
                     </a>
                     <div class="card-body">
                         <p class="card-text nomeProdutoCarrossel">@produto.Nome</p>

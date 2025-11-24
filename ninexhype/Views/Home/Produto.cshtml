@@ -63,26 +63,31 @@
             <div class="OpcoesInfoEntrega">
                 <div class="txtOpcoes">Estoque Disponível</div>
                 <div class="txtOpcoes3">Mais de @Model.Produto.QtdeEstoque unidades disponíveis</div>
-                <div class="txtOpcoes2">Quantidade Selecionada: 1</div>
+
+                <div class="txtOpcoes2">Quantidade Selecionada:
+                    <span id="quantidadeSelecionada">1</span>
+                </div>
+
                 <div class="btnEstoqueDisponivel">
                     <button class="btnAdd">Adicionar</button>
                     <button class="btnRem">Remover</button>
                 </div>
             </div>
+
             <div class="OpcoesInfoEntrega">
                 <div class="txtOpcoes">Calcular Frete</div>
                 <nav class="SearchBarFrete">
                     <input type="text" id="cepInput" class="calcularFrete" placeholder="Digite Seu CEP" />
                 </nav>
-                <div  id="infoCep" class="txtOpcoes2">Informe o seu CEP no campo acima</div>
+                <div id="infoCep" class="txtOpcoes2">Informe o seu CEP no campo acima</div>
 
                 <!-- Resultado do prazo -->
                 <div class="txtOpcoes2" id="prazoResultado"></div>
             </div>
 
             <div class="OpcoesInfoEntrega">
-                <div class="txtOpcoes">Prazo de Entrega</div>
-                <div class="txtOpcoes2">Entrega prevista para 05/04 a 12/04</div>
+                <div class="txtOpcoes">Prazo de Envio</div>
+                <div class="txtOpcoes2">Envio de 24 à 48 Horas.</div>
                 <div class="txtOpcoes3">Informe seu CEP para uma informação mais precisa
                 </div>
             </div>

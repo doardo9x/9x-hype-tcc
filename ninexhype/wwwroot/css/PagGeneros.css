@@ -1,5 +1,13 @@
 /* Containers principais */
 
+header {
+ background-color: #ffffff ;
+    background: linear-gradient(to top,
+            rgb(255, 255, 255) 0%,
+            rgb(145, 145, 145) 10%,
+            #101524 25%);
+}
+
 .center {
     display: flex;
     align-self: center;

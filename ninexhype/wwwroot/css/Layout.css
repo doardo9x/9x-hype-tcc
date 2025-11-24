@@ -12,10 +12,11 @@
     --VerdeCarrinho-color: #008000;
     --VerdeCarrinhoHover-color: #005c00;
     --VermelhoFav-color: #BA1B1B;
-    --VermelhoFavHover-color: #a31b1b ;
+    --VermelhoFavHover-color: #a31b1b;
     --VermelhoRemFav-color: #8b0000;
     --VermelhoRemFavHover-color: #6b0101;
 }
+
 /* Header */
 header {
     width: 100%;
@@ -25,6 +26,7 @@ header {
     flex-wrap: wrap;
 
 }
+
 /* Footer */
 footer {
     background-color: #171925;
@@ -60,7 +62,7 @@ footer {
 }
 
 .iconsRedes {
-    width: 100%;   
+    width: 100%;
     display: flex;
     gap: 10px;
 }
@@ -164,5 +166,15 @@ footer {
 
     .numeroTelefone {
         background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    header {
+        display: none;
+    }
+
+    .parceriaEmail {
+        display: none;
     }
 }

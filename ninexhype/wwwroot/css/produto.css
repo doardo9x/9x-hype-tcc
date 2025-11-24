@@ -369,13 +369,18 @@ html {
 }
 
 /* ---------------------------------------------- Info Entrega ---------------------------------------------- */
-#prazoResultado{
+#prazoResultado {
     padding: 0px;
 }
-#cepInput{padding: 0;}
-.SearchBarFrete{
+
+#cepInput {
+    padding: 0;
+}
+
+.SearchBarFrete {
     height: auto;
 }
+
 .infoEntrega {
     width: 25%;
     max-width: 100%;
@@ -822,6 +827,12 @@ textarea::placeholder {
 
 /* ---------------------- Responsividade ---------------------- */
 
+@media (max-width: 699px) {
+    .descricao {
+        display: none;
+    }
+}
+
 @media (max-width: 1080px) {
 
     .pagProduto {
@@ -877,11 +888,6 @@ textarea::placeholder {
 
     .metodosPagamento {
         display: none;
-    }
-
-
-    .ContDescricaoSimples {
-        width: 100%;
     }
 
     .itemDescSimples {

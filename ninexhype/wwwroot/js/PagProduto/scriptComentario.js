@@ -178,3 +178,17 @@ cepInput.addEventListener("keydown", (e) => {
 
 
 
+let quantidade = 1; // Valor inicial
+const spanQuantidade = document.getElementById("quantidadeSelecionada");
+
+document.querySelector(".btnAdd").addEventListener("click", () => {
+    quantidade++;
+    spanQuantidade.textContent = quantidade;
+});
+
+document.querySelector(".btnRem").addEventListener("click", () => {
+    if (quantidade > 1) { 
+        quantidade--;
+        spanQuantidade.textContent = quantidade;
+    }
+});

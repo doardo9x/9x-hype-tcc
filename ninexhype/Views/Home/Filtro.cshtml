@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Filtro " + ViewBag.Categoria;
 }
-
-<div class="tituloResultado">
+<link rel="stylesheet" href="~/css/Filtros.css" />
+<div class="tituloResultado titulofiltro">
     <h2 class="normalText fs-1">@ViewBag.Categoria</h2>
 </div>
-<hr />
+
 
 @if (Model == null || !Model.Any())
 {
