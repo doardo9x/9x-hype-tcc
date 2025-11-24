@@ -105,6 +105,11 @@ tr, td {
     gap: 5px;
 }
 
+.divBotao {
+    justify-content: center;
+    align-items: center;
+}
+
 .botoesGerenciar{
     color: white;
     padding: 10px;

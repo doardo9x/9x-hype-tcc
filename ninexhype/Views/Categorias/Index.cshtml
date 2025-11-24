@@ -27,7 +27,7 @@
                     <td class="nomeProduto">
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>
-                    <td class="divBotoes">
+                    <td class="divBotoes divBotao">
 
                         <div class="botaoEdit">
                             <a asp-action="Edit" asp-route-id="@item.Id">
@@ -53,4 +53,5 @@
         </tbody>
     </table>
 </div>
+
 <link rel="stylesheet" href="~/css/tabelaProdutos.css">
