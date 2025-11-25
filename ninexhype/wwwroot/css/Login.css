@@ -246,3 +246,9 @@ input.checkboxConexao[type="checkbox"]:hover {
 {
     color: red;
 }
+
+@media(max-width: 699px) {
+    .main {
+        width: 90%;
+    }
+}

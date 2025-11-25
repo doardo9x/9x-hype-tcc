@@ -257,3 +257,19 @@ header{
     display: flex;
     justify-content: center;
 }
+
+
+@media(max-width: 699px) {
+    .infoProduto {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .labelQuantidade {
+        width: 20%;
+    }
+
+    .quantidadeProduto {
+        width: 80%;
+    }
+}
