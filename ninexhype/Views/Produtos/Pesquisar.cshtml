@@ -17,7 +17,7 @@ else
             @foreach (var produto in Model)
             {
                     <div class="card cardCarrossel" style="width: 12rem;">
-                        <a asp-action="Produto" asp-route-id="@produto.Id">
+                        <a asp-action="Produto" asp-controller="Home" asp-route-id="@produto.Id">
                             <img class="card-img-top"
                                 src="@(produto.Fotos.Count == 0 
                                     ? "https://dummyimage.com/450x300/dee2e6/6c757d.jpg"

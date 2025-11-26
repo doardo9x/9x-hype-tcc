@@ -267,9 +267,9 @@ public class AppDbSeed
             new ProdutoFoto { Id = 102, ProdutoId = 44, ArquivoFoto = "/img/500x500/COURTBLOCK3.png"},
 
             // Produto 45 -
-            new ProdutoFoto { Id = 103, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboosV1.png"},
-            new ProdutoFoto { Id = 104, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboosV2.png"},
-            new ProdutoFoto { Id = 105, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboosV3.png"},
+            new ProdutoFoto { Id = 103, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboostV1.png"},
+            new ProdutoFoto { Id = 104, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboostV2.png"},
+            new ProdutoFoto { Id = 105, ProdutoId = 45, ArquivoFoto = "/img/500x500/StellaMcCartneyUltraboostV3.png"},
 
             // Produto 46 -
             new ProdutoFoto { Id = 106, ProdutoId = 46, ArquivoFoto = "/img/500x500/JabbarHi1.png"},

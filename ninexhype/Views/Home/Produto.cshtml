@@ -277,7 +277,7 @@
                     </div>
                 </div>
                 <div class="imgComentario">
-                    <img src="~/img/Comentarios/Reviews/imgReviewExemplo.jpg" alt="" class="imgReviewComentario">
+                    <img src="@Model.Produto.Fotos.FirstOrDefault()?.ArquivoFoto" alt="" class="imgReviewComentario" />
                 </div>
             </div>
 
@@ -310,7 +310,9 @@
                     </div>
                 </div>
                 <div class="imgComentario">
-                    <img src="~/img/Comentarios/Reviews/imgReviewExemplo2.jpg" alt="" class="imgReviewComentario">
+                    <img src="@(Model.Produto.Fotos.OrderBy(f => f.Id).Skip(2).FirstOrDefault()?.ArquivoFoto)" alt=""
+                        class="imgReviewComentario" />
+
                 </div>
             </div>
 
@@ -343,7 +345,8 @@
                     </div>
                 </div>
                 <div class="imgComentario">
-                    <img src="~/img/Comentarios/Reviews/imgReviewExemplo3.jpg" alt="" class="imgReviewComentario">
+                    <img src="@(Model.Produto.Fotos.OrderBy(f => f.Id).Skip(1).FirstOrDefault()?.ArquivoFoto)" alt=""
+                        class="imgReviewComentario" />
                 </div>
             </div>
 

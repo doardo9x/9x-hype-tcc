@@ -56,9 +56,11 @@ namespace ninexhype.Controllers
 
             var produtos = await _context.Produtos
                 .Include(p => p.Categoria)
-                    .ThenInclude(c => c.TipoRoupa)
+                .ThenInclude(c => c.TipoRoupa)
                 .Include(p => p.Fotos)
+                .Where(p => p.CategoriaId != 8)   // ⬅ EXCLUI produto destaque
                 .ToListAsync();
+
 
             var resultados = produtos.Where(p =>
                 Normalizar(p.Nome).Contains(termoNormalizado) ||
