@@ -169,12 +169,30 @@ footer {
     }
 }
 
+@media screen and (min-width: 700px) {
+    .HeaderMobile{
+        display: none;
+    }
+}
 @media screen and (max-width: 699px) {
-    header {
+    Header {
         display: none;
     }
 
     .parceriaEmail {
         display: none;
     }
+
+    .HeaderMobile{
+        padding-top: 20px;
+    }
+}
+
+.nav-item.dropdown {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+.dropdown-menu {
+    z-index: 99999 !important;
+    position: absolute !important;
 }
