@@ -719,8 +719,12 @@ footer {
     justify-content: center;
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 699px) {
     
+
+    .Header{
+        display: none;
+    }
     .contatoFooter {
         width: 98%;
         flex-direction: column;

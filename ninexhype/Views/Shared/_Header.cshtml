@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="~/css/Layout.css">
 </head>
 
-<header>
+<Header>
     <div class="HeaderLogo center desktop">
         <a asp-controller="Home" asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
     </div>
@@ -29,8 +29,12 @@
             <i class="icones fa-solid fa-cart-shopping"></i>
         </a>
         <div class="icons">
-            <partial name="_LoginPartial">
+            <partial name="_LoginPartial" />
         </div>
     </div>
 
-</header>
+</Header>
+
+<div class="HeaderMobile">
+    <a asp-controller="Home" asp-action="index" class="fs-1 ninexLogo center">9xHype</a>
+</div>
