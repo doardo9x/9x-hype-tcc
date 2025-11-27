@@ -478,3 +478,19 @@ html {
         height: 100px;
     }
 }
+
+
+/* Adicione ao final do seu arquivo CSS existente */
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 10px;
+    justify-content: center;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.preview-container div {
+    flex: 0 0 auto;
+}

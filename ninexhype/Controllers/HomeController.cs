@@ -63,12 +63,14 @@ public class HomeController : Controller
     {
         Produto produto = _db.Produtos
             .Where(p => p.Id == id)
+            .Where(p => p.CategoriaId != 8)
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
             .SingleOrDefault();
 
         List<Produto> semelhantes = _db.Produtos
             .Where(p => p.Id != id && p.CategoriaId == produto.CategoriaId)
+            .Where(p => p.CategoriaId != 8)
             .OrderBy(p => EF.Functions.Random())
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
@@ -89,6 +91,7 @@ public class HomeController : Controller
         // Carregar todos os produtos masculinos, incluindo categoria e fotos
         var produtos = _db.Produtos
             .Where(p => p.Genero == Genero.Masculino)
+            .Where(p => p.CategoriaId != 8)
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
             .ToList();
@@ -125,6 +128,7 @@ public class HomeController : Controller
     {
         var produtos = _db.Produtos
             .Where(p => p.Genero == Genero.Feminino)
+            .Where(p => p.CategoriaId != 8)
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
             .ToList();
@@ -158,6 +162,7 @@ public class HomeController : Controller
     public IActionResult Unissex()
     {
         var produtos = _db.Produtos
+            .Where(p => p.CategoriaId != 8)
             .Include(p => p.Categoria)
             .Include(p => p.Fotos)
             .ToList();

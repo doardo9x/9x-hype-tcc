@@ -257,6 +257,7 @@ namespace ninexhype.Controllers
 
             var produto = await _context.Produtos
                 .Include(p => p.Categoria)
+                .Include(p => p.Fotos)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (produto == null) return NotFound();
