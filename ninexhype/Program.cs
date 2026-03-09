@@ -9,9 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Configuração do Serviço de Conexão com o banco de dados
-string conexao = builder.Configuration.GetConnectionString("ninexhypeConn");
-builder.Services.AddDbContext<AppDbContext>(
-    opt => opt.UseMySQL(conexao)
+// string conexao = builder.Configuration.GetConnectionString("ninexhypeConn");
+// builder.Services.AddDbContext<AppDbContext>(
+//     opt => opt.UseMySQL(conexao)
+// ); 
+
+string conexao = "Data Source=ninexhype_net10.db";
+builder.Services.AddDbContext<AppDbContext>(opt => 
+    opt.UseSqlite(conexao)
 );
 
 // Configuração do Serviço de Identidade de Usuários

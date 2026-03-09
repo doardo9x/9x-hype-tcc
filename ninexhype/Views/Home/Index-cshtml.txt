@@ -1,4 +1,4 @@
-@model ninexhype.ViewModels.IndexVM
+﻿@model ninexhype.ViewModels.IndexVM
 @{
     ViewData["Title"] = "Home";
 }
