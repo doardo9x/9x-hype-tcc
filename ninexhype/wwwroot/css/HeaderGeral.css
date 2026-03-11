@@ -1,0 +1,12 @@
+Header{
+    background-color:white ;
+    display: flex;
+}
+.cont-Header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    border: 1px solid black;
+}
+
